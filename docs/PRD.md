@@ -445,7 +445,7 @@ _Each task should be completable in 1-4 hours (roughly one PR/commit)._
 - [x] **Task 7.2**: Add integration tests for critical flows
 - [ ] **Task 7.3**: Set up E2E tests with Playwright (optional)
 - [x] **Task 7.4**: Configure ESLint and Prettier
-- [ ] **Task 7.5**: Write README with setup instructions
+- [x] **Task 7.5**: Write README with setup instructions
 - [ ] **Task 7.6**: Document how to add new articles
 - [ ] **Task 7.7**: Create contribution guide (for future self)
 

@@ -6,7 +6,6 @@ Your memory is ONLY what's in the filesystem - PRD.md, PROGRESS.md, and git hist
 ## Step 1: Understand Current State (REQUIRED)
 
 Read these files to understand where we are:
-
 ```bash
 cat docs/PROGRESS.md
 cat docs/PRD.md
@@ -38,7 +37,6 @@ After completing the task:
 ## Step 4: Commit Changes
 
 If this is a git repository:
-
 ```bash
 git add -A
 git commit -m "feat: [brief description of what was implemented]"
