@@ -1,8 +1,22 @@
-import { getAllArticles } from "@/lib/content";
+import { getAllArticles, getAllTags } from "@/lib/content";
 import { ArticleCard } from "@/components/article-card";
+import { TagFilter } from "@/components/tag-filter";
 
-export default async function Home() {
-  const articles = await getAllArticles();
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ tag?: string }>;
+}) {
+  const { tag: selectedTag } = await searchParams;
+  const allArticles = await getAllArticles();
+  const allTags = await getAllTags();
+
+  // Filter articles by tag if selected
+  const filteredArticles = selectedTag
+    ? allArticles.filter((article) =>
+        article.tags?.some((t) => t.toLowerCase() === selectedTag.toLowerCase())
+      )
+    : allArticles;
 
   return (
     <main className="min-h-screen">
@@ -21,24 +35,24 @@ export default async function Home() {
           </p>
         </section>
 
+        {/* Tag Filter Section */}
+        <TagFilter
+          allTags={allTags}
+          selectedTag={selectedTag}
+          articleCount={filteredArticles.length}
+        />
+
         {/* Article List */}
         <section>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-text-primary flex items-center">
-              <span className="w-1 h-6 bg-accent-primary mr-3"></span>
-              最新文章
-              <span className="ml-3 text-sm font-normal text-text-muted">
-                ({articles.length})
-              </span>
-            </h2>
-          </div>
           <div className="grid gap-6">
-            {articles.length === 0 ? (
+            {filteredArticles.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-text-secondary">暂无文章</p>
+                <p className="text-text-secondary">
+                  {selectedTag ? `暂无标签为 "${selectedTag}" 的文章` : "暂无文章"}
+                </p>
               </div>
             ) : (
-              articles.map((article) => (
+              filteredArticles.map((article) => (
                 <ArticleCard key={article.slug} article={article} />
               ))
             )}

@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 2 - Core Features (MVP) |
-| **Current Task** | Task 2.4 Complete. Next: Task 2.6 - Implement tag filtering functionality |
+| **Current Task** | Task 2.6 Complete. Next: Task 2.7 - Create tag page at `/blog/tag/[tag]` |
 | **Blocker** | None |
-| **Last Action** | Implemented code highlighting with react-syntax-highlighter, added copy button to code blocks |
+| **Last Action** | Implemented tag filtering functionality with TagFilter component using URL search params |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -225,17 +225,44 @@
     - Proper padding and line height for readability
   - **Notes**: Build verified successfully. Code blocks now have professional syntax highlighting with a copy button. Used react-syntax-highlighter instead of Shiki for better client-side performance and smaller bundle size.
 
+- [x] **Task 2.6**: Implement tag filtering functionality
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `components/tag-filter.tsx` - Client-side tag filter component with URL-based state
+  - **Files Modified**:
+    - `app/page.tsx` - Added searchParams prop and tag filtering logic
+  - **Features**:
+    - TagFilter component showing all available tags as clickable badges
+    - URL-based filtering using search params (e.g., `/?tag=Next.js`)
+    - Active tag highlighting with orange accent color
+    - "Clear filter" link when a tag is selected
+    - "全部" (All) button to show all articles
+    - Article count updates based on current filter
+    - Server-side rendering friendly (uses Next.js searchParams)
+    - Empty state message when no articles match the selected tag
+  - **Styling**:
+    - Active tag: Orange background with white text
+    - Inactive tag: Tertiary background with border, hover effect
+    - Responsive layout with flex-wrap for tag list
+    - Section title shows current filter state
+  - **Technical Implementation**:
+    - Uses Next.js 15 async searchParams for type-safe URL param handling
+    - Client-side TagFilter component for interactivity (useSearchParams hook)
+    - Case-insensitive tag matching
+    - Maintains other URL params when filtering
+  - **Notes**: Build verified successfully. Tag filtering is fully functional on the homepage. The URL-based approach ensures shareable links and SSR compatibility.
+
 ### In Progress
 
-- [ ] **Task 2.6**: Implement tag filtering functionality
+- [ ] **Task 2.7**: Create tag page at `/blog/tag/[tag]`
   - **Status**: Next task - Ready to begin
-  - **Notes**: Need to add tag filtering to article list page and create tag-specific pages
+  - **Notes**: Create dedicated pages for each tag with article list
 
 ### Pending
 
 ### Phase 2: Core Features (MVP)
 
-- [ ] **Task 2.6**: Implement tag filtering functionality
 - [ ] **Task 2.7**: Create tag page at `/blog/tag/[tag]`
 - [ ] **Task 2.8**: Add About page
 
@@ -401,6 +428,7 @@ None yet - project just started
 | 2026-01-17 01:29 | Task 2.1 Complete | Implemented content provider interface and local MDX implementation with abstract architecture for future Notion/Obsidian migration |
 | 2026-01-17 01:44 | Tasks 2.2/2.3/2.5 Complete | Created ArticleCard component with comprehensive metadata display (date, reading time, tags, category) and enhanced hover effects; Refactored homepage to use the new component |
 | 2026-01-17 01:53 | Task 2.4 Complete | Implemented code highlighting with react-syntax-highlighter (PrismJS). Added CodeBlock component with language detection, VSCode Dark Plus theme, copy button with visual feedback, and support for 40+ programming languages |
+| 2026-01-17 02:00 | Task 2.6 Complete | Implemented tag filtering functionality with TagFilter component using URL search params. Added client-side interactive tag buttons with active state highlighting, clear filter option, and shareable filtered URLs |
 
 ---
 

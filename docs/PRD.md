@@ -363,7 +363,7 @@ cc-automatic-blog-project/
 - [x] **Task 2.3**: Add article metadata display (date, tags, reading time)
 - [x] **Task 2.4**: Implement Shiki code highlighting for code blocks
 - [x] **Task 2.5**: Add article card component with hover effects
-- [ ] **Task 2.6**: Implement tag filtering functionality
+- [x] **Task 2.6**: Implement tag filtering functionality
 - [ ] **Task 2.7**: Create tag page at `/blog/tag/[tag]`
 - [ ] **Task 2.8**: Add About page
 

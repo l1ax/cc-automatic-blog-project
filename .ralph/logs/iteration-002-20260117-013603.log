@@ -1,0 +1,36 @@
+Excellent! Task 2.4 has been completed successfully. Let me provide a summary of what was implemented:
+
+## Task 2.4 Complete: Code Highlighting Implementation
+
+I successfully implemented code highlighting for the blog using **react-syntax-highlighter** (with PrismJS engine). Here's what was added:
+
+### Features Implemented:
+1. **CodeBlock Component** (`components/code-block.tsx`)
+   - VSCode-quality syntax highlighting using PrismJS
+   - Support for 40+ programming languages (JavaScript, TypeScript, Python, Rust, Go, Java, C, C++, PHP, Ruby, Swift, Kotlin, Scala, Bash, CSS, SCSS, HTML, JSON, YAML, SQL, Dart, Vue, Svelte, and more)
+   - Language alias normalization (e.g., `js` → `javascript`, `ts` → `typescript`)
+   - VSCode Dark Plus theme matching the blog's color scheme
+
+2. **User Experience Features**
+   - Language label displayed in header bar
+   - Copy button with visual feedback (shows "已复制!" after copying)
+   - Orange accent color on copy button hover
+   - Responsive code blocks with horizontal scrolling
+   - Fira Code monospace font for code display
+
+3. **Updated Components**
+   - Modified `MDXContent` component to use the new `CodeBlock` component
+   - Maintained inline code styling for code snippets within paragraphs
+
+### Build Verification:
+- Build completed successfully
+- Static pages generated correctly
+- Bundle size increased to ~318 kB for blog pages (acceptable for a personal blog with code highlighting)
+
+### Files Changed:
+- Created: `components/code-block.tsx`
+- Modified: `components/mdx-content.tsx`, `docs/PRD.md`, `docs/PROGRESS.md`
+- Dependencies added: `react-syntax-highlighter@15.6.1`, `@types/react-syntax-highlighter@5.0.4`
+
+### Next Task:
+The next task in the PRD is **Task 2.6: Implement tag filtering functionality**.
