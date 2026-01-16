@@ -392,7 +392,7 @@ cc-automatic-blog-project/
 **Goal**: 完善移动端体验和细节优化。
 
 - [x] **Task 4.1**: Implement mobile-first responsive design for all pages
-- [ ] **Task 4.2**: Add mobile navigation menu (hamburger menu)
+- [x] **Task 4.2**: Add mobile navigation menu (hamburger menu)
 - [ ] **Task 4.3**: Optimize typography for mobile reading
 - [ ] **Task 4.4**: Add loading states and skeleton screens
 - [ ] **Task 4.5**: Add 404 page
