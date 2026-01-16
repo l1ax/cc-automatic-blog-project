@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 1 - Walking Skeleton (Foundation) |
-| **Current Task** | Task 1.3 - Set up MDX support (install @next/mdx and configure) |
+| **Current Task** | Task 1.4 - Create first sample article in `/posts` directory with Frontmatter |
 | **Blocker** | None |
-| **Last Action** | Created project directory structure (posts/, components/, lib/) |
+| **Last Action** | Set up MDX support (installed @next/mdx, configured Next.js) |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -53,17 +53,31 @@
     - `lib/providers/` - Utility functions and content layer (with .gitkeep)
   - **Notes**: Basic directory structure established for the blog
 
+- [x] **Task 1.3**: Set up MDX support (install @next/mdx and configure)
+  - **Completed**: 2026-01-17
+  - **Commit**: 2c17e79
+  - **Files Modified**:
+    - `package.json` - Added MDX dependencies
+    - `next.config.ts` - Configured @next/mdx with MDX support
+    - `tsconfig.json` - Added .mdx and .md to include array
+    - `mdx.d.ts` - Created TypeScript declarations for MDX files
+  - **Dependencies Added**:
+    - @next/mdx@^16.1.2
+    - @mdx-js/loader@^3.1.1
+    - @mdx-js/react@^3.1.1
+    - @types/mdx@^2.0.13
+  - **Notes**: MDX is now fully configured. TypeScript recognizes .mdx and .md files. Build verified successfully.
+
 ### In Progress
 
-- [ ] **Task 1.3**: Set up MDX support (install @next/mdx and configure)
+- [ ] **Task 1.4**: Create first sample article in `/posts` directory with Frontmatter
   - **Status**: Ready to begin
-  - **Notes**: Install @next/mdx and @mdx-js/loader for MDX support
+  - **Notes**: Create a sample blog post with proper frontmatter schema
 
 ### Pending
 
 ### Phase 1: Walking Skeleton (Foundation)
 
-- [ ] **Task 1.3**: Set up MDX support (install @next/mdx and configure)
 - [ ] **Task 1.4**: Create first sample article in `/posts` directory with Frontmatter
 - [ ] **Task 1.5**: Implement basic layout with dark theme (深灰色 + 橙色配色)
 - [ ] **Task 1.6**: Create article detail page at `/blog/[slug]` that renders MDX
@@ -170,6 +184,12 @@ None yet - project just started
 - eslint@8
 - eslint-config-next@15.1.4
 
+**MDX Dependencies (Task 1.3)**:
+- @next/mdx@16.1.2
+- @mdx-js/loader@3.1.1
+- @mdx-js/react@3.1.1
+- @types/mdx@2.0.13
+
 ---
 
 ## Blockers
@@ -188,8 +208,8 @@ None yet - project just started
 2. **Read PRD**: `cat docs/PRD.md` - understand full requirements
 3. **Check git log**: `git log --oneline -10` - see recent commits
 4. **Check git status**: `git status` - see uncommitted changes
-5. **Current task is**: Task 1.3 - Set up MDX support (install @next/mdx and configure)
-6. **Next action should be**: Install @next/mdx and configure Next.js for MDX support
+5. **Current task is**: Task 1.4 - Create first sample article in `/posts` directory with Frontmatter
+6. **Next action should be**: Create a sample blog post with proper frontmatter schema
 
 **Important Context to Remember:**
 - This is a personal tech blog for knowledge management, not public engagement
@@ -211,6 +231,7 @@ None yet - project just started
 | 2026-01-17 00:20 | Ready to Start | Task 1.1 is next - Initialize Next.js project |
 | 2026-01-17 01:00 | Task 1.1 Complete | Next.js 15 project initialized with TypeScript and Tailwind CSS |
 | 2026-01-17 01:01 | Task 1.2 Complete | Created project directory structure (posts/, components/, lib/) |
+| 2026-01-17 01:04 | Task 1.3 Complete | Set up MDX support - installed @next/mdx, configured Next.js and TypeScript |
 
 ---
 

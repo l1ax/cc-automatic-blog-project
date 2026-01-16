@@ -370,7 +370,14 @@ run_iteration() {
 
     # Execute and capture output
     # Using --print for non-interactive mode with --dangerously-skip-permissions for automation
+    echo -e "  ${DIM}Executing: claude --print --dangerously-skip-permissions < $PROMPT_FILE${NC}"
+    echo ""
+
     if cat "$PROMPT_FILE" | claude --print --dangerously-skip-permissions 2>&1 | tee "$log_file"; then
+        local claude_exit=$?
+        echo ""
+        echo -e "  ${DIM}Claude exit code: $claude_exit${NC}"
+
         local end_time
         local duration
         end_time=$(date +%s)
@@ -381,6 +388,7 @@ run_iteration() {
 
         # Check for completion
         if grep -q "<promise>PRD_COMPLETE</promise>" "$log_file"; then
+            echo -e "  ${GREEN}PRD_COMPLETE signal detected${NC}"
             return 0  # Complete!
         fi
 
@@ -403,10 +411,13 @@ run_iteration() {
             log_warning "Task may not have been marked complete"
         fi
 
+        echo -e "  ${DIM}Returning 1 to continue loop${NC}"
         return 1  # Continue
     else
         local exit_code=$?
+        echo ""
         log_error "Claude exited with code $exit_code"
+        echo -e "  ${DIM}Check log file: $log_file${NC}"
         return 2  # Error
     fi
 }
@@ -534,9 +545,11 @@ EOF
 
     while [ "$iteration" -lt "$max_iterations" ]; do
         iteration=$((iteration + 1))
+        echo -e "  ${DIM}[DEBUG] Starting iteration $iteration of $max_iterations${NC}"
 
         run_iteration "$iteration" "$max_iterations"
         local result=$?
+        echo -e "  ${DIM}[DEBUG] run_iteration returned: $result${NC}"
 
         if [ $result -eq 0 ]; then
             # PRD Complete!
@@ -577,9 +590,14 @@ COMPLETE
         if [ "$iteration" -lt "$max_iterations" ]; then
             echo ""
             echo -e "  ${DIM}Pausing ${pause_seconds}s before next iteration...${NC}"
+            echo -e "  ${DIM}[DEBUG] Will continue to iteration $((iteration + 1))${NC}"
             sleep "$pause_seconds"
+            echo -e "  ${DIM}[DEBUG] Pause complete, continuing loop${NC}"
+        else
+            echo -e "  ${DIM}[DEBUG] Reached max iterations ($max_iterations)${NC}"
         fi
     done
+    echo -e "  ${DIM}[DEBUG] Exited main loop${NC}"
 
     # Max iterations reached
     echo ""

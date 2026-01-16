@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
+import createMDX from '@next/mdx'
 
 const nextConfig: NextConfig = {
   /* config options here */
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+  extension: /\.mdx?$/,
+})
+
+export default withMDX(nextConfig);

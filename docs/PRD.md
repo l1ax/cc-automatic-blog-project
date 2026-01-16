@@ -344,7 +344,7 @@ cc-automatic-blog-project/
 
 - [x] **Task 1.1**: Initialize Next.js 14 project with TypeScript and Tailwind CSS
 - [x] **Task 1.2**: Configure project structure (create directories and base files)
-- [ ] **Task 1.3**: Set up MDX support (install @next/mdx and configure)
+- [x] **Task 1.3**: Set up MDX support (install @next/mdx and configure)
 - [ ] **Task 1.4**: Create first sample article in `/posts` directory with Frontmatter
 - [ ] **Task 1.5**: Implement basic layout with dark theme (深灰色 + 橙色配色)
 - [ ] **Task 1.6**: Create article detail page at `/blog/[slug]` that renders MDX
