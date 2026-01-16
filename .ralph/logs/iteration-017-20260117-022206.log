@@ -1,0 +1,32 @@
+Task 4.6 is now complete. Let me provide a summary of what was implemented:
+
+## Task 4.6 Complete: Add image optimization (next/image)
+
+### What was implemented:
+
+1. **Created `components/mdx-image.tsx`** - An optimized image component with:
+   - Next.js Image component for automatic optimization
+   - AVIF and WebP format support for modern browsers
+   - Lazy loading for better performance
+   - Loading skeleton animation (pulse effect)
+   - Error handling with fallback UI
+   - Image caption support via title attribute
+
+2. **Updated `next.config.ts`** - Added image configuration:
+   - Remote patterns for all HTTPS domains
+   - Modern image formats (AVIF, WebP)
+   - Responsive device and image sizes
+
+3. **Updated `components/mdx-content.tsx`** - Integrated MDXImage component into the Markdown renderer
+
+4. **Updated sample article** - Added a test image to demonstrate the feature
+
+### Features:
+- Automatic image optimization using Next.js Image
+- Support for external images (all HTTPS domains)
+- Responsive sizing with proper `sizes` attribute
+- Graceful loading states with animation
+- Error handling with user-friendly fallback
+- Image captions displayed below images
+
+The build verified successfully and all changes have been committed.

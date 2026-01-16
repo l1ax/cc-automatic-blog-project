@@ -4,6 +4,7 @@ import { getArticleBySlug, getAllArticleSlugs } from '@/lib/content';
 import { MDXContent } from '@/components/mdx-content';
 import { TableOfContents } from '@/components/table-of-contents';
 import { extractToc } from '@/lib/toc';
+import type { Metadata } from 'next';
 
 interface PageProps {
   params: Promise<{
@@ -20,7 +21,7 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each page
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
 
@@ -30,9 +31,46 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
+  const baseUrl = 'https://yourdomain.com';
+  const url = `${baseUrl}/blog/${slug}`;
+
   return {
     title: article.title,
     description: article.summary || `Read ${article.title}`,
+    keywords: article.tags,
+    openGraph: {
+      type: 'article',
+      url,
+      title: article.title,
+      description: article.summary || `Read ${article.title}`,
+      publishedTime: article.date,
+      authors: ['Blog Author'],
+      tags: article.tags,
+      images: [
+        {
+          url: '/opengraph-image',
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.summary || `Read ${article.title}`,
+      images: [
+        {
+          url: '/twitter-image',
+          width: 1200,
+          height: 600,
+          alt: article.title,
+        },
+      ],
+    },
+    alternates: {
+      canonical: url,
+    },
   };
 }
 
@@ -47,8 +85,46 @@ export default async function BlogArticlePage({ params }: PageProps) {
   // Extract table of contents from article content
   const toc = extractToc(article.content);
 
+  // Generate structured data for this article
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.summary,
+    image: 'https://yourdomain.com/opengraph-image',
+    datePublished: article.date,
+    dateModified: article.date,
+    author: {
+      '@type': 'Person',
+      name: 'Blog Author',
+      url: 'https://yourdomain.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: '个人技术博客',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://yourdomain.com/icon.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://yourdomain.com/blog/${article.slug}`,
+    },
+    keywords: article.tags?.join(', '),
+    articleSection: article.category,
+  };
+
   return (
     <article className="min-h-screen">
+      {/* Structured Data (JSON-LD) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+
       {/* Table of Contents - fixed on desktop */}
       {toc.length > 0 && <TableOfContents toc={toc} />}
 
