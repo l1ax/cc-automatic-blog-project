@@ -11,7 +11,7 @@ interface PageProps {
 
 // Generate static params for all articles
 export async function generateStaticParams() {
-  const slugs = getAllArticleSlugs();
+  const slugs = await getAllArticleSlugs();
   return slugs.map((slug) => ({
     slug,
   }));
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 // Generate metadata for each page
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
 
   if (!article) {
     return {
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function BlogArticlePage({ params }: PageProps) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
 
   if (!article) {
     notFound();

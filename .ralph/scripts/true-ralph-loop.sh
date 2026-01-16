@@ -7,7 +7,7 @@
 #  FRESH Claude sessions for each iteration, preventing context rot.
 #═══════════════════════════════════════════════════════════════════════════════
 
-set -euo pipefail
+set -uo pipefail
 
 # ┌─────────────────────────────────────────────────────────────────────────────┐
 # │                              CONFIGURATION                                  │

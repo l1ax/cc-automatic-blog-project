@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 2 - Core Features (MVP) |
-| **Current Task** | Phase 1 Complete. Ready to start Phase 2 - Core Features (MVP) |
+| **Current Task** | Task 2.1 Complete. Next: Task 2.2 - Create article list page showing all articles |
 | **Blocker** | None |
-| **Last Action** | Configured project for Vercel deployment and verified build works |
+| **Last Action** | Implemented content provider interface and local MDX implementation |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -143,17 +143,48 @@
     - Build output structure verified
   - **Notes**: Project is ready for Vercel deployment via GitHub integration. The build works locally with SSG generating static pages. Deploy via Vercel Dashboard by importing the GitHub repository, or use Vercel CLI after login.
 
+- [x] **Task 2.1**: Implement content provider interface and local MDX implementation
+  - **Completed**: 2026-01-17
+  - **Commit**: a285e92
+  - **Files Created**:
+    - `lib/providers/types.ts` - Abstract ContentProvider interface and type definitions
+    - `lib/providers/local-mdx.ts` - LocalMDXProvider class implementation with search support
+  - **Files Modified**:
+    - `lib/content.ts` - Refactored to use provider architecture, added async functions, maintained backward compatibility with sync wrappers
+    - `app/blog/[slug]/page.tsx` - Updated to use async API
+    - `app/page.tsx` - Updated to use async API
+  - **Features**:
+    - Abstract ContentProvider interface for future migration to Notion/Obsidian
+    - LocalMDXProvider implementation with full CRUD operations
+    - Search functionality with relevance scoring (title > tags > category > summary)
+    - Reading time calculation (200 words/minute average)
+    - Async API for all content operations
+    - Backward compatibility with sync wrapper functions (deprecated)
+    - Singleton provider instance for easy import
+  - **Architecture**:
+    ```
+    lib/
+    ├── content.ts (public API, re-exports from providers)
+    └── providers/
+        ├── types.ts (ContentProvider interface, Article types)
+        └── local-mdx.ts (LocalMDXProvider class)
+    ```
+  - **Future Migration Path**:
+    - Create `lib/providers/notion.ts` with `NotionProvider implements ContentProvider`
+    - Update `lib/content.ts` to import from `notion.ts` instead of `local-mdx.ts`
+    - No changes needed to consuming components (pages, components)
+  - **Notes**: Build verified successfully. All existing functionality preserved. The new architecture provides a clean migration path to Notion/Obsidian in the future.
+
 ### In Progress
 
-- [ ] **Task 2.1**: Implement content provider interface and local MDX implementation
+- [ ] **Task 2.2**: Create article list page (`/`) showing all articles
   - **Status**: Next task - Ready to begin
-  - **Notes**: Create abstract content provider interface and implement local MDX provider for better architecture and future migration path
+  - **Notes**: The homepage already shows articles, but may need enhancements for better article list display
 
 ### Pending
 
 ### Phase 2: Core Features (MVP)
 
-- [ ] **Task 2.1**: Implement content provider interface and local MDX implementation
 - [ ] **Task 2.2**: Create article list page (`/`) showing all articles
 - [ ] **Task 2.3**: Add article metadata display (date, tags, reading time)
 - [ ] **Task 2.4**: Implement Shiki code highlighting for code blocks
@@ -265,6 +296,11 @@ None yet - project just started
 - remark-gfm@4.0.0
 - rehype-raw@7.0.0
 
+**Content Provider Architecture (Task 2.1)**:
+- No new dependencies added
+- Refactored existing code to use provider pattern
+- All functionality preserved with new architecture
+
 ---
 
 ## Blockers
@@ -312,6 +348,7 @@ None yet - project just started
 | 2026-01-17 01:14 | Task 1.5 Complete | Implemented dark theme layout with header, footer, styled homepage, and comprehensive Tailwind color palette |
 | 2026-01-17 01:17 | Task 1.6 Complete | Created article detail page at `/blog/[slug]` with MDX rendering, content utilities, and dynamic homepage |
 | 2026-01-17 01:20 | Task 1.7 Complete | Configured Vercel deployment with vercel.json, added comprehensive README with deployment instructions, verified production build works |
+| 2026-01-17 01:29 | Task 2.1 Complete | Implemented content provider interface and local MDX implementation with abstract architecture for future Notion/Obsidian migration |
 
 ---
 

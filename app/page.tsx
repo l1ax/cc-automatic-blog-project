@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getAllArticles } from "@/lib/content";
 
 export default async function Home() {
-  const articles = getAllArticles();
+  const articles = await getAllArticles();
 
   return (
     <main className="min-h-screen">

@@ -358,7 +358,7 @@ cc-automatic-blog-project/
 
 **Goal**: 完成核心阅读体验功能。
 
-- [ ] **Task 2.1**: Implement content provider interface and local MDX implementation
+- [x] **Task 2.1**: Implement content provider interface and local MDX implementation
 - [ ] **Task 2.2**: Create article list page (`/`) showing all articles
 - [ ] **Task 2.3**: Add article metadata display (date, tags, reading time)
 - [ ] **Task 2.4**: Implement Shiki code highlighting for code blocks
