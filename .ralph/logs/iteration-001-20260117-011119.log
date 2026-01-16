@@ -1,0 +1,18 @@
+Task 1.4 is now complete. I have:
+
+1. **Created the first sample article** at `posts/2026-01-17-welcome-to-my-blog.md` with:
+   - Proper frontmatter schema (title, date, summary, tags, category, draft)
+   - TypeScript, Python, and Rust code examples for testing code highlighting
+   - Introduction content about the blog
+
+2. **Updated PRD.md**: Marked Task 1.4 as complete `[x]`
+
+3. **Updated PROGRESS.md**:
+   - Moved Task 1.4 to "Completed" section with commit hash `6c555a8`
+   - Set Task 1.5 as "In Progress"
+   - Updated "Quick Context" section
+   - Added entry to "Session History" table
+
+4. **Committed changes**: `6c555a8 - feat: create first sample article with frontmatter`
+
+The next task is **Task 1.5: Implement basic layout with dark theme (深灰色 + 橙色配色)**.

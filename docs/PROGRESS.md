@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 1 - Walking Skeleton (Foundation) |
-| **Current Task** | Task 1.5 - Implement basic layout with dark theme (深灰色 + 橙色配色) |
+| **Current Task** | Task 1.6 - Create article detail page at `/blog/[slug]` that renders MDX |
 | **Blocker** | None |
-| **Last Action** | Created first sample article with frontmatter (posts/2026-01-17-welcome-to-my-blog.md) |
+| **Last Action** | Implemented dark theme layout with header, footer, and styled homepage |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -18,7 +18,7 @@
 |-------|-------|
 | **Working Directory** | /Users/cong/chenzhicong/cc-automatic-blog-project |
 | **Git Branch** | main |
-| **Last Commit** | 78430aa - init |
+| **Last Commit** | 6c555a8 - feat: create first sample article with frontmatter |
 
 ---
 
@@ -82,17 +82,37 @@
     - draft: false
   - **Notes**: Sample article includes proper frontmatter with all required fields. Contains TypeScript, Python, and Rust code examples for testing code highlighting.
 
+- [x] **Task 1.5**: Implement basic layout with dark theme (深灰色 + 橙色配色)
+  - **Completed**: 2026-01-17
+  - **Commit**: [pending]
+  - **Files Modified**:
+    - `tailwind.config.ts` - Added comprehensive color palette with dark theme colors (#1a1a1a background, #f97316 orange accents)
+    - `app/globals.css` - Simplified CSS with proper dark theme styling
+    - `app/layout.tsx` - Added header with navigation, footer, and full page layout structure
+    - `app/page.tsx` - Created styled homepage with hero section, sample article card, and features grid
+  - **Color Palette**:
+    - Background: #1a1a1a (primary), #242424 (secondary), #2d2d2d (tertiary)
+    - Text: #e5e5e5 (primary), #a3a3a3 (secondary), #737373 (muted)
+    - Accent: #f97316 (primary), #ea580c (hover), #c2410c (subtle)
+    - Border: #404040, Divider: #262626
+  - **Features**:
+    - Sticky header with navigation links (首页, 关于)
+    - Orange accent color for branding
+    - Responsive layout with max-width container
+    - Footer with copyright
+    - Typography configuration for content rendering
+  - **Notes**: Build verified successfully. Dark theme with orange accents is fully implemented across all components.
+
 ### In Progress
 
-- [ ] **Task 1.5**: Implement basic layout with dark theme (深灰色 + 橙色配色)
+- [ ] **Task 1.6**: Create article detail page at `/blog/[slug]` that renders MDX
   - **Status**: Ready to begin
-  - **Notes**: Update app/layout.tsx with dark theme colors (#1a1a1a background, #f97316 orange accents)
+  - **Notes**: Create dynamic route app/blog/[slug]/page.tsx that reads MDX files from posts/ directory and renders them with frontmatter metadata
 
 ### Pending
 
 ### Phase 1: Walking Skeleton (Foundation)
 
-- [ ] **Task 1.5**: Implement basic layout with dark theme (深灰色 + 橙色配色)
 - [ ] **Task 1.6**: Create article detail page at `/blog/[slug]` that renders MDX
 - [ ] **Task 1.7**: Deploy to Vercel and verify basic build works
 
@@ -246,6 +266,7 @@ None yet - project just started
 | 2026-01-17 01:01 | Task 1.2 Complete | Created project directory structure (posts/, components/, lib/) |
 | 2026-01-17 01:04 | Task 1.3 Complete | Set up MDX support - installed @next/mdx, configured Next.js and TypeScript |
 | 2026-01-17 01:11 | Task 1.4 Complete | Created first sample article with frontmatter (posts/2026-01-17-welcome-to-my-blog.md) |
+| 2026-01-17 01:14 | Task 1.5 Complete | Implemented dark theme layout with header, footer, styled homepage, and comprehensive Tailwind color palette |
 
 ---
 
