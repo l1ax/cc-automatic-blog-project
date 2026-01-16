@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 4 - Responsive Design & Polish |
-| **Current Task** | Task 4.2 Complete. Next: Task 4.3 - Optimize typography for mobile reading |
+| **Current Task** | Task 4.3 Complete. Next: Task 4.4 - Add loading states and skeleton screens |
 | **Blocker** | None |
-| **Last Action** | Implemented mobile navigation menu with hamburger icon and slide-in panel |
+| **Last Action** | Optimized typography for mobile reading with better font sizes, line heights, and reading width |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -536,7 +536,7 @@ None
   - **Notes**: Build verified successfully. All pages now have comprehensive mobile-first responsive design with proper breakpoints for all screen sizes.
 - [x] **Task 4.2**: Add mobile navigation menu (hamburger menu)
   - **Completed**: 2026-01-17
-  - **Commit**: TBD
+  - **Commit**: c6a80c2
   - **Files Created**:
     - `components/mobile-nav.tsx` - Mobile navigation component with hamburger menu
   - **Files Modified**:
@@ -578,8 +578,50 @@ None
     - Dark backdrop for focus
     - Easy to close (X button, click outside, or route change)
   - **Notes**: Build verified successfully. Mobile navigation menu is fully functional with smooth animations and proper touch interactions. The menu follows the blog's dark theme with orange accents.
-- [ ] **Task 4.3**: Optimize typography for mobile reading
-- [ ] **Task 4.4**: Add loading states and skeleton screens
+
+- [x] **Task 4.3**: Optimize typography for mobile reading
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Modified**:
+    - `app/globals.css` - Added comprehensive mobile typography optimization
+    - `components/mdx-content.tsx` - Updated typography classes for better mobile reading
+    - `app/blog/[slug]/page.tsx` - Improved article header and content typography
+  - **Features**:
+    - Mobile-optimized font sizes (16px base on mobile, larger on desktop)
+    - Improved line heights for better readability (1.75 on mobile, 1.8 for Chinese text)
+    - Letter spacing optimization for mobile screens
+    - Reading width optimization (65ch max on desktop, 100% on mobile)
+    - Text selection styling with orange accent color
+    - Touch-friendly link spacing for mobile
+    - Balanced text wrapping for headings (text-balance utility)
+    - Chinese character optimization (lang-specific line heights and spacing)
+    - Responsive prose sizes (prose-base on mobile, prose-lg on desktop)
+    - Enhanced inline code font sizes
+  - **CSS Optimizations**:
+    - Text size adjust controls to prevent mobile zoom
+    - Mobile-specific media queries for typography
+    - Reading width utility class for optimal comprehension
+    - Leading-relaxed-mobile utility for better line spacing
+    - Language-specific optimizations for Chinese text (zh, zh-CN, zh-TW)
+  - **MDX Content Improvements**:
+    - Headings now use text-balance for better line breaking
+    - Paragraphs use leading-relaxed-mobile and reading-width
+    - Lists have better spacing (space-y-2 on mobile, space-y-2.5 on desktop)
+    - Blockquotes have better padding and line height
+    - Links use break-words instead of break-all for better flow
+    - Table cell sizes increased for better readability
+  - **Article Page Improvements**:
+    - Title has better line-height (leading-tight) and text-balance
+    - Metadata text sizes increased (text-sm sm:text-base)
+    - Summary paragraph uses leading-relaxed-mobile
+    - Tag badges have better sizing (text-xs sm:text-sm)
+    - Prose size changed to prose-base sm:prose-lg
+  - **Technical Implementation**:
+    - Mobile-first approach with responsive breakpoints
+    - Custom Tailwind utilities for typography optimization
+    - CSS custom properties for consistent theming
+    - Proper text selection styling with brand colors
+  - **Notes**: Build verified successfully. Typography is now optimized for mobile reading with better font sizes, line heights, letter spacing, and reading width. Chinese characters receive special treatment for optimal readability.
 - [ ] **Task 4.5**: Add 404 page
 - [ ] **Task 4.6**: Add image optimization (next/image)
 - [ ] **Task 4.7**: Implement dark/light theme toggle (optional)
@@ -747,6 +789,7 @@ None yet - project just started
 | 2026-01-17 03:45 | Task 3.7 Complete | Added "Back to top" button with smooth scrolling animation. Created BackToTop component with fade-in/slide-up animation when scrolling down. Added scroll-smooth utility to html element. Button appears after 300px scroll, positioned at bottom-right corner with orange accent color matching blog theme. Build verified successfully. |
 | 2026-01-17 03:45 | Phase 3 Complete | All Phase 3 tasks completed. Search & Navigation features are now implemented: FlexSearch integration, build-time search index, search box with live results, keyboard shortcut, article TOC, smooth scrolling, and back to top button. |
 | 2026-01-17 04:00 | Task 4.2 Complete | Added mobile navigation menu with hamburger icon and slide-in panel. Created MobileNav component with smooth animations, click-outside-to-close, body scroll lock, and proper accessibility. Integrated into header layout. Search box hidden on mobile to save space. Build verified successfully. |
+| 2026-01-17 04:15 | Task 4.3 Complete | Optimized typography for mobile reading. Added comprehensive CSS optimizations including 16px base font size, improved line heights (1.75 on mobile, 1.8 for Chinese), letter spacing optimization, reading width limits (65ch), text selection styling, and touch-friendly link spacing. Updated MDXContent and article page with responsive typography classes. Build verified successfully. |
 
 ---
 

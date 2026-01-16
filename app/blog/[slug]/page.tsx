@@ -56,7 +56,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         {/* Back to Home */}
         <Link
           href="/"
-          className="inline-flex items-center text-text-secondary hover:text-accent-primary transition-colors duration-200 mb-6 sm:mb-8 text-sm sm:text-base"
+          className="inline-flex items-center text-text-secondary hover:text-accent-primary transition-colors duration-200 mb-6 sm:mb-8 text-base sm:text-lg"
         >
           <svg
             className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2"
@@ -76,11 +76,11 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
         {/* Article Header */}
         <header className="mb-8 sm:mb-12">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4 sm:mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4 sm:mb-6 leading-tight sm:leading-tight text-balance">
             {article.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-text-muted text-xs sm:text-sm mb-4 sm:mb-6">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-text-muted text-sm sm:text-base mb-4 sm:mb-6">
             <div className="flex items-center">
               <svg
                 className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2"
@@ -110,17 +110,17 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </div>
 
           {article.summary && (
-            <p className="text-base sm:text-lg md:text-xl text-text-secondary border-l-2 sm:border-l-4 border-accent-primary pl-4 sm:pl-6 py-2">
+            <p className="text-base sm:text-lg md:text-xl text-text-secondary border-l-2 sm:border-l-4 border-accent-primary pl-4 sm:pl-6 py-2 sm:py-3 leading-relaxed-mobile">
               {article.summary}
             </p>
           )}
 
           {article.tags && article.tags.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-4 sm:mt-6">
+            <div className="flex flex-wrap gap-2 sm:gap-2.5 mt-4 sm:mt-6">
               {article.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2.5 sm:px-3 py-1 bg-bg-tertiary text-text-secondary text-[10px] sm:text-xs sm:text-sm rounded-full border border-border"
+                  className="px-2.5 sm:px-3 py-1 bg-bg-tertiary text-text-secondary text-xs sm:text-sm rounded-full border border-border"
                 >
                   {tag}
                 </span>
@@ -130,7 +130,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         </header>
 
         {/* Article Content */}
-        <div className="prose prose-invert prose-sm sm:prose-base max-w-none">
+        <div className="prose prose-invert prose-base sm:prose-lg max-w-none reading-width">
           <MDXContent content={article.content} />
         </div>
 
@@ -138,7 +138,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         <footer className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-divider">
           <Link
             href="/"
-            className="inline-flex items-center text-accent-primary hover:text-accent-hover transition-colors duration-200 text-sm sm:text-base"
+            className="inline-flex items-center text-accent-primary hover:text-accent-hover transition-colors duration-200 text-base sm:text-lg"
           >
             <svg
               className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2"
