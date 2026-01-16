@@ -4,10 +4,10 @@
 
 | Field | Value |
 |-------|-------|
-| **Current Phase** | Phase 5 - Advanced Features |
-| **Current Task** | Task 5.6 Complete. Next: Task 5.7 - Add copy button to code blocks |
+| **Current Phase** | Phase 6 - Deployment & CI/CD |
+| **Current Task** | Task 5.7 Complete. Next: Task 6.1 - Configure Vercel project with GitHub integration |
 | **Blocker** | None |
-| **Last Action** | Added reading time display to article detail page. Reading time calculation already existed in LocalMDXProvider (~200 words/min excluding code blocks). Added clock icon and "X 分钟阅读" display to article header metadata section. |
+| **Last Action** | Task 5.7 (Add copy button to code blocks) was already implemented as part of Task 2.4. The CodeBlock component at components/code-block.tsx includes a copy button with visual feedback ("已复制!" toast message). Marking as complete and moving to Phase 6. |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -1003,7 +1003,16 @@ None
     - Returns minimum 1 minute, rounded up
   - **Notes**: Build verified successfully. Reading time estimation was already implemented in the content provider and homepage cards. This task added reading time display to the article detail page header for consistency.
 
-- [ ] **Task 5.7**: Add copy button to code blocks
+- [x] **Task 5.7**: Add copy button to code blocks
+  - **Completed**: 2026-01-17 (as part of Task 2.4)
+  - **Commit**: TBD (see Task 2.4 commit)
+  - **Notes**: Copy button was already implemented as part of Task 2.4 (CodeBlock component). The copy button includes:
+    - Click-to-copy functionality using navigator.clipboard API
+    - Visual feedback with "已复制!" message and checkmark icon
+    - 2-second timeout before reverting to original state
+    - Orange accent color on hover
+    - Hidden "复制" text on mobile (icon only)
+    - Accessibility with aria-label="Copy code"
 
 ### Phase 6: Deployment & CI/CD
 

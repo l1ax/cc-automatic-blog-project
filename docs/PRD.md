@@ -414,7 +414,7 @@ cc-automatic-blog-project/
 - [x] **Task 5.4**: Add syntax highlighting for Mermaid code blocks
 - [x] **Task 5.5**: Add related articles section at bottom of articles
 - [x] **Task 5.6**: Implement reading time estimation
-- [ ] **Task 5.7**: Add copy button to code blocks
+- [x] **Task 5.7**: Add copy button to code blocks
 
 **Phase 5 Verification**: 数学公式和图表能正确渲染，相关文章推荐合理
 
