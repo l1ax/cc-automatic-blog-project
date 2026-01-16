@@ -1,0 +1,41 @@
+**Task 3.7 Complete: "Back to top" button**
+
+I've successfully implemented the "Back to top" button feature for the blog. Here's what was done:
+
+**Files Created:**
+- `components/back-to-top.tsx` - A client-side React component with smooth animations
+
+**Files Modified:**
+- `app/layout.tsx` - Added BackToTop component and `scroll-smooth` utility class to html element
+
+**Features Implemented:**
+1. **Floating button** positioned at bottom-right corner (fixed position)
+2. **Visibility toggle** - appears after scrolling down 300px
+3. **Smooth animations** - fade-in/slide-up when appearing, fade-out when hidden
+4. **Smooth scrolling** - uses `window.scrollTo({ behavior: 'smooth' })` and Tailwind's `scroll-smooth` utility
+5. **Orange accent color** matching the blog's theme (#f97316)
+6. **Proper accessibility** with aria-label="返回顶部"
+7. **Pointer events disabled** when hidden to prevent accidental clicks
+
+**Technical Details:**
+- Client-side component using `useState` for visibility tracking
+- `useEffect` with scroll event listener and proper cleanup
+- Positioned with `bottom-8 right-8` classes
+- Circular button (w-12 h-12) with up arrow icon
+- Hover state with darker orange color
+- Shadow effect for elevation
+
+**Build Status:** Verified successfully - all pages render correctly and the button appears smoothly when scrolling down.
+
+---
+
+**Phase 3 Complete!** All Search & Navigation tasks are now finished:
+- Task 3.1: FlexSearch integration
+- Task 3.2: Build-time search index
+- Task 3.3: Search box with live results
+- Task 3.4: Keyboard shortcut (Cmd+K)
+- Task 3.5: Article table of contents
+- Task 3.6: Smooth scrolling (included with TOC)
+- Task 3.7: Back to top button
+
+**Next:** Phase 4 - Responsive Design & Polish (Task 4.1: Implement mobile-first responsive design)

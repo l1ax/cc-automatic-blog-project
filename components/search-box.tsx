@@ -121,12 +121,12 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
   };
 
   return (
-    <div ref={searchRef} className="relative w-full max-w-md">
+    <div ref={searchRef} className="relative w-full">
       {/* Search Input */}
       <div className="relative">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <div className="absolute inset-y-0 left-0 pl-2 sm:pl-3 flex items-center pointer-events-none">
           <svg
-            className="h-5 w-5 text-text-muted"
+            className="h-4 w-4 sm:h-5 sm:w-5 text-text-muted"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -151,10 +151,10 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
             }
           }}
           placeholder={placeholder}
-          className="block w-full pl-10 pr-16 py-2 bg-bg-tertiary border border-border rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary focus:ring-1 focus:ring-accent-primary transition-colors duration-200"
+          className="block w-full pl-8 sm:pl-10 pr-14 sm:pr-16 py-1.5 sm:py-2 bg-bg-tertiary border border-border rounded-lg text-sm text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary focus:ring-1 focus:ring-accent-primary transition-colors duration-200"
         />
         {/* Keyboard shortcut badge */}
-        <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+        <div className="absolute inset-y-0 right-0 pr-2 sm:pr-3 flex items-center pointer-events-none">
           <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium text-text-muted bg-bg-secondary border border-border rounded">
             <span className="text-[10px]">⌘</span>K
           </kbd>
@@ -167,10 +167,10 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
               setIsOpen(false);
               inputRef.current?.focus();
             }}
-            className="absolute inset-y-0 right-0 pr-3 flex items-center text-text-muted hover:text-text-primary transition-colors duration-200"
+            className="absolute inset-y-0 right-0 pr-2 sm:pr-3 flex items-center text-text-muted hover:text-text-primary transition-colors duration-200"
           >
             <svg
-              className="h-5 w-5"
+              className="h-4 w-4 sm:h-5 sm:w-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -196,11 +196,11 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
           />
 
           {/* Results */}
-          <div className="absolute z-20 mt-2 w-full bg-bg-secondary border border-border rounded-lg shadow-xl shadow-bg-primary/50 max-h-96 overflow-hidden">
+          <div className="absolute z-20 mt-2 w-full sm:w-auto bg-bg-secondary border border-border rounded-lg shadow-xl shadow-bg-primary/50 max-h-80 sm:max-h-96 overflow-hidden">
             {isLoading ? (
-              <div className="py-8 px-4 text-center text-text-muted">
+              <div className="py-6 sm:py-8 px-3 sm:px-4 text-center text-text-muted">
                 <svg
-                  className="animate-spin h-6 w-6 mx-auto mb-2"
+                  className="animate-spin h-5 w-5 sm:h-6 sm:w-6 mx-auto mb-2"
                   fill="none"
                   viewBox="0 0 24 24"
                 >
@@ -218,33 +218,33 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                   />
                 </svg>
-                <span className="text-sm">搜索中...</span>
+                <span className="text-xs sm:text-sm">搜索中...</span>
               </div>
             ) : results.length > 0 ? (
-              <ul className="py-2">
+              <ul className="py-1 sm:py-2">
                 {results.map((result, index) => (
                   <li key={result.slug}>
                     <Link
                       href={`/blog/${result.slug}`}
                       onClick={handleResultClick}
-                      className={`block px-4 py-3 hover:bg-bg-tertiary transition-colors duration-150 ${
+                      className={`block px-3 sm:px-4 py-2 sm:py-3 hover:bg-bg-tertiary transition-colors duration-150 ${
                         index === selectedIndex ? "bg-bg-tertiary" : ""
                       }`}
                     >
-                      <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-start justify-between gap-2 sm:gap-3">
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-sm font-medium text-text-primary mb-1 line-clamp-1">
+                          <h4 className="text-xs sm:text-sm font-medium text-text-primary mb-0.5 sm:mb-1 line-clamp-1">
                             {result.title}
                           </h4>
                           {result.summary && (
-                            <p className="text-xs text-text-secondary line-clamp-2 mb-2">
+                            <p className="text-[10px] sm:text-xs text-text-secondary line-clamp-2 mb-1 sm:mb-2">
                               {result.summary}
                             </p>
                           )}
-                          <div className="flex items-center gap-3 text-xs text-text-muted">
+                          <div className="flex items-center gap-2 sm:gap-3 text-[10px] sm:text-xs text-text-muted">
                             <span className="flex items-center">
                               <svg
-                                className="w-3.5 h-3.5 mr-1"
+                                className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-0.5 sm:mr-1"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -261,7 +261,7 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
                             {result.readingTime && (
                               <span className="flex items-center">
                                 <svg
-                                  className="w-3.5 h-3.5 mr-1"
+                                  className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-0.5 sm:mr-1"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"
@@ -279,7 +279,7 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
                           </div>
                         </div>
                         <svg
-                          className="w-4 h-4 text-text-muted flex-shrink-0 mt-1"
+                          className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-text-muted flex-shrink-0 mt-0.5 sm:mt-1"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -297,9 +297,9 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
                 ))}
               </ul>
             ) : query.trim() ? (
-              <div className="py-8 px-4 text-center text-text-muted">
+              <div className="py-6 sm:py-8 px-3 sm:px-4 text-center text-text-muted">
                 <svg
-                  className="w-12 h-12 mx-auto mb-3 text-text-muted"
+                  className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 text-text-muted"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -311,8 +311,8 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
                     d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <p className="text-sm">未找到相关文章</p>
-                <p className="text-xs mt-1 text-text-muted">
+                <p className="text-xs sm:text-sm">未找到相关文章</p>
+                <p className="text-[10px] sm:text-xs mt-1 text-text-muted">
                   试试其他关键词
                 </p>
               </div>

@@ -35,8 +35,8 @@ export function BackToTop() {
       onClick={scrollToTop}
       aria-label="返回顶部"
       className={`
-        fixed bottom-8 right-8 z-50
-        w-12 h-12 rounded-full
+        fixed bottom-4 sm:bottom-6 right-4 sm:right-8 z-50
+        w-10 h-10 sm:w-12 sm:h-12 rounded-full
         bg-accent-primary hover:bg-accent-hover
         text-white shadow-lg
         flex items-center justify-center
@@ -45,7 +45,7 @@ export function BackToTop() {
       `}
     >
       <svg
-        className="w-6 h-6"
+        className="w-5 h-5 sm:w-6 sm:h-6"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

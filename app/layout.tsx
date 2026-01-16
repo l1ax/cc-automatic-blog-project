@@ -20,31 +20,48 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col">
           {/* Header */}
           <header className="border-b border-divider bg-bg-primary sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-between items-center h-16 gap-4">
+            <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8">
+              {/* Top bar: logo and search */}
+              <div className="flex items-center justify-between h-14 sm:h-16 gap-2 sm:gap-4">
                 <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
-                  <span className="text-xl font-bold text-accent-primary">
+                  <span className="text-lg sm:text-xl font-bold text-accent-primary">
                     Tech Blog
                   </span>
                 </Link>
-                <nav className="hidden sm:flex items-center space-x-6">
-                  <Link
-                    href="/"
-                    className="text-text-secondary hover:text-accent-primary transition-colors duration-200"
-                  >
-                    首页
-                  </Link>
-                  <Link
-                    href="/about"
-                    className="text-text-secondary hover:text-accent-primary transition-colors duration-200"
-                  >
-                    关于
-                  </Link>
-                </nav>
-                <div className="flex-1 max-w-md">
+                <div className="flex-1 max-w-[180px] sm:max-w-xs md:max-w-md">
                   <SearchBox placeholder="搜索文章..." />
                 </div>
               </div>
+              {/* Mobile navigation - shown on small screens */}
+              <nav className="sm:hidden flex items-center space-x-6 py-3 border-t border-divider">
+                <Link
+                  href="/"
+                  className="text-sm text-text-secondary hover:text-accent-primary transition-colors duration-200"
+                >
+                  首页
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-sm text-text-secondary hover:text-accent-primary transition-colors duration-200"
+                >
+                  关于
+                </Link>
+              </nav>
+              {/* Desktop navigation - shown on larger screens */}
+              <nav className="hidden sm:flex items-center space-x-6">
+                <Link
+                  href="/"
+                  className="text-text-secondary hover:text-accent-primary transition-colors duration-200"
+                >
+                  首页
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-text-secondary hover:text-accent-primary transition-colors duration-200"
+                >
+                  关于
+                </Link>
+              </nav>
             </div>
           </header>
 
@@ -56,10 +73,10 @@ export default function RootLayout({
 
           {/* Footer */}
           <footer className="border-t border-divider mt-auto">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-              <div className="text-center text-text-secondary text-sm">
+            <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
+              <div className="text-center text-text-secondary text-xs sm:text-sm">
                 <p>&copy; {new Date().getFullYear()} 个人技术博客. All rights reserved.</p>
-                <p className="mt-2 text-text-muted">
+                <p className="mt-1 sm:mt-2 text-text-muted">
                   Built with Next.js, TypeScript, and Tailwind CSS
                 </p>
               </div>

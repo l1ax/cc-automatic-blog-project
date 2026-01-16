@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 4 - Responsive Design & Polish |
-| **Current Task** | Task 3.7 Complete. Next: Task 4.1 - Implement mobile-first responsive design for all pages |
+| **Current Task** | Task 4.1 Complete. Next: Task 4.2 - Add mobile navigation menu (hamburger menu) |
 | **Blocker** | None |
-| **Last Action** | Added "Back to top" button with smooth scrolling and fade-in animation |
+| **Last Action** | Implemented mobile-first responsive design for all pages with comprehensive breakpoint support |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -505,7 +505,35 @@ None
 
 ### Phase 4: Responsive Design & Polish
 
-- [ ] **Task 4.1**: Implement mobile-first responsive design for all pages
+- [x] **Task 4.1**: Implement mobile-first responsive design for all pages
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Modified**:
+    - `app/layout.tsx` - Mobile navigation with separate mobile nav bar, responsive header/footer
+    - `app/page.tsx` - Responsive hero section, features grid (1→2→3 columns), spacing
+    - `components/article-card.tsx` - Responsive padding, text sizes, icon sizes, tag badges
+    - `app/blog/[slug]/page.tsx` - Mobile-optimized typography, spacing, prose sizing
+    - `components/mdx-content.tsx` - Mobile prose (sm/base), responsive headings, table overflow
+    - `components/code-block.tsx` - Mobile font size, horizontal scroll, hide "复制" text on mobile
+    - `components/search-box.tsx` - Responsive sizing, smaller dropdown on mobile
+    - `components/back-to-top.tsx` - Smaller button on mobile (10→12), adjusted positioning
+    - `components/tag-filter.tsx` - Responsive tag badges, truncated text on mobile
+    - `app/blog/tag/[tag]/page.tsx` - Mobile breadcrumb, spacing
+    - `app/about/page.tsx` - Responsive grids, cards, icons, spacing
+  - **Breakpoints Used**:
+    - `sm:` (640px) - Small tablets and large phones
+    - `md:` (768px) - Tablets
+    - `lg:` (1024px) - Small laptops
+    - Base styles (default) - Mobile-first approach (< 640px)
+  - **Mobile Optimizations**:
+    - Reduced padding and spacing on mobile (px-3 vs px-4 sm:px-6)
+    - Smaller text sizes (text-sm sm:text-base)
+    - Responsive typography (text-2xl sm:text-3xl md:text-4xl)
+    - Mobile navigation bar below main header (visible on small screens)
+    - Touch-friendly sizing (min 44px for touch targets)
+    - Horizontal scroll for code blocks and tables
+    - Truncated text for long content (max-w-[120px] sm:max-w-none)
+  - **Notes**: Build verified successfully. All pages now have comprehensive mobile-first responsive design with proper breakpoints for all screen sizes.
 - [ ] **Task 4.2**: Add mobile navigation menu (hamburger menu)
 - [ ] **Task 4.3**: Optimize typography for mobile reading
 - [ ] **Task 4.4**: Add loading states and skeleton screens

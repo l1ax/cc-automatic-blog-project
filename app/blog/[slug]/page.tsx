@@ -52,14 +52,14 @@ export default async function BlogArticlePage({ params }: PageProps) {
       {/* Table of Contents - fixed on desktop */}
       {toc.length > 0 && <TableOfContents toc={toc} />}
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Back to Home */}
         <Link
           href="/"
-          className="inline-flex items-center text-text-secondary hover:text-accent-primary transition-colors duration-200 mb-8"
+          className="inline-flex items-center text-text-secondary hover:text-accent-primary transition-colors duration-200 mb-6 sm:mb-8 text-sm sm:text-base"
         >
           <svg
-            className="w-5 h-5 mr-2"
+            className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -75,15 +75,15 @@ export default async function BlogArticlePage({ params }: PageProps) {
         </Link>
 
         {/* Article Header */}
-        <header className="mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-text-primary mb-6">
+        <header className="mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4 sm:mb-6">
             {article.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-text-muted text-sm mb-6">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-text-muted text-xs sm:text-sm mb-4 sm:mb-6">
             <div className="flex items-center">
               <svg
-                className="w-5 h-5 mr-2"
+                className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -100,9 +100,9 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
             {article.category && (
               <div className="flex items-center">
-                <span className="w-1 h-1 bg-text-muted rounded-full mr-2"></span>
+                <span className="w-1 h-1 bg-text-muted rounded-full mr-1.5 sm:mr-2"></span>
                 <span className="flex items-center">
-                  <span className="w-2 h-2 bg-accent-primary rounded-full mr-2"></span>
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent-primary rounded-full mr-1.5 sm:mr-2"></span>
                   {article.category}
                 </span>
               </div>
@@ -110,17 +110,17 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </div>
 
           {article.summary && (
-            <p className="text-xl text-text-secondary border-l-4 border-accent-primary pl-6 py-2">
+            <p className="text-base sm:text-lg md:text-xl text-text-secondary border-l-2 sm:border-l-4 border-accent-primary pl-4 sm:pl-6 py-2">
               {article.summary}
             </p>
           )}
 
           {article.tags && article.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mt-6">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-4 sm:mt-6">
               {article.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 bg-bg-tertiary text-text-secondary text-sm rounded-full border border-border"
+                  className="px-2.5 sm:px-3 py-1 bg-bg-tertiary text-text-secondary text-[10px] sm:text-xs sm:text-sm rounded-full border border-border"
                 >
                   {tag}
                 </span>
@@ -130,18 +130,18 @@ export default async function BlogArticlePage({ params }: PageProps) {
         </header>
 
         {/* Article Content */}
-        <div className="prose prose-invert prose-lg max-w-none">
+        <div className="prose prose-invert prose-sm sm:prose-base max-w-none">
           <MDXContent content={article.content} />
         </div>
 
         {/* Article Footer */}
-        <footer className="mt-16 pt-8 border-t border-divider">
+        <footer className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-divider">
           <Link
             href="/"
-            className="inline-flex items-center text-accent-primary hover:text-accent-hover transition-colors duration-200"
+            className="inline-flex items-center text-accent-primary hover:text-accent-hover transition-colors duration-200 text-sm sm:text-base"
           >
             <svg
-              className="w-5 h-5 mr-2"
+              className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

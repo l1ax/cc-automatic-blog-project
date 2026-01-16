@@ -42,10 +42,10 @@ export default async function TagPage({ params }: TagPageProps) {
 
   return (
     <main className="min-h-screen">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Breadcrumb */}
-        <nav className="mb-8">
-          <ol className="flex items-center space-x-2 text-sm">
+        <nav className="mb-6 sm:mb-8">
+          <ol className="flex items-center space-x-1.5 sm:space-x-2 text-xs sm:text-sm">
             <li>
               <Link
                 href="/"
@@ -57,26 +57,27 @@ export default async function TagPage({ params }: TagPageProps) {
             <li className="text-text-muted">/</li>
             <li className="text-text-muted">标签</li>
             <li className="text-text-muted">/</li>
-            <li className="text-accent-primary font-medium">{decodedTag}</li>
+            <li className="text-accent-primary font-medium truncate max-w-[120px] sm:max-w-none">{decodedTag}</li>
           </ol>
         </nav>
 
         {/* Header */}
-        <section className="mb-12">
-          <div className="flex items-center mb-4">
-            <span className="w-1 h-8 bg-accent-primary mr-4"></span>
-            <h1 className="text-3xl sm:text-4xl font-bold text-text-primary">
-              标签: {decodedTag}
+        <section className="mb-8 sm:mb-12">
+          <div className="flex items-center mb-3 sm:mb-4">
+            <span className="w-1 h-6 sm:h-8 bg-accent-primary mr-3 sm:mr-4"></span>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary">
+              <span className="hidden sm:inline">标签: </span>
+              <span className="sm:hidden">标签:</span> {decodedTag}
             </h1>
           </div>
-          <p className="text-text-secondary text-lg">
+          <p className="text-text-secondary text-base sm:text-lg">
             共 {articles.length} 篇文章
           </p>
         </section>
 
         {/* Article List */}
         <section>
-          <div className="grid gap-6">
+          <div className="grid gap-4 sm:gap-6">
             {articles.map((article) => (
               <ArticleCard key={article.slug} article={article} />
             ))}
@@ -84,13 +85,13 @@ export default async function TagPage({ params }: TagPageProps) {
         </section>
 
         {/* Back to Home */}
-        <section className="mt-12 pt-8 border-t border-border">
+        <section className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-border">
           <Link
             href="/"
-            className="inline-flex items-center text-text-secondary hover:text-accent-primary transition-colors duration-200"
+            className="inline-flex items-center text-text-secondary hover:text-accent-primary transition-colors duration-200 text-sm sm:text-base"
           >
             <svg
-              className="w-5 h-5 mr-2"
+              className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
