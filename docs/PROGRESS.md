@@ -581,7 +581,7 @@ None
 
 - [x] **Task 4.3**: Optimize typography for mobile reading
   - **Completed**: 2026-01-17
-  - **Commit**: TBD
+  - **Commit**: c24c6f9
   - **Files Modified**:
     - `app/globals.css` - Added comprehensive mobile typography optimization
     - `components/mdx-content.tsx` - Updated typography classes for better mobile reading
