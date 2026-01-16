@@ -1,0 +1,1 @@
+# cc-automatic-blog-project
