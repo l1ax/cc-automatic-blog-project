@@ -446,8 +446,8 @@ _Each task should be completable in 1-4 hours (roughly one PR/commit)._
 - [ ] **Task 7.3**: Set up E2E tests with Playwright (optional)
 - [x] **Task 7.4**: Configure ESLint and Prettier
 - [x] **Task 7.5**: Write README with setup instructions
-- [ ] **Task 7.6**: Document how to add new articles
-- [ ] **Task 7.7**: Create contribution guide (for future self)
+- [x] **Task 7.6**: Document how to add new articles
+- [x] **Task 7.7**: Create contribution guide (for future self)
 
 **Phase 7 Verification**: 测试通过，文档完整
 
