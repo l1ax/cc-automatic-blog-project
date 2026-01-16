@@ -1,0 +1,7 @@
+# This directory will contain React components
+# Components will include:
+# - ArticleCard.tsx
+# - CodeBlock.tsx
+# - SearchBox.tsx
+# - TOC.tsx
+# - And more...

@@ -1,0 +1,6 @@
+# This directory will contain utility functions and the content layer
+# Files will include:
+# - content.ts (content provider interface)
+# - providers/local-mdx.ts (local MDX implementation)
+# - search.ts (search index generation)
+# - And more utilities...

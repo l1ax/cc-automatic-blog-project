@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 1 - Walking Skeleton (Foundation) |
-| **Current Task** | Task 1.2 - Configure project structure (create directories and base files) |
+| **Current Task** | Task 1.3 - Set up MDX support (install @next/mdx and configure) |
 | **Blocker** | None |
-| **Last Action** | Next.js 14 project initialized with TypeScript and Tailwind CSS |
+| **Last Action** | Created project directory structure (posts/, components/, lib/) |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -30,7 +30,7 @@
 - [x] **PROGRESS Creation**: Progress tracking document created
 - [x] **Task 1.1**: Initialize Next.js 14 project with TypeScript and Tailwind CSS
   - **Completed**: 2026-01-17
-  - **Commit**: (pending)
+  - **Commit**: fa869a4
   - **Files Created**:
     - package.json
     - next.config.ts
@@ -44,16 +44,20 @@
     - app/globals.css
   - **Notes**: Using Next.js 15.1.4 (latest), TypeScript 5, Tailwind CSS 3.4.17. Build verified successfully.
 
+- [x] **Task 1.2**: Configure project structure (create directories and base files)
+  - **Completed**: 2026-01-17
+  - **Commit**: d4cf88e
+  - **Directories Created**:
+    - `posts/` - Article source files (with .gitkeep)
+    - `components/` - React components (with .gitkeep)
+    - `lib/providers/` - Utility functions and content layer (with .gitkeep)
+  - **Notes**: Basic directory structure established for the blog
+
 ### In Progress
 
-- [ ] **Task 1.2**: Configure project structure (create directories and base files)
-  - **Started**: 2026-01-17
+- [ ] **Task 1.3**: Set up MDX support (install @next/mdx and configure)
   - **Status**: Ready to begin
-  - **Directories to Create**:
-    - `posts/` - Article source files
-    - `components/` - React components
-    - `lib/` - Utility functions and content layer
-  - **Notes**: Create the basic directory structure for the blog
+  - **Notes**: Install @next/mdx and @mdx-js/loader for MDX support
 
 ### Pending
 
@@ -184,8 +188,8 @@ None yet - project just started
 2. **Read PRD**: `cat docs/PRD.md` - understand full requirements
 3. **Check git log**: `git log --oneline -10` - see recent commits
 4. **Check git status**: `git status` - see uncommitted changes
-5. **Current task is**: Task 1.2 - Configure project structure (create directories and base files)
-6. **Next action should be**: Create directory structure for the blog
+5. **Current task is**: Task 1.3 - Set up MDX support (install @next/mdx and configure)
+6. **Next action should be**: Install @next/mdx and configure Next.js for MDX support
 
 **Important Context to Remember:**
 - This is a personal tech blog for knowledge management, not public engagement
@@ -206,6 +210,7 @@ None yet - project just started
 | 2026-01-17 00:20 | PROGRESS Complete | PROGRESS.md created for tracking |
 | 2026-01-17 00:20 | Ready to Start | Task 1.1 is next - Initialize Next.js project |
 | 2026-01-17 01:00 | Task 1.1 Complete | Next.js 15 project initialized with TypeScript and Tailwind CSS |
+| 2026-01-17 01:01 | Task 1.2 Complete | Created project directory structure (posts/, components/, lib/) |
 
 ---
 
