@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 1 - Walking Skeleton (Foundation) |
-| **Current Task** | Task 1.4 - Create first sample article in `/posts` directory with Frontmatter |
+| **Current Task** | Task 1.5 - Implement basic layout with dark theme (深灰色 + 橙色配色) |
 | **Blocker** | None |
-| **Last Action** | Set up MDX support (installed @next/mdx, configured Next.js) |
+| **Last Action** | Created first sample article with frontmatter (posts/2026-01-17-welcome-to-my-blog.md) |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -68,17 +68,30 @@
     - @types/mdx@^2.0.13
   - **Notes**: MDX is now fully configured. TypeScript recognizes .mdx and .md files. Build verified successfully.
 
+- [x] **Task 1.4**: Create first sample article in `/posts` directory with Frontmatter
+  - **Completed**: 2026-01-17
+  - **Commit**: f6899c5
+  - **Files Created**:
+    - `posts/2026-01-17-welcome-to-my-blog.md` - First sample blog post
+  - **Frontmatter Schema**:
+    - title: "欢迎来到我的技术博客"
+    - date: "2026-01-17"
+    - summary: Article description
+    - tags: ["博客", "Next.js", "开篇"]
+    - category: "博客相关"
+    - draft: false
+  - **Notes**: Sample article includes proper frontmatter with all required fields. Contains TypeScript, Python, and Rust code examples for testing code highlighting.
+
 ### In Progress
 
-- [ ] **Task 1.4**: Create first sample article in `/posts` directory with Frontmatter
+- [ ] **Task 1.5**: Implement basic layout with dark theme (深灰色 + 橙色配色)
   - **Status**: Ready to begin
-  - **Notes**: Create a sample blog post with proper frontmatter schema
+  - **Notes**: Update app/layout.tsx with dark theme colors (#1a1a1a background, #f97316 orange accents)
 
 ### Pending
 
 ### Phase 1: Walking Skeleton (Foundation)
 
-- [ ] **Task 1.4**: Create first sample article in `/posts` directory with Frontmatter
 - [ ] **Task 1.5**: Implement basic layout with dark theme (深灰色 + 橙色配色)
 - [ ] **Task 1.6**: Create article detail page at `/blog/[slug]` that renders MDX
 - [ ] **Task 1.7**: Deploy to Vercel and verify basic build works
@@ -232,6 +245,7 @@ None yet - project just started
 | 2026-01-17 01:00 | Task 1.1 Complete | Next.js 15 project initialized with TypeScript and Tailwind CSS |
 | 2026-01-17 01:01 | Task 1.2 Complete | Created project directory structure (posts/, components/, lib/) |
 | 2026-01-17 01:04 | Task 1.3 Complete | Set up MDX support - installed @next/mdx, configured Next.js and TypeScript |
+| 2026-01-17 01:11 | Task 1.4 Complete | Created first sample article with frontmatter (posts/2026-01-17-welcome-to-my-blog.md) |
 
 ---
 

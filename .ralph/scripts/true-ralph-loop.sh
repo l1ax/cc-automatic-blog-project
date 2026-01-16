@@ -402,8 +402,10 @@ run_iteration() {
         # Update counts
         local new_counts
         local new_done
-        new_counts=$(get_task_counts)
-        new_done=$(echo "$new_counts" | cut -d' ' -f1)
+        new_counts=$(get_task_counts 2>/dev/null || echo "0 0")
+        new_done=$(echo "$new_counts" | cut -d' ' -f1 || echo "0")
+
+        echo -e "  ${DIM}[DEBUG] New counts: $new_counts, new_done: $new_done, old completed: $completed${NC}"
 
         if [ "$new_done" -gt "$completed" ]; then
             log_success "Task completed! ($new_done/$total done)"
