@@ -359,10 +359,10 @@ cc-automatic-blog-project/
 **Goal**: 完成核心阅读体验功能。
 
 - [x] **Task 2.1**: Implement content provider interface and local MDX implementation
-- [ ] **Task 2.2**: Create article list page (`/`) showing all articles
-- [ ] **Task 2.3**: Add article metadata display (date, tags, reading time)
+- [x] **Task 2.2**: Create article list page (`/`) showing all articles
+- [x] **Task 2.3**: Add article metadata display (date, tags, reading time)
 - [ ] **Task 2.4**: Implement Shiki code highlighting for code blocks
-- [ ] **Task 2.5**: Add article card component with hover effects
+- [x] **Task 2.5**: Add article card component with hover effects
 - [ ] **Task 2.6**: Implement tag filtering functionality
 - [ ] **Task 2.7**: Create tag page at `/blog/tag/[tag]`
 - [ ] **Task 2.8**: Add About page

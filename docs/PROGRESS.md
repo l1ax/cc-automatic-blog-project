@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 2 - Core Features (MVP) |
-| **Current Task** | Task 2.1 Complete. Next: Task 2.2 - Create article list page showing all articles |
+| **Current Task** | Tasks 2.2, 2.3, 2.5 Complete. Next: Task 2.4 - Implement Shiki code highlighting |
 | **Blocker** | None |
-| **Last Action** | Implemented content provider interface and local MDX implementation |
+| **Last Action** | Created ArticleCard component and enhanced homepage with reading time display |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -175,20 +175,41 @@
     - No changes needed to consuming components (pages, components)
   - **Notes**: Build verified successfully. All existing functionality preserved. The new architecture provides a clean migration path to Notion/Obsidian in the future.
 
+- [x] **Task 2.2/2.3/2.5**: Create article list page with ArticleCard component
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `components/article-card.tsx` - Reusable ArticleCard component with full metadata display
+  - **Files Modified**:
+    - `app/page.tsx` - Refactored to use ArticleCard component
+  - **Features**:
+    - ArticleCard component with comprehensive metadata display
+    - Reading time display (calculated in LocalMDXProvider)
+    - Date with calendar icon
+    - Category indicator with orange dot
+    - Tag badges with hover effects
+    - Enhanced hover states (border color change, shadow effect)
+    - Article count in section header
+    - SVG icons for date and reading time
+    - Group-based hover styling for text color transitions
+  - **Styling**:
+    - Hover effect: Border changes to orange (accent-primary)
+    - Shadow effect: Subtle orange shadow on hover
+    - Title color transition on hover
+    - Tag badges get orange border on hover
+  - **Notes**: Build verified successfully. ArticleCard is now a reusable component that can be used in other contexts (tag pages, search results, etc.)
+
 ### In Progress
 
-- [ ] **Task 2.2**: Create article list page (`/`) showing all articles
+- [ ] **Task 2.4**: Implement Shiki code highlighting for code blocks
   - **Status**: Next task - Ready to begin
-  - **Notes**: The homepage already shows articles, but may need enhancements for better article list display
+  - **Notes**: Code blocks currently use basic styling; need to integrate Shiki for VSCode-quality syntax highlighting
 
 ### Pending
 
 ### Phase 2: Core Features (MVP)
 
-- [ ] **Task 2.2**: Create article list page (`/`) showing all articles
-- [ ] **Task 2.3**: Add article metadata display (date, tags, reading time)
 - [ ] **Task 2.4**: Implement Shiki code highlighting for code blocks
-- [ ] **Task 2.5**: Add article card component with hover effects
 - [ ] **Task 2.6**: Implement tag filtering functionality
 - [ ] **Task 2.7**: Create tag page at `/blog/tag/[tag]`
 - [ ] **Task 2.8**: Add About page
@@ -349,6 +370,7 @@ None yet - project just started
 | 2026-01-17 01:17 | Task 1.6 Complete | Created article detail page at `/blog/[slug]` with MDX rendering, content utilities, and dynamic homepage |
 | 2026-01-17 01:20 | Task 1.7 Complete | Configured Vercel deployment with vercel.json, added comprehensive README with deployment instructions, verified production build works |
 | 2026-01-17 01:29 | Task 2.1 Complete | Implemented content provider interface and local MDX implementation with abstract architecture for future Notion/Obsidian migration |
+| 2026-01-17 01:44 | Tasks 2.2/2.3/2.5 Complete | Created ArticleCard component with comprehensive metadata display (date, reading time, tags, category) and enhanced hover effects; Refactored homepage to use the new component |
 
 ---
 

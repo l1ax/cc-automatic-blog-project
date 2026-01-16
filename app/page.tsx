@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { getAllArticles } from "@/lib/content";
+import { ArticleCard } from "@/components/article-card";
 
 export default async function Home() {
   const articles = await getAllArticles();
@@ -21,56 +21,25 @@ export default async function Home() {
           </p>
         </section>
 
-        {/* Sample Article Card */}
+        {/* Article List */}
         <section>
-          <h2 className="text-2xl font-bold text-text-primary mb-6 flex items-center">
-            <span className="w-1 h-6 bg-accent-primary mr-3"></span>
-            最新文章
-          </h2>
-          <div className="space-y-6">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-text-primary flex items-center">
+              <span className="w-1 h-6 bg-accent-primary mr-3"></span>
+              最新文章
+              <span className="ml-3 text-sm font-normal text-text-muted">
+                ({articles.length})
+              </span>
+            </h2>
+          </div>
+          <div className="grid gap-6">
             {articles.length === 0 ? (
-              <p className="text-text-secondary">暂无文章</p>
+              <div className="text-center py-12">
+                <p className="text-text-secondary">暂无文章</p>
+              </div>
             ) : (
               articles.map((article) => (
-                <Link
-                  key={article.slug}
-                  href={`/blog/${article.slug}`}
-                  className="block bg-bg-secondary rounded-lg p-6 border border-border hover:border-accent-primary transition-colors duration-200"
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-text-primary mb-2">
-                        {article.title}
-                      </h3>
-                      {article.summary && (
-                        <p className="text-text-secondary mb-4 line-clamp-2">
-                          {article.summary}
-                        </p>
-                      )}
-                      <div className="flex items-center space-x-4 text-sm text-text-muted">
-                        <span>{article.date}</span>
-                        {article.category && (
-                          <span className="flex items-center">
-                            <span className="w-2 h-2 bg-accent-primary rounded-full mr-2"></span>
-                            {article.category}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                  {article.tags && article.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                      {article.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 bg-bg-tertiary text-text-secondary text-xs rounded-full border border-border"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </Link>
+                <ArticleCard key={article.slug} article={article} />
               ))
             )}
           </div>
