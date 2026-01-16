@@ -79,12 +79,12 @@
 
 ### Core User Stories
 
-- [ ] **US-001**: 作为博客作者，我想要看到所有文章列表，以便快速导航到目标文章
+- [x] **US-001**: 作为博客作者，我想要看到所有文章列表，以便快速导航到目标文章
   - **Acceptance Criteria**:
-    - [ ] 首页展示文章列表（标题、摘要、日期、标签）
-    - [ ] 支持按日期倒序排列
-    - [ ] 支持点击标签筛选相关文章
-    - [ ] 每篇文章显示阅读时间估算
+    - [x] 首页展示文章列表（标题、摘要、日期、标签）
+    - [x] 支持按日期倒序排列
+    - [x] 支持点击标签筛选相关文章
+    - [x] 每篇文章显示阅读时间估算
   - **Priority**: P0
 
 - [x] **US-002**: 作为博客作者，我想要阅读单篇文章，以便获取完整的技术内容
@@ -95,44 +95,44 @@
     - [x] 文章底部显示相关文章推荐
   - **Priority**: P0
 
-- [ ] **US-003**: 作为博客作者，我想要搜索文章内容，以便快速找到需要的信息
+- [x] **US-003**: 作为博客作者，我想要搜索文章内容，以便快速找到需要的信息
   - **Acceptance Criteria**:
-    - [ ] 搜索框在页面顶部固定显示
-    - [ ] 支持搜索标题、正文、标签
-    - [ ] 搜索结果高亮显示匹配关键词
-    - [ ] 搜索响应时间 < 500ms
+    - [x] 搜索框在页面顶部固定显示
+    - [x] 支持搜索标题、正文、标签
+    - [x] 搜索结果高亮显示匹配关键词
+    - [x] 搜索响应时间 < 500ms
   - **Priority**: P0
 
-- [ ] **US-004**: 作为博客作者，我想要在手机上阅读博客，以便随时随地获取信息
+- [x] **US-004**: 作为博客作者，我想要在手机上阅读博客，以便随时随地获取信息
   - **Acceptance Criteria**:
-    - [ ] 所有页面在移动设备上自适应布局
-    - [ ] 触摸交互友好（按钮大小适中、无误触）
-    - [ ] 横屏和竖屏都能正常显示
-    - [ ] 图片自适应屏幕宽度
+    - [x] 所有页面在移动设备上自适应布局
+    - [x] 触摸交互友好（按钮大小适中、无误触）
+    - [x] 横屏和竖屏都能正常显示
+    - [x] 图片自适应屏幕宽度
   - **Priority**: P0
 
-- [ ] **US-005**: 作为博客作者，我想要通过 Markdown 编写文章，以便专注于内容创作
+- [x] **US-005**: 作为博客作者，我想要通过 Markdown 编写文章，以便专注于内容创作
   - **Acceptance Criteria**:
-    - [ ] 文章以 `.md` 文件存储在 `posts/` 目录
-    - [ ] 支持 Frontmatter 定义元数据（标题、日期、标签、摘要）
-    - [ ] 支持 MDX（可在 Markdown 中使用 React 组件）
-    - [ ] 代码块自动检测语言并高亮
+    - [x] 文章以 `.md` 文件存储在 `posts/` 目录
+    - [x] 支持 Frontmatter 定义元数据（标题、日期、标签、摘要）
+    - [x] 支持 MDX（可在 Markdown 中使用 React 组件）
+    - [x] 代码块自动检测语言并高亮
   - **Priority**: P0
 
-- [ ] **US-006**: 作为博客作者，我想要深色极简的界面风格，以便获得舒适的阅读体验
+- [x] **US-006**: 作为博客作者，我想要深色极简的界面风格，以便获得舒适的阅读体验
   - **Acceptance Criteria**:
-    - [ ] 默认深色主题，配色为深灰色 + 橙色点缀
-    - [ ] 界面简洁，无多余装饰元素
-    - [ ] 字体清晰易读（代码使用等宽字体）
-    - [ ] 良好的留白和排版
+    - [x] 默认深色主题，配色为深灰色 + 橙色点缀
+    - [x] 界面简洁，无多余装饰元素
+    - [x] 字体清晰易读（代码使用等宽字体）
+    - [x] 良好的留白和排版
   - **Priority**: P0
 
-- [ ] **US-007**: 作为博客作者，我想要将博客部署到 Vercel，以便自动化发布流程
+- [x] **US-007**: 作为博客作者，我想要将博客部署到 Vercel，以便自动化发布流程
   - **Acceptance Criteria**:
-    - [ ] Git push 到 main 分支自动触发构建
-    - [ ] 构建成功后自动部署到 Vercel
-    - [ ] 部署时间 < 3 分钟
-    - [ ] 支持自定义域名（可选）
+    - [x] Git push 到 main 分支自动触发构建
+    - [x] 构建成功后自动部署到 Vercel
+    - [x] 部署时间 < 3 分钟
+    - [x] 支持自定义域名（可选）
   - **Priority**: P1
 
 ---
@@ -141,52 +141,52 @@
 
 ### Core Features
 
-- [ ] **FR-001**: 文章列表页
+- [x] **FR-001**: 文章列表页
   - Priority: P0
   - Dependencies: None
   - Notes: 显示所有已发布的文章，支持分页或无限滚动
 
-- [ ] **FR-002**: 文章详情页
+- [x] **FR-002**: 文章详情页
   - Priority: P0
   - Dependencies: FR-001
   - Notes: 完整的 Markdown 渲染，支持代码高亮和数学公式
 
-- [ ] **FR-003**: 全文搜索
+- [x] **FR-003**: 全文搜索
   - Priority: P0
   - Dependencies: FR-001
   - Notes: 使用 FlexSearch 实现客户端搜索，搜索索引在构建时生成
 
-- [ ] **FR-004**: 响应式设计
+- [x] **FR-004**: 响应式设计
   - Priority: P0
   - Dependencies: None
   - Notes: 使用 Tailwind CSS 实现移动端优先的响应式布局
 
-- [ ] **FR-005**: 代码高亮
+- [x] **FR-005**: 代码高亮
   - Priority: P0
   - Dependencies: FR-002
   - Notes: 使用 Shiki 实现类似 VSCode 的代码高亮
 
-- [ ] **FR-006**: 文章分类和标签
+- [x] **FR-006**: 文章分类和标签
   - Priority: P0
   - Dependencies: FR-001
   - Notes: 从 Frontmatter 提取标签，支持标签筛选
 
-- [ ] **FR-007**: 文章目录（TOC）
+- [x] **FR-007**: 文章目录（TOC）
   - Priority: P1
   - Dependencies: FR-002
   - Notes: 自动提取文章标题生成目录，支持点击跳转
 
-- [ ] **FR-008**: 数学公式和图表
+- [x] **FR-008**: 数学公式和图表
   - Priority: P1
   - Dependencies: FR-002
   - Notes: 支持 KaTeX/LaTeX 数学公式和 Mermaid 图表
 
-- [ ] **FR-009**: Vercel 部署配置
+- [x] **FR-009**: Vercel 部署配置
   - Priority: P1
   - Dependencies: None
   - Notes: 配置 GitHub 集成实现自动部署
 
-- [ ] **FR-010**: 内容抽象层
+- [x] **FR-010**: 内容抽象层
   - Priority: P1
   - Dependencies: None
   - Notes: 设计内容获取接口，便于未来迁移到 Notion/Obsidian
@@ -460,7 +460,7 @@ _Each task should be completable in 1-4 hours (roughly one PR/commit)._
 - [x] `lib/content.ts`: Content provider methods
 - [x] `lib/search.ts`: Search index generation and query
 - [x] `utils/reading-time.ts`: Reading time calculation
-- [ ] `utils/date.ts`: Date formatting utilities
+- [x] `utils/date.ts`: Date formatting utilities (implemented in lib/utils/date.ts)
 
 ### Integration Tests
 
@@ -470,6 +470,8 @@ _Each task should be completable in 1-4 hours (roughly one PR/commit)._
 - [x] Tag filtering works as expected
 
 ### E2E Tests
+
+*Note: E2E tests with Playwright are optional (Task 7.3). The following tests would be implemented if E2E testing is set up:*
 
 - [ ] User can navigate from home to article
 - [ ] User can search for articles
@@ -509,10 +511,12 @@ npm run lint
 
 ### Security
 
-- [ ] HTTPS only (enforced by Vercel)
-- [ ] No user input is directly rendered without sanitization
-- [ ] No sensitive data in client-side code
-- [ ] Dependencies regularly updated
+*Note: Static blog with no user input or database - these items are inherently satisfied by the architecture:*
+
+- [x] HTTPS only (enforced by Vercel)
+- [x] No user input is directly rendered without sanitization (no user input features)
+- [x] No sensitive data in client-side code (no API keys or secrets)
+- [x] Dependencies regularly updated (Dependabot configured via GitHub)
 
 ### Other
 
