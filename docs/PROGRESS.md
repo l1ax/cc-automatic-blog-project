@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 5 - Advanced Features |
-| **Current Task** | Task 5.3 Complete. Next: Task 5.4 - Add syntax highlighting for Mermaid code blocks |
+| **Current Task** | Task 5.4 Complete. Next: Task 5.5 - Add related articles section at bottom of articles |
 | **Blocker** | None |
-| **Last Action** | Integrated Mermaid for diagram rendering with MermaidDiagram component. Added dark theme customization matching blog's design. Created test article with 10 different diagram types (flowcharts, sequence diagrams, state diagrams, class diagrams, ER diagrams, Gantt charts, pie charts, Git graphs, mindmaps, timelines). |
+| **Last Action** | Added syntax highlighting for Mermaid code blocks with toggle button. Enhanced MermaidDiagram component to switch between rendered diagram and syntax highlighted code view. Uses react-syntax-highlighter with VSCode Dark Plus theme. |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -920,7 +920,33 @@ None
     - Error state with red border and expandable code
   - **Notes**: Build verified successfully. Mermaid is now integrated and fully functional. Diagrams can be created using Markdown code blocks with the `mermaid` language identifier. The test article demonstrates all major diagram types with Chinese text support.
 
-- [ ] **Task 5.4**: Add syntax highlighting for Mermaid code blocks
+- [x] **Task 5.4**: Add syntax highlighting for Mermaid code blocks
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Modified**:
+    - `components/mermaid-diagram.tsx` - Added syntax highlighted code view toggle
+  - **Features**:
+    - Toggle button to switch between rendered diagram and syntax highlighted code
+    - Header bar showing "Mermaid Diagram" label with toggle button
+    - "查看代码" (View Code) button shows syntax highlighted Mermaid code
+    - "查看图表" (View Diagram) button returns to rendered diagram view
+    - Uses react-syntax-highlighter for Mermaid syntax highlighting
+    - Consistent styling with code blocks (header bar, rounded corners, borders)
+    - VSCode Dark Plus theme for syntax highlighting
+    - Responsive design with proper mobile sizing
+  - **Styling**:
+    - Header bar with language label and toggle button
+    - Orange accent color on toggle button hover
+    - Border around diagram/code container
+    - Rounded corners matching blog design
+    - Syntax highlighting with PrismJS mermaid support
+  - **Technical Implementation**:
+    - useState for showCode toggle state
+    - Conditional rendering based on showCode state
+    - SyntaxHighlighter component for code view
+    - Existing mermaid rendering for diagram view
+  - **Notes**: Build verified successfully. Mermaid diagrams now have a toggle button to view the raw Mermaid source code with syntax highlighting. This is useful for users who want to see or copy the diagram definition.
+
 - [ ] **Task 5.5**: Add related articles section at bottom of articles
 - [ ] **Task 5.6**: Implement reading time estimation
 - [ ] **Task 5.7**: Add copy button to code blocks
@@ -1094,6 +1120,7 @@ None yet - project just started
 | 2026-01-17 05:30 | Task 4.8 Complete | Added favicon and comprehensive SEO meta tags. Created icon.tsx, apple-icon.tsx, opengraph-image.tsx, twitter-image.tsx for dynamic image generation. Created sitemap.ts and robots.ts for search engine optimization. Updated layout.tsx with Open Graph, Twitter Cards, robots meta tags, and JSON-LD structured data. Updated blog/[slug]/page.tsx with article-specific SEO metadata and BlogPosting schema. Build verified successfully. |
 | 2026-01-17 05:45 | Task 5.1/5.2 Complete | Integrated KaTeX for math formula rendering. Added remark-math and rehype-katex plugins to MDXContent. Created MathBlock component for KaTeX rendering. Created test article (math-formula-test.md) with inline and block math formulas including integrals, matrices, Fourier transforms, and Schrödinger equation. Math formulas render server-side at build time using standard LaTeX syntax ($ for inline, $$ for block). Build verified successfully. |
 | 2026-01-17 06:00 | Task 5.3 Complete | Integrated Mermaid for diagram rendering. Created MermaidDiagram component with client-side rendering using mermaid@11.6.0. Added dark theme customization matching blog's orange accent colors. Integrated MermaidDiagram into MDXContent to detect mermaid code blocks. Created test article (mermaid-diagram-test.md) with 10 different diagram types: flowcharts, sequence diagrams, state diagrams, class diagrams, ER diagrams, Gantt charts, pie charts, Git graphs, mindmaps, and timelines. All diagrams support Chinese text and responsive layout with horizontal scrolling. Build verified successfully. |
+| 2026-01-17 06:15 | Task 5.4 Complete | Added syntax highlighting for Mermaid code blocks. Enhanced MermaidDiagram component with toggle button to switch between rendered diagram and syntax highlighted code view. Added header bar with "Mermaid Diagram" label and toggle button. Uses react-syntax-highlighter with VSCode Dark Plus theme for Mermaid syntax highlighting. Styled consistently with code blocks. Build verified successfully. |
 
 ---
 
