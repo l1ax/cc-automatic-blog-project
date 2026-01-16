@@ -398,7 +398,7 @@ _Each task should be completable in 1-4 hours (roughly one PR/commit)._
 - [x] **Task 4.4**: Add loading states and skeleton screens
 - [x] **Task 4.5**: Add 404 page
 - [x] **Task 4.6**: Add image optimization (next/image)
-- [ ] **Task 4.7**: Implement dark/light theme toggle (optional)
+- [x] **Task 4.7**: Implement dark/light theme toggle (optional)
 - [x] **Task 4.8**: Add favicon and meta tags for SEO
 
 **Phase 4 Verification**: 移动端 Lighthouse 评分 > 90，所有页面在不同设备上正常显示

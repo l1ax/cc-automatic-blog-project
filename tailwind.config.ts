@@ -6,30 +6,31 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: ["class"],
   theme: {
     extend: {
       colors: {
-        // Background colors
+        // Background colors - dark mode (default)
         bg: {
-          primary: "#1a1a1a",
-          secondary: "#242424",
-          tertiary: "#2d2d2d",
+          primary: "var(--bg-primary)",
+          secondary: "var(--bg-secondary)",
+          tertiary: "var(--bg-tertiary)",
         },
         // Text colors
         text: {
-          primary: "#e5e5e5",
-          secondary: "#a3a3a3",
-          muted: "#737373",
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+          muted: "var(--text-muted)",
         },
-        // Accent colors (orange)
+        // Accent colors (orange) - same for both themes
         accent: {
           primary: "#f97316",
           hover: "#ea580c",
           subtle: "#c2410c",
         },
         // Border & Divider
-        border: "#404040",
-        divider: "#262626",
+        border: "var(--border-color)",
+        divider: "var(--divider-color)",
       },
       typography: ({ theme }: any) => ({
         DEFAULT: {
