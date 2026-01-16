@@ -4,10 +4,10 @@
 
 | Field | Value |
 |-------|-------|
-| **Current Phase** | Phase 2 - Core Features (MVP) |
-| **Current Task** | Task 2.7 Complete. Next: Task 2.8 - Add About page |
+| **Current Phase** | Phase 3 - Search & Navigation |
+| **Current Task** | Task 2.8 Complete. Next: Task 3.1 - Integrate FlexSearch for client-side search |
 | **Blocker** | None |
-| **Last Action** | Created tag pages at `/blog/tag/[tag]` with SSG, breadcrumb navigation, and article list |
+| **Last Action** | Created About page at `/about` with comprehensive information about the blog |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -255,7 +255,7 @@
 
 - [x] **Task 2.7**: Create tag page at `/blog/tag/[tag]`
   - **Completed**: 2026-01-17
-  - **Commit**: TBD
+  - **Commit**: bfb2c1f
   - **Files Created**:
     - `app/blog/tag/[tag]/page.tsx` - Dynamic route for tag pages
   - **Features**:
@@ -277,17 +277,45 @@
     - Proper spacing and typography
   - **Notes**: Build verified successfully. Tag pages are generated at build time with SSG. The breadcrumb navigation provides clear context for users.
 
+- [x] **Task 2.8**: Add About page
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `app/about/page.tsx` - About page with comprehensive information
+  - **Features**:
+    - Static page at `/about` with SEO metadata
+    - Breadcrumb navigation (首页 / 关于)
+    - Multiple content sections explaining the blog:
+      - 博客初衷
+      - 技术栈
+      - 核心特性
+      - 未来计划
+      - 设计理念
+      - 联系方式
+    - Grid layout for tech stack and features
+    - Icon badges for feature highlights
+    - "返回首页" button with orange accent
+    - Responsive layout with proper spacing
+    - Consistent dark theme styling
+  - **Styling**:
+    - Orange accent bar for header
+    - Secondary background cards for each section
+    - Grid layout (2 columns on desktop, 1 on mobile)
+    - SVG icons for visual elements
+    - Proper typography hierarchy
+  - **Notes**: Build verified successfully. The About page provides comprehensive information about the blog's purpose, tech stack, features, and design philosophy. The page is fully responsive and follows the established design patterns.
+
 ### In Progress
 
-- [ ] **Task 2.8**: Add About page
+- [ ] **Task 3.1**: Integrate FlexSearch for client-side search
   - **Status**: Next task - Ready to begin
-  - **Notes**: Create an About page with personal introduction
+  - **Notes**: Install FlexSearch and set up basic search functionality
 
 ### Pending
 
 ### Phase 2: Core Features (MVP)
 
-- [ ] **Task 2.8**: Add About page
+**All tasks completed!**
 
 ### Phase 3: Search & Navigation
 
@@ -419,8 +447,8 @@ None yet - project just started
 2. **Read PRD**: `cat docs/PRD.md` - understand full requirements
 3. **Check git log**: `git log --oneline -10` - see recent commits
 4. **Check git status**: `git status` - see uncommitted changes
-5. **Current task is**: Task 1.7 - Deploy to Vercel and verify basic build works
-6. **Next action should be**: Deploy the project to Vercel
+5. **Current task is**: Task 3.1 - Integrate FlexSearch for client-side search
+6. **Next action should be**: Install FlexSearch and set up search functionality
 
 **Important Context to Remember:**
 - This is a personal tech blog for knowledge management, not public engagement
@@ -453,6 +481,9 @@ None yet - project just started
 | 2026-01-17 01:53 | Task 2.4 Complete | Implemented code highlighting with react-syntax-highlighter (PrismJS). Added CodeBlock component with language detection, VSCode Dark Plus theme, copy button with visual feedback, and support for 40+ programming languages |
 | 2026-01-17 02:00 | Task 2.6 Complete | Implemented tag filtering functionality with TagFilter component using URL search params. Added client-side interactive tag buttons with active state highlighting, clear filter option, and shareable filtered URLs |
 | 2026-01-17 02:07 | Task 2.7 Complete | Created tag pages at `/blog/tag/[tag]` with SSG. Added breadcrumb navigation, SEO metadata, 404 handling, and consistent styling with existing pages. Tag URLs support Chinese characters with URL encoding. |
+| 2026-01-17 02:14 | Task 2.8 Complete | Created About page at `/about` with comprehensive information sections (blog purpose, tech stack, features, future plans, design philosophy, contact). Added breadcrumb navigation, grid layout, SVG icons, and responsive design following established patterns. |
+| 2026-01-17 02:14 | Phase 2 Complete | All Phase 2 tasks completed. Core features (MVP) are now implemented: content provider architecture, article list/detail pages, code highlighting, tag filtering, tag pages, and About page. |
+| 2026-01-17 02:14 | Phase 3 Start | Ready to begin Phase 3 - Search & Navigation. Next task: Task 3.1 - Integrate FlexSearch for client-side search. |
 
 ---
 

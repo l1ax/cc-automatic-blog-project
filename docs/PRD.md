@@ -365,7 +365,7 @@ cc-automatic-blog-project/
 - [x] **Task 2.5**: Add article card component with hover effects
 - [x] **Task 2.6**: Implement tag filtering functionality
 - [x] **Task 2.7**: Create tag page at `/blog/tag/[tag]`
-- [ ] **Task 2.8**: Add About page
+- [x] **Task 2.8**: Add About page
 
 **Phase 2 Verification**: 能浏览文章列表、点击进入文章详情、按标签筛选文章
 
