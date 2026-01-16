@@ -424,8 +424,8 @@ cc-automatic-blog-project/
 
 **Goal**: 完善部署流程和自动化。
 
-- [ ] **Task 6.1**: Configure Vercel project with GitHub integration
-- [ ] **Task 6.2**: Set up automatic deployment on push to main branch
+- [x] **Task 6.1**: Configure Vercel project with GitHub integration
+- [x] **Task 6.2**: Set up automatic deployment on push to main branch
 - [ ] **Task 6.3**: Add build optimization (bundle analysis)
 - [ ] **Task 6.4**: Configure custom domain (if applicable)
 - [ ] **Task 6.5**: Set up environment variables for any API keys

@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 6 - Deployment & CI/CD |
-| **Current Task** | Task 6.1 Complete. Next: Task 6.2 - Set up automatic deployment on push to main branch |
+| **Current Task** | Task 6.2 Complete. Next: Task 6.3 - Add build optimization (bundle analysis) |
 | **Blocker** | None |
-| **Last Action** | Configured Vercel project with GitHub integration. Enhanced vercel.json with security headers, cache policies, and environment variables. Created GitHub Actions CI workflow for type checking, linting, and build validation. Updated README.md with comprehensive deployment instructions including Vercel Dashboard, Vercel CLI, and GitHub integration options. |
+| **Last Action** | Verified automatic deployment configuration in vercel.json. Updated README.md to clarify that automatic deployment is already configured with `git.deploymentEnabled.main: true`. Users just need to connect their GitHub repo in Vercel dashboard for automatic deployments to work. |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -1065,7 +1065,22 @@ None
     - Images: public, max-age=31536000, immutable
     - PNG/JPG/WebP/AVIF: public, max-age=31536000, immutable
   - **Notes**: Build verified successfully. The project is now fully configured for Vercel deployment with GitHub integration. The CI workflow ensures code quality before deployment. Users can now deploy via Vercel Dashboard, Vercel CLI, or through automatic GitHub integration. Next step is Task 6.2: Set up automatic deployment on push to main branch (this requires connecting the GitHub repository in Vercel dashboard).
-- [ ] **Task 6.2**: Set up automatic deployment on push to main branch
+
+- [x] **Task 6.2**: Set up automatic deployment on push to main branch
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Modified**:
+    - `README.md` - Updated documentation to clarify automatic deployment is already configured
+  - **Features**:
+    - Verified automatic deployment configuration in vercel.json
+    - `git.deploymentEnabled.main: true` enables automatic deployments
+    - Updated README.md with clear documentation about automatic deployment
+    - No additional code changes needed - configuration was already complete in Task 6.1
+  - **User Action Required**:
+    - Connect GitHub repository to Vercel via Vercel dashboard
+    - This is a manual step: Go to Vercel → Add New Project → Import GitHub repo
+    - Once connected, automatic deployments work immediately on push to main
+  - **Notes**: Automatic deployment is fully configured via vercel.json. The `git.deploymentEnabled.main: true` setting ensures that pushes to the main branch trigger automatic Vercel deployments. Users just need to connect their GitHub repository in the Vercel dashboard for this to take effect. No code changes were required.
 - [ ] **Task 6.3**: Add build optimization (bundle analysis)
 - [ ] **Task 6.4**: Configure custom domain (if applicable)
 - [ ] **Task 6.5**: Set up environment variables for any API keys
@@ -1237,6 +1252,7 @@ None yet - project just started
 | 2026-01-17 06:45 | Task 5.7 Complete | Copy button was already implemented as part of Task 2.4 (CodeBlock component). Marked as complete in PRD and PROGRESS. |
 | 2026-01-17 06:45 | Phase 5 Complete | All Phase 5 tasks completed. Advanced features are now implemented: KaTeX math formulas, Mermaid diagrams, syntax highlighting for Mermaid code blocks, related articles section, and reading time estimation. Moving to Phase 6: Deployment & CI/CD. |
 | 2026-01-17 07:00 | Task 6.1 Complete | Configured Vercel project with GitHub integration. Enhanced vercel.json with security headers, cache policies, environment variables, and git deployment settings. Created GitHub Actions CI workflow (.github/workflows/ci.yml) with type checking, linting, and build jobs. Updated README.md with comprehensive deployment instructions including Vercel Dashboard, Vercel CLI, and GitHub Integration options. Build verified successfully. |
+| 2026-01-17 07:15 | Task 6.2 Complete | Verified automatic deployment configuration in vercel.json. The `git.deploymentEnabled.main: true` setting was already configured in Task 6.1. Updated README.md to clarify that automatic deployment is already configured and users just need to connect their GitHub repository in Vercel dashboard for it to work. No code changes required. |
 
 ---
 

@@ -1,0 +1,25 @@
+Perfect! Task 5.6 is now complete. Let me provide a summary:
+
+## Task 5.6 Complete: Reading Time Estimation
+
+**What was done:**
+- Reading time calculation was already implemented in `lib/providers/local-mdx.ts` with the `calculateReadingTime()` function
+- Reading time was already displayed on homepage article cards
+- Added reading time display to the article detail page header (`app/blog/[slug]/page.tsx`)
+
+**Implementation details:**
+- Reading time is calculated based on ~200 words per minute average
+- Excludes code blocks (```` ```...``` ````) and inline code (`` `...` ```) from word count
+- Converts markdown links to plain text before counting
+- Displayed with a clock icon and "X 分钟阅读" format
+- Positioned between date and category in the article metadata section
+- Consistent styling with other metadata elements
+
+**Files modified:**
+- `app/blog/[slug]/page.tsx` - Added reading time display to article header
+
+**Build status:** Verified successfully ✅
+
+**Commit:** `e003490` - "feat: add reading time display to article detail page"
+
+The next pending task is **Task 5.7: Add copy button to code blocks**.

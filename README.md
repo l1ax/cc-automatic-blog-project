@@ -116,11 +116,22 @@ This runs on every push and pull request to ensure code quality before deploymen
 
 ### Automatic Deployments
 
+**Automatic deployment is already configured** in `vercel.json` with:
+```json
+"git": {
+  "deploymentEnabled": {
+    "main": true
+  }
+}
+```
+
 When you connect Vercel to your GitHub repository:
 
-1. **Push to `main`**: Triggers production deployment
+1. **Push to `main`**: Automatically triggers production deployment
 2. **Pull requests**: Creates preview deployments for testing
 3. **Commit status**: Vercel updates GitHub commit statuses
+
+**No additional configuration needed** - just connect your GitHub repo in Vercel dashboard and automatic deployments will work immediately.
 
 ### Pre-deployment Checks
 
