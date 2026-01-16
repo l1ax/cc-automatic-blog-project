@@ -7,6 +7,7 @@ import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
 import { CodeBlock } from './code-block';
 import { MDXImage } from './mdx-image';
+import { MermaidDiagram } from './mermaid-diagram';
 import { generateHeadingId } from '@/lib/toc';
 import 'katex/dist/katex.min.css';
 
@@ -85,6 +86,11 @@ export function MDXContent({ content }: MDXContentProps) {
                 {children}
               </code>
             );
+          }
+
+          // Handle Mermaid diagrams
+          if (language === 'mermaid') {
+            return <MermaidDiagram code={String(children).replace(/\n$/, '')} />;
           }
 
           return (

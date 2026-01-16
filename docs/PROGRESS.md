@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 5 - Advanced Features |
-| **Current Task** | Task 5.1/5.2 Complete. Next: Task 5.3 - Integrate Mermaid for diagrams |
+| **Current Task** | Task 5.3 Complete. Next: Task 5.4 - Add syntax highlighting for Mermaid code blocks |
 | **Blocker** | None |
-| **Last Action** | Integrated KaTeX for math formula rendering with remark-math and rehype-katex plugins. Added MathBlock component and created test article with various LaTeX formulas. |
+| **Last Action** | Integrated Mermaid for diagram rendering with MermaidDiagram component. Added dark theme customization matching blog's design. Created test article with 10 different diagram types (flowcharts, sequence diagrams, state diagrams, class diagrams, ER diagrams, Gantt charts, pie charts, Git graphs, mindmaps, timelines). |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -859,7 +859,67 @@ None
     - Math formulas rendered server-side at build time (static HTML)
     - No client-side JavaScript needed for math rendering
   - **Notes**: Build verified successfully. KaTeX is now integrated and fully functional. Math formulas can be written using standard LaTeX syntax with `$` for inline and `$$` for block display. The test article demonstrates various math capabilities.
-- [ ] **Task 5.3**: Integrate Mermaid for diagrams
+
+- [x] **Task 5.3**: Integrate Mermaid for diagrams
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `components/mermaid-diagram.tsx` - MermaidDiagram component for rendering diagrams
+    - `posts/2026-01-17-mermaid-diagram-test.md` - Test article with various diagram types
+  - **Files Modified**:
+    - `components/mdx-content.tsx` - Added MermaidDiagram component import and handler
+  - **Dependencies Added**:
+    - mermaid@11.6.0 - Diagram and charting library
+  - **Features**:
+    - Mermaid code block detection in Markdown (```mermaid ... ```)
+    - Client-side rendering using Mermaid.js
+    - Dark theme with custom colors matching blog's design
+    - Error handling with user-friendly error messages
+    - Syntax validation before rendering
+    - Responsive diagram containers with horizontal scrolling
+  - **Supported Diagram Types**:
+    - Flowcharts (flowchart TD/LR)
+    - Sequence Diagrams (sequenceDiagram)
+    - State Diagrams (stateDiagram-v2)
+    - Class Diagrams (classDiagram)
+    - Entity Relationship Diagrams (erDiagram)
+    - Gantt Charts (gantt)
+    - Pie Charts (pie)
+    - Git Graphs (gitGraph)
+    - Mindmaps (mindmap)
+    - Timelines (timeline)
+  - **Test Article Contents**:
+    - Basic and complex flowcharts
+    - User login sequence diagram
+    - Order status state diagram
+    - Blog system class diagram
+    - Database ER diagram
+    - Project development Gantt chart
+    - Tech stack pie chart
+    - Version control Git graph
+    - Blog architecture mindmap
+    - Project timeline
+  - **Technical Implementation**:
+    - Client-side component ("use client")
+    - Mermaid initialized once using module-level flag
+    - Dark theme configuration with custom colors
+    - SVG rendering injected into container div
+    - Error boundaries with expandable code view
+    - Horizontal scrolling for wide diagrams
+  - **Theme Customization**:
+    - Background: #2d2d2d (tertiary background)
+    - Primary color: #f97316 (orange accent)
+    - Text: #e5e5e5 (primary text)
+    - Border: #f97316 (orange)
+    - Lines: #a3a3a3 (secondary text)
+  - **Styling**:
+    - Centered diagram display
+    - Horizontal scroll support for mobile
+    - Minimum height for loading state
+    - Responsive padding (my-4 sm:my-6)
+    - Error state with red border and expandable code
+  - **Notes**: Build verified successfully. Mermaid is now integrated and fully functional. Diagrams can be created using Markdown code blocks with the `mermaid` language identifier. The test article demonstrates all major diagram types with Chinese text support.
+
 - [ ] **Task 5.4**: Add syntax highlighting for Mermaid code blocks
 - [ ] **Task 5.5**: Add related articles section at bottom of articles
 - [ ] **Task 5.6**: Implement reading time estimation
@@ -953,6 +1013,16 @@ None yet - project just started
 **Build Script Dependencies (Task 3.2)**:
 - tsx@4.21.0
 
+**Math Formula Dependencies (Task 5.1/5.2)**:
+- katex@0.16.11
+- react-katex@3.0.1
+- @types/katex@0.16.7
+- remark-math@6.0.0
+- rehype-katex@7.0.1
+
+**Diagram Dependencies (Task 5.3)**:
+- mermaid@11.6.0
+
 ---
 
 ## Blockers
@@ -1023,6 +1093,7 @@ None yet - project just started
 | 2026-01-17 05:00 | Task 4.6 Complete | Added image optimization with Next.js Image component. Created MDXImage component with AVIF/WebP support, lazy loading, loading skeleton, error handling, and caption support. Configured next.config.ts with remote patterns for external images. Integrated into MDXContent for automatic optimization of images in Markdown content. Build verified successfully. |
 | 2026-01-17 05:30 | Task 4.8 Complete | Added favicon and comprehensive SEO meta tags. Created icon.tsx, apple-icon.tsx, opengraph-image.tsx, twitter-image.tsx for dynamic image generation. Created sitemap.ts and robots.ts for search engine optimization. Updated layout.tsx with Open Graph, Twitter Cards, robots meta tags, and JSON-LD structured data. Updated blog/[slug]/page.tsx with article-specific SEO metadata and BlogPosting schema. Build verified successfully. |
 | 2026-01-17 05:45 | Task 5.1/5.2 Complete | Integrated KaTeX for math formula rendering. Added remark-math and rehype-katex plugins to MDXContent. Created MathBlock component for KaTeX rendering. Created test article (math-formula-test.md) with inline and block math formulas including integrals, matrices, Fourier transforms, and Schrödinger equation. Math formulas render server-side at build time using standard LaTeX syntax ($ for inline, $$ for block). Build verified successfully. |
+| 2026-01-17 06:00 | Task 5.3 Complete | Integrated Mermaid for diagram rendering. Created MermaidDiagram component with client-side rendering using mermaid@11.6.0. Added dark theme customization matching blog's orange accent colors. Integrated MermaidDiagram into MDXContent to detect mermaid code blocks. Created test article (mermaid-diagram-test.md) with 10 different diagram types: flowcharts, sequence diagrams, state diagrams, class diagrams, ER diagrams, Gantt charts, pie charts, Git graphs, mindmaps, and timelines. All diagrams support Chinese text and responsive layout with horizontal scrolling. Build verified successfully. |
 
 ---
 
