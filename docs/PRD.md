@@ -440,7 +440,7 @@ cc-automatic-blog-project/
 
 **Goal**: 确保代码质量和可维护性。
 
-- [ ] **Task 7.1**: Add unit tests for utility functions
+- [x] **Task 7.1**: Add unit tests for utility functions
 - [ ] **Task 7.2**: Add integration tests for critical flows
 - [ ] **Task 7.3**: Set up E2E tests with Playwright (optional)
 - [ ] **Task 7.4**: Configure ESLint and Prettier
@@ -456,9 +456,9 @@ cc-automatic-blog-project/
 
 ### Unit Tests
 
-- [ ] `lib/content.ts`: Content provider methods
-- [ ] `lib/search.ts`: Search index generation and query
-- [ ] `utils/reading-time.ts`: Reading time calculation
+- [x] `lib/content.ts`: Content provider methods
+- [x] `lib/search.ts`: Search index generation and query
+- [x] `utils/reading-time.ts`: Reading time calculation
 - [ ] `utils/date.ts`: Date formatting utilities
 
 ### Integration Tests

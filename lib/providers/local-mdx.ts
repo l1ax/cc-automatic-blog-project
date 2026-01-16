@@ -8,24 +8,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { ContentProvider, Article, ArticleMetadata, SearchQuery } from './types';
+import { calculateReadingTime } from '../utils/reading-time';
 
 const POSTS_DIRECTORY = path.join(process.cwd(), 'posts');
-
-/**
- * Calculate estimated reading time for an article
- * Based on average reading speed of ~200 words per minute
- */
-function calculateReadingTime(content: string): number {
-  const wordsPerMinute = 200;
-  // Remove code blocks and count words in plain text
-  const plainText = content
-    .replace(/```[\s\S]*?```/g, '') // Remove code blocks
-    .replace(/`[^`]+`/g, '') // Remove inline code
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'); // Convert markdown links to text
-
-  const wordCount = plainText.split(/\s+/).filter(Boolean).length;
-  return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
-}
 
 /**
  * Extract slug from filename

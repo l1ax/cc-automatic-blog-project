@@ -13,7 +13,7 @@ import type { SearchableArticle, BuildTimeIndex } from './types';
  * Tokenize text into searchable tokens
  * Supports both Chinese and English text
  */
-function tokenize(text: string): string[] {
+export function tokenize(text: string): string[] {
   if (!text) return [];
 
   // Remove special characters but keep Chinese characters, letters, and numbers

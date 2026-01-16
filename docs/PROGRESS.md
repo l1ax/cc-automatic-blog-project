@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 7 - Testing & Documentation |
-| **Current Task** | Phase 6 Complete. Next: Task 7.1 - Add unit tests for utility functions |
+| **Current Task** | Task 7.1 Complete. Next: Task 7.2 - Add integration tests for critical flows |
 | **Blocker** | None |
-| **Last Action** | Completed Phase 6: Deployment & CI/CD. Created comprehensive DEPLOYMENT.md documentation with deployment methods, environment variables, custom domain setup, CI/CD pipeline, build optimization, troubleshooting guide, deployment checklist, and advanced topics. |
+| **Last Action** | Completed Task 7.1: Added unit tests for utility functions. Set up Vitest testing framework with comprehensive test coverage for TOC utilities (extractToc, generateHeadingId, getActiveHeading), search index tokenization, and reading time calculation. All 65 tests passing. |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -1221,7 +1221,50 @@ None
 
 ### Phase 7: Testing & Documentation
 
-- [ ] **Task 7.1**: Add unit tests for utility functions
+- [x] **Task 7.1**: Add unit tests for utility functions
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `vitest.config.ts` - Vitest configuration with React plugin and coverage settings
+    - `vitest.setup.ts` - Test setup file with cleanup
+    - `lib/__tests__/toc.test.ts` - Unit tests for TOC utilities (23 tests)
+    - `lib/search/__tests__/build-index.test.ts` - Unit tests for search index utilities (19 tests)
+    - `lib/utils/__tests__/reading-time.test.ts` - Unit tests for reading time calculation (23 tests)
+    - `lib/utils/reading-time.ts` - Extracted reading time utility for testing
+  - **Files Modified**:
+    - `package.json` - Added test scripts and testing dependencies
+    - `lib/providers/local-mdx.ts` - Updated to import reading time from utils
+    - `lib/search/build-index.ts` - Exported tokenize function for testing
+  - **Dependencies Added**:
+    - vitest@^4.0.17 - Testing framework
+    - @vitest/ui@^4.0.17 - Vitest UI for interactive testing
+    - @vitejs/plugin-react@^5.1.2 - Vite React plugin
+    - vite@^7.3.1 - Build tool for testing
+    - happy-dom@^20.3.1 - DOM environment for testing
+    - @testing-library/react@^16.3.1 - React testing utilities
+    - @testing-library/jest-dom@^6.9.1 - Jest DOM matchers
+    - jsdom@^27.4.0 - JSDOM environment
+  - **Features**:
+    - Vitest testing framework configured with React support and coverage reporting
+    - 65 comprehensive unit tests covering:
+      - TOC extraction from Markdown content
+      - Heading ID generation (including Chinese characters)
+      - Active heading detection based on scroll position
+      - Search tokenization (English, Chinese, mixed)
+      - Chinese bigram generation for search
+      - Reading time calculation (excluding code blocks)
+      - Custom reading time calculation with configurable WPM
+    - Test scripts:
+      - `npm test` - Run tests in watch mode
+      - `npm run test:run` - Run tests once
+      - `npm run test:ui` - Run tests with UI
+      - `npm run test:coverage` - Run tests with coverage report
+    - Extracted reading time calculation to separate utility function for better testability
+  - **Test Coverage**:
+    - `lib/toc.ts` - extractToc, generateHeadingId, getActiveHeading (23 tests)
+    - `lib/search/build-index.ts` - tokenize function (19 tests)
+    - `lib/utils/reading-time.ts` - calculateReadingTime, calculateReadingTimeCustom (23 tests)
+  - **Notes**: All 65 tests passing. Type checking and linting also passing. Testing infrastructure is fully set up and ready for expansion.
 - [ ] **Task 7.2**: Add integration tests for critical flows
 - [ ] **Task 7.3**: Set up E2E tests with Playwright (optional)
 - [ ] **Task 7.4**: Configure ESLint and Prettier
@@ -1386,6 +1429,7 @@ None yet - project just started
 | 2026-01-17 07:00 | Task 6.1 Complete | Configured Vercel project with GitHub integration. Enhanced vercel.json with security headers, cache policies, environment variables, and git deployment settings. Created GitHub Actions CI workflow (.github/workflows/ci.yml) with type checking, linting, and build jobs. Updated README.md with comprehensive deployment instructions including Vercel Dashboard, Vercel CLI, and GitHub Integration options. Build verified successfully. |
 | 2026-01-17 07:15 | Task 6.2 Complete | Verified automatic deployment configuration in vercel.json. The `git.deploymentEnabled.main: true` setting was already configured in Task 6.1. Updated README.md to clarify that automatic deployment is already configured and users just need to connect their GitHub repository in Vercel dashboard for it to work. No code changes required. |
 | 2026-01-17 07:30 | Task 6.3 Complete | Added build optimization with bundle analysis. Installed @next/bundle-analyzer, configured next.config.ts with bundle analyzer plugin and build optimizations (React Strict Mode, production source maps disabled, modular imports). Added build:analyze and type-check scripts. Created .env.example and comprehensive BUILD_OPTIMIZATION.md documentation. Build verified successfully. |
+| 2026-01-17 07:45 | Task 7.1 Complete | Added unit tests for utility functions. Set up Vitest testing framework with React plugin and coverage reporting. Created comprehensive unit tests for TOC utilities (extractToc, generateHeadingId, getActiveHeading), search index tokenization, and reading time calculation. All 65 tests passing. Extracted reading time calculation to separate utility function for better testability. Added test scripts (test, test:run, test:ui, test:coverage). Build verified successfully. |
 
 ---
 
