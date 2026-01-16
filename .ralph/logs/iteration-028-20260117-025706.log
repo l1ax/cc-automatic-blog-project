@@ -1,0 +1,12 @@
+Task 7.1 is now complete. I have:
+
+1. **Set up Vitest testing framework** with React plugin and coverage reporting
+2. **Created comprehensive unit tests** for:
+   - TOC utilities (`lib/toc.ts`): extractToc, generateHeadingId, getActiveHeading (23 tests)
+   - Search index utilities (`lib/search/build-index.ts`): tokenize function (19 tests)
+   - Reading time calculation (`lib/utils/reading-time.ts`): calculateReadingTime, calculateReadingTimeCustom (23 tests)
+3. **Extracted reading time calculation** to a separate utility function for better testability
+4. **Added test scripts**: `npm test`, `npm run test:run`, `npm run test:ui`, `npm run test:coverage`
+5. **All 65 tests passing** with type checking and linting verified
+
+The testing infrastructure is now fully set up and ready for expansion. The next task would be Task 7.2: Add integration tests for critical flows.

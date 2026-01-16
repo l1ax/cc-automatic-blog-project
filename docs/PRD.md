@@ -441,7 +441,7 @@ cc-automatic-blog-project/
 **Goal**: 确保代码质量和可维护性。
 
 - [x] **Task 7.1**: Add unit tests for utility functions
-- [ ] **Task 7.2**: Add integration tests for critical flows
+- [x] **Task 7.2**: Add integration tests for critical flows
 - [ ] **Task 7.3**: Set up E2E tests with Playwright (optional)
 - [ ] **Task 7.4**: Configure ESLint and Prettier
 - [ ] **Task 7.5**: Write README with setup instructions
@@ -463,10 +463,10 @@ cc-automatic-blog-project/
 
 ### Integration Tests
 
-- [ ] Article list page loads correctly
-- [ ] Article detail page renders MDX content
-- [ ] Search functionality returns correct results
-- [ ] Tag filtering works as expected
+- [x] Article list page loads correctly
+- [x] Article detail page renders MDX content
+- [x] Search functionality returns correct results
+- [x] Tag filtering works as expected
 
 ### E2E Tests
 

@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 7 - Testing & Documentation |
-| **Current Task** | Task 7.1 Complete. Next: Task 7.2 - Add integration tests for critical flows |
+| **Current Task** | Task 7.2 Complete. Next: Task 7.3 - Set up E2E tests with Playwright (optional) |
 | **Blocker** | None |
-| **Last Action** | Completed Task 7.1: Added unit tests for utility functions. Set up Vitest testing framework with comprehensive test coverage for TOC utilities (extractToc, generateHeadingId, getActiveHeading), search index tokenization, and reading time calculation. All 65 tests passing. |
+| **Last Action** | Completed Task 7.2: Added integration tests for critical flows. Created comprehensive integration tests for content provider (getAllArticles, getArticleBySlug, getArticlesByTag, searchArticles, getRelatedArticles) and client-side search (load, search, tokenization, scoring, error handling). All 131 tests passing. |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -1265,7 +1265,43 @@ None
     - `lib/search/build-index.ts` - tokenize function (19 tests)
     - `lib/utils/reading-time.ts` - calculateReadingTime, calculateReadingTimeCustom (23 tests)
   - **Notes**: All 65 tests passing. Type checking and linting also passing. Testing infrastructure is fully set up and ready for expansion.
-- [ ] **Task 7.2**: Add integration tests for critical flows
+- [x] **Task 7.2**: Add integration tests for critical flows
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `lib/__tests__/content.integration.test.ts` - Integration tests for content provider (28 tests)
+    - `lib/search/__tests__/client-search.integration.test.ts` - Integration tests for client-side search (38 tests)
+  - **Features**:
+    - Comprehensive integration tests for content provider:
+      - getAllArticles: Returns all published articles with metadata, sorted by date
+      - getArticleBySlug: Returns full article with content for valid slug
+      - getArticlesByTag: Filters articles by tag with case-insensitive matching
+      - getAllTags: Returns all unique tags sorted alphabetically
+      - searchArticles: Searches title, summary, tags, and category with relevance scoring
+      - getRelatedArticles: Recommends articles based on shared tags, category, and recency
+    - Comprehensive integration tests for client-side search:
+      - Index loading: Loads from server, caches results, handles concurrent requests
+      - Search functionality: English, Chinese, and mixed queries
+      - Tokenization: English words, Chinese characters and bigrams, punctuation handling
+      - Scoring and ranking: Results ordered by relevance score
+      - Error handling: Network failures, missing articles, recovery on retry
+      - Performance: Efficient handling of long queries and repeated searches
+      - Real-world scenarios: Technology stack search, category search, partial terms
+    - End-to-end flow tests:
+      - Article list page flow (getAllArticles, getAllTags)
+      - Article detail page flow (getArticleBySlug, getRelatedArticles)
+      - Tag filtering flow (getAllTags, getArticlesByTag)
+      - Search flow (searchArticles)
+  - **Test Coverage**:
+    - Content provider integration: 28 tests covering all critical flows
+    - Client-side search integration: 38 tests covering loading, searching, error handling, and performance
+    - Total: 131 tests passing (65 unit tests + 66 integration tests)
+  - **Technical Implementation**:
+    - Content provider tests use real MDX files from posts/ directory
+    - Client search tests use mocked fetch API with realistic index data
+    - Tests verify correct behavior without hitting actual filesystem or network
+    - Proper cleanup and isolation between test suites
+  - **Notes**: All 131 tests passing. Integration tests verify the critical flows work correctly with real data structures and mock responses.
 - [ ] **Task 7.3**: Set up E2E tests with Playwright (optional)
 - [ ] **Task 7.4**: Configure ESLint and Prettier
 - [ ] **Task 7.5**: Write README with setup instructions
@@ -1430,6 +1466,7 @@ None yet - project just started
 | 2026-01-17 07:15 | Task 6.2 Complete | Verified automatic deployment configuration in vercel.json. The `git.deploymentEnabled.main: true` setting was already configured in Task 6.1. Updated README.md to clarify that automatic deployment is already configured and users just need to connect their GitHub repository in Vercel dashboard for it to work. No code changes required. |
 | 2026-01-17 07:30 | Task 6.3 Complete | Added build optimization with bundle analysis. Installed @next/bundle-analyzer, configured next.config.ts with bundle analyzer plugin and build optimizations (React Strict Mode, production source maps disabled, modular imports). Added build:analyze and type-check scripts. Created .env.example and comprehensive BUILD_OPTIMIZATION.md documentation. Build verified successfully. |
 | 2026-01-17 07:45 | Task 7.1 Complete | Added unit tests for utility functions. Set up Vitest testing framework with React plugin and coverage reporting. Created comprehensive unit tests for TOC utilities (extractToc, generateHeadingId, getActiveHeading), search index tokenization, and reading time calculation. All 65 tests passing. Extracted reading time calculation to separate utility function for better testability. Added test scripts (test, test:run, test:ui, test:coverage). Build verified successfully. |
+| 2026-01-17 07:50 | Task 7.2 Complete | Added integration tests for critical flows. Created comprehensive integration tests for content provider (getAllArticles, getArticleBySlug, getArticlesByTag, getAllTags, searchArticles, getRelatedArticles) and client-side search (load, search, tokenization, scoring, error handling). All 131 tests passing (65 unit + 66 integration). Tests verify article list page flow, article detail page flow, tag filtering flow, and search flow. Build verified successfully. |
 
 ---
 
