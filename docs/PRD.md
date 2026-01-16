@@ -408,8 +408,8 @@ cc-automatic-blog-project/
 
 **Goal**: 添加数学公式、图表等高级功能。
 
-- [ ] **Task 5.1**: Integrate KaTeX for math formula rendering
-- [ ] **Task 5.2**: Create MDX component for math equations
+- [x] **Task 5.1**: Integrate KaTeX for math formula rendering
+- [x] **Task 5.2**: Create MDX component for math equations
 - [ ] **Task 5.3**: Integrate Mermaid for diagrams
 - [ ] **Task 5.4**: Add syntax highlighting for Mermaid code blocks
 - [ ] **Task 5.5**: Add related articles section at bottom of articles

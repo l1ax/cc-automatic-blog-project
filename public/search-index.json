@@ -1,6 +1,20 @@
 {
   "articles": [
     {
+      "slug": "math-formula-test",
+      "title": "数学公式测试",
+      "summary": "测试博客中的数学公式渲染功能，使用 KaTeX 进行 LaTeX 公式渲染。",
+      "tags": [
+        "测试",
+        "数学",
+        "KaTeX"
+      ],
+      "category": "测试",
+      "date": "2026-01-17",
+      "readingTime": 2,
+      "content": "数学公式测试 这篇文章用于测试博客中的数学公式渲染功能。我们使用 KaTeX 来渲染 LaTeX 格式的数学公式。 行内公式 行内公式使用单个美元符号 $...$ 包裹。例如，著名的质能方程是 $E = mc^2$，勾股定理是 $a^2 + b^2 = c^2$。 再比如，欧拉公式被认为是数学中最美的公式之一：$e^{i\\pi} + 1 = 0$。 块级公式 块级公式使用双美元符号 $$...$$ 包裹，会单独显示在一行。 基础公式 二次方程的求根公式： $$ x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} $$ 圆的面积公式： $$ A = \\pi r^2 $$ 微积分 定积分示例： $$ \\int{0}^{\\infty} e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2} $$ 导数示例： $$ \\frac{d}{dx}\\left( \\int{a}^{x} f(t) dt \\right) = f(x) $$ 线性代数 矩阵乘法： $$ \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} ax + by \\\\ cx + dy \\end{pmatrix} $$ 行列式计算： $$ \\det(\\mathbf{A}) = \\sum{\\sigma \\in Sn} \\text{sgn}(\\sigma) \\prod{i=1}^{n} a{i,\\sigma(i)} $$ 求和与乘积 求和符号： $$ \\sum{i=1}^{n} i = \\frac{n(n+1)}{2} $$ 乘积符号： $$ \\prod{i=1}^{n} i = n! $$ 极限 极限定义： $$ \\lim{x \\to \\infty} \\left(1 + \\frac{1}{x}\\right)^x = e $$ 统计学 正态分布概率密度函数： $$ f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2} $$ 贝叶斯定理： $$ P(A|B) = \\frac{P(B|A) \\cdot P(A)}{P(B)} $$ 复杂公式示例 傅里叶变换： $$ \\hat{f}(\\xi) = \\int{-\\infty}^{\\infty} f(x) e^{-2\\pi i x \\xi} dx $$ 薛定谔方程： $$ i\\hbar\\frac{\\partial}{\\partial t}\\Psi(\\mathbf{r},t) = \\left -\\frac{\\hbar^2}{2m}\\nabla^2 + V(\\mathbf{r},t) \\right\\Psi(\\mathbf{r},t) $$ 分式和根号 复杂的分式： $$ \\frac{1}{1 + \\frac{1}{1 + \\frac{1}{1 + \\frac{1}{x}}}} $$ 嵌套根号： $$ \\sqrt{1 + \\sqrt{1 + \\sqrt{1 + \\sqrt{1 + \\cdots}}}} $$ 总结 KaTeX 支持完整的 LaTeX 数学语法，可以渲染各种复杂的数学公式。无论是简单的代数公式，还是复杂的微积分、线性代数公式，都能正确显示。 这使得博客非常适合记录技术笔记，特别是涉及到数学推导的内容。"
+    },
+    {
       "slug": "welcome-to-my-blog",
       "title": "欢迎来到我的技术博客",
       "summary": "这是我的个人技术博客，用于记录和分享编程学习笔记和技术思考。",
@@ -16,7 +30,1442 @@
     }
   ],
   "indexed": {
+    "0": [
+      "math-formula-test"
+    ],
+    "1": [
+      "math-formula-test"
+    ],
+    "2": [
+      "math-formula-test"
+    ],
     "15": [
+      "welcome-to-my-blog"
+    ],
+    "数学公式测试": [
+      "math-formula-test"
+    ],
+    "测试博客中的数学公式渲染功能": [
+      "math-formula-test"
+    ],
+    "使用": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "katex": [
+      "math-formula-test"
+    ],
+    "进行": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "latex": [
+      "math-formula-test"
+    ],
+    "公式渲染": [
+      "math-formula-test"
+    ],
+    "测试": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "数学": [
+      "math-formula-test"
+    ],
+    "这篇文章用于测试博客中的数学公式渲染功能": [
+      "math-formula-test"
+    ],
+    "我们使用": [
+      "math-formula-test"
+    ],
+    "来渲染": [
+      "math-formula-test"
+    ],
+    "格式的数学公式": [
+      "math-formula-test"
+    ],
+    "行内公式": [
+      "math-formula-test"
+    ],
+    "行内公式使用单个美元符号": [
+      "math-formula-test"
+    ],
+    "包裹": [
+      "math-formula-test"
+    ],
+    "例如": [
+      "math-formula-test"
+    ],
+    "著名的质能方程是": [
+      "math-formula-test"
+    ],
+    "e": [
+      "math-formula-test"
+    ],
+    "mc": [
+      "math-formula-test"
+    ],
+    "勾股定理是": [
+      "math-formula-test"
+    ],
+    "a": [
+      "math-formula-test"
+    ],
+    "b": [
+      "math-formula-test"
+    ],
+    "c": [
+      "math-formula-test"
+    ],
+    "再比如": [
+      "math-formula-test"
+    ],
+    "欧拉公式被认为是数学中最美的公式之一": [
+      "math-formula-test"
+    ],
+    "i": [
+      "math-formula-test"
+    ],
+    "pi": [
+      "math-formula-test"
+    ],
+    "块级公式": [
+      "math-formula-test"
+    ],
+    "块级公式使用双美元符号": [
+      "math-formula-test"
+    ],
+    "会单独显示在一行": [
+      "math-formula-test"
+    ],
+    "基础公式": [
+      "math-formula-test"
+    ],
+    "二次方程的求根公式": [
+      "math-formula-test"
+    ],
+    "x": [
+      "math-formula-test"
+    ],
+    "frac": [
+      "math-formula-test"
+    ],
+    "pm": [
+      "math-formula-test"
+    ],
+    "sqrt": [
+      "math-formula-test"
+    ],
+    "4ac": [
+      "math-formula-test"
+    ],
+    "2a": [
+      "math-formula-test"
+    ],
+    "圆的面积公式": [
+      "math-formula-test"
+    ],
+    "r": [
+      "math-formula-test"
+    ],
+    "微积分": [
+      "math-formula-test"
+    ],
+    "定积分示例": [
+      "math-formula-test"
+    ],
+    "int": [
+      "math-formula-test"
+    ],
+    "infty": [
+      "math-formula-test"
+    ],
+    "dx": [
+      "math-formula-test"
+    ],
+    "导数示例": [
+      "math-formula-test"
+    ],
+    "d": [
+      "math-formula-test"
+    ],
+    "left": [
+      "math-formula-test"
+    ],
+    "f": [
+      "math-formula-test"
+    ],
+    "t": [
+      "math-formula-test"
+    ],
+    "dt": [
+      "math-formula-test"
+    ],
+    "right": [
+      "math-formula-test"
+    ],
+    "线性代数": [
+      "math-formula-test"
+    ],
+    "矩阵乘法": [
+      "math-formula-test"
+    ],
+    "begin": [
+      "math-formula-test"
+    ],
+    "pmatrix": [
+      "math-formula-test"
+    ],
+    "end": [
+      "math-formula-test"
+    ],
+    "y": [
+      "math-formula-test"
+    ],
+    "ax": [
+      "math-formula-test"
+    ],
+    "by": [
+      "math-formula-test"
+    ],
+    "cx": [
+      "math-formula-test"
+    ],
+    "dy": [
+      "math-formula-test"
+    ],
+    "行列式计算": [
+      "math-formula-test"
+    ],
+    "det": [
+      "math-formula-test"
+    ],
+    "mathbf": [
+      "math-formula-test"
+    ],
+    "sum": [
+      "math-formula-test"
+    ],
+    "sigma": [
+      "math-formula-test"
+    ],
+    "in": [
+      "math-formula-test"
+    ],
+    "sn": [
+      "math-formula-test"
+    ],
+    "text": [
+      "math-formula-test"
+    ],
+    "sgn": [
+      "math-formula-test"
+    ],
+    "prod": [
+      "math-formula-test"
+    ],
+    "n": [
+      "math-formula-test"
+    ],
+    "求和与乘积": [
+      "math-formula-test"
+    ],
+    "求和符号": [
+      "math-formula-test"
+    ],
+    "乘积符号": [
+      "math-formula-test"
+    ],
+    "极限": [
+      "math-formula-test"
+    ],
+    "极限定义": [
+      "math-formula-test"
+    ],
+    "lim": [
+      "math-formula-test"
+    ],
+    "to": [
+      "math-formula-test"
+    ],
+    "统计学": [
+      "math-formula-test"
+    ],
+    "正态分布概率密度函数": [
+      "math-formula-test"
+    ],
+    "mu": [
+      "math-formula-test"
+    ],
+    "贝叶斯定理": [
+      "math-formula-test"
+    ],
+    "p": [
+      "math-formula-test"
+    ],
+    "cdot": [
+      "math-formula-test"
+    ],
+    "复杂公式示例": [
+      "math-formula-test"
+    ],
+    "傅里叶变换": [
+      "math-formula-test"
+    ],
+    "hat": [
+      "math-formula-test"
+    ],
+    "xi": [
+      "math-formula-test"
+    ],
+    "薛定谔方程": [
+      "math-formula-test"
+    ],
+    "hbar": [
+      "math-formula-test"
+    ],
+    "partial": [
+      "math-formula-test"
+    ],
+    "psi": [
+      "math-formula-test"
+    ],
+    "2m": [
+      "math-formula-test"
+    ],
+    "nabla": [
+      "math-formula-test"
+    ],
+    "v": [
+      "math-formula-test"
+    ],
+    "分式和根号": [
+      "math-formula-test"
+    ],
+    "复杂的分式": [
+      "math-formula-test"
+    ],
+    "嵌套根号": [
+      "math-formula-test"
+    ],
+    "cdots": [
+      "math-formula-test"
+    ],
+    "总结": [
+      "math-formula-test"
+    ],
+    "支持完整的": [
+      "math-formula-test"
+    ],
+    "数学语法": [
+      "math-formula-test"
+    ],
+    "可以渲染各种复杂的数学公式": [
+      "math-formula-test"
+    ],
+    "无论是简单的代数公式": [
+      "math-formula-test"
+    ],
+    "还是复杂的微积分": [
+      "math-formula-test"
+    ],
+    "线性代数公式": [
+      "math-formula-test"
+    ],
+    "都能正确显示": [
+      "math-formula-test"
+    ],
+    "这使得博客非常适合记录技术笔记": [
+      "math-formula-test"
+    ],
+    "特别是涉及到数学推导的内容": [
+      "math-formula-test"
+    ],
+    "数": [
+      "math-formula-test"
+    ],
+    "学": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "公": [
+      "math-formula-test"
+    ],
+    "式": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "测": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "试": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "学公": [
+      "math-formula-test"
+    ],
+    "公式": [
+      "math-formula-test"
+    ],
+    "式测": [
+      "math-formula-test"
+    ],
+    "博": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "客": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "中": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "的": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "渲": [
+      "math-formula-test"
+    ],
+    "染": [
+      "math-formula-test"
+    ],
+    "功": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "能": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "试博": [
+      "math-formula-test"
+    ],
+    "博客": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "客中": [
+      "math-formula-test"
+    ],
+    "中的": [
+      "math-formula-test"
+    ],
+    "的数": [
+      "math-formula-test"
+    ],
+    "式渲": [
+      "math-formula-test"
+    ],
+    "渲染": [
+      "math-formula-test"
+    ],
+    "染功": [
+      "math-formula-test"
+    ],
+    "功能": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "使": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "用": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "进": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "行": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "这": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "篇": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "文": [
+      "math-formula-test"
+    ],
+    "章": [
+      "math-formula-test"
+    ],
+    "于": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "这篇": [
+      "math-formula-test"
+    ],
+    "篇文": [
+      "math-formula-test"
+    ],
+    "文章": [
+      "math-formula-test"
+    ],
+    "章用": [
+      "math-formula-test"
+    ],
+    "用于": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "于测": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "我": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "们": [
+      "math-formula-test"
+    ],
+    "我们": [
+      "math-formula-test"
+    ],
+    "们使": [
+      "math-formula-test"
+    ],
+    "来": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "来渲": [
+      "math-formula-test"
+    ],
+    "格": [
+      "math-formula-test"
+    ],
+    "格式": [
+      "math-formula-test"
+    ],
+    "式的": [
+      "math-formula-test"
+    ],
+    "内": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "行内": [
+      "math-formula-test"
+    ],
+    "内公": [
+      "math-formula-test"
+    ],
+    "单": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "个": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "美": [
+      "math-formula-test"
+    ],
+    "元": [
+      "math-formula-test"
+    ],
+    "符": [
+      "math-formula-test"
+    ],
+    "号": [
+      "math-formula-test"
+    ],
+    "式使": [
+      "math-formula-test"
+    ],
+    "用单": [
+      "math-formula-test"
+    ],
+    "单个": [
+      "math-formula-test"
+    ],
+    "个美": [
+      "math-formula-test"
+    ],
+    "美元": [
+      "math-formula-test"
+    ],
+    "元符": [
+      "math-formula-test"
+    ],
+    "符号": [
+      "math-formula-test"
+    ],
+    "包": [
+      "math-formula-test"
+    ],
+    "裹": [
+      "math-formula-test"
+    ],
+    "例": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "如": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "著": [
+      "math-formula-test"
+    ],
+    "名": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "质": [
+      "math-formula-test"
+    ],
+    "方": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "程": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "是": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "著名": [
+      "math-formula-test"
+    ],
+    "名的": [
+      "math-formula-test"
+    ],
+    "的质": [
+      "math-formula-test"
+    ],
+    "质能": [
+      "math-formula-test"
+    ],
+    "能方": [
+      "math-formula-test"
+    ],
+    "方程": [
+      "math-formula-test"
+    ],
+    "程是": [
+      "math-formula-test"
+    ],
+    "勾": [
+      "math-formula-test"
+    ],
+    "股": [
+      "math-formula-test"
+    ],
+    "定": [
+      "math-formula-test"
+    ],
+    "理": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "勾股": [
+      "math-formula-test"
+    ],
+    "股定": [
+      "math-formula-test"
+    ],
+    "定理": [
+      "math-formula-test"
+    ],
+    "理是": [
+      "math-formula-test"
+    ],
+    "再": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "比": [
+      "math-formula-test"
+    ],
+    "再比": [
+      "math-formula-test"
+    ],
+    "比如": [
+      "math-formula-test"
+    ],
+    "欧": [
+      "math-formula-test"
+    ],
+    "拉": [
+      "math-formula-test"
+    ],
+    "被": [
+      "math-formula-test"
+    ],
+    "认": [
+      "math-formula-test"
+    ],
+    "为": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "最": [
+      "math-formula-test"
+    ],
+    "之": [
+      "math-formula-test"
+    ],
+    "一": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "欧拉": [
+      "math-formula-test"
+    ],
+    "拉公": [
+      "math-formula-test"
+    ],
+    "式被": [
+      "math-formula-test"
+    ],
+    "被认": [
+      "math-formula-test"
+    ],
+    "认为": [
+      "math-formula-test"
+    ],
+    "为是": [
+      "math-formula-test"
+    ],
+    "是数": [
+      "math-formula-test"
+    ],
+    "学中": [
+      "math-formula-test"
+    ],
+    "中最": [
+      "math-formula-test"
+    ],
+    "最美": [
+      "math-formula-test"
+    ],
+    "美的": [
+      "math-formula-test"
+    ],
+    "的公": [
+      "math-formula-test"
+    ],
+    "式之": [
+      "math-formula-test"
+    ],
+    "之一": [
+      "math-formula-test"
+    ],
+    "块": [
+      "math-formula-test"
+    ],
+    "级": [
+      "math-formula-test"
+    ],
+    "块级": [
+      "math-formula-test"
+    ],
+    "级公": [
+      "math-formula-test"
+    ],
+    "双": [
+      "math-formula-test"
+    ],
+    "用双": [
+      "math-formula-test"
+    ],
+    "双美": [
+      "math-formula-test"
+    ],
+    "会": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "独": [
+      "math-formula-test"
+    ],
+    "显": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "示": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "在": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "会单": [
+      "math-formula-test"
+    ],
+    "单独": [
+      "math-formula-test"
+    ],
+    "独显": [
+      "math-formula-test"
+    ],
+    "显示": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "示在": [
+      "math-formula-test"
+    ],
+    "在一": [
+      "math-formula-test"
+    ],
+    "一行": [
+      "math-formula-test"
+    ],
+    "基": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "础": [
+      "math-formula-test"
+    ],
+    "基础": [
+      "math-formula-test"
+    ],
+    "础公": [
+      "math-formula-test"
+    ],
+    "二": [
+      "math-formula-test"
+    ],
+    "次": [
+      "math-formula-test"
+    ],
+    "求": [
+      "math-formula-test"
+    ],
+    "根": [
+      "math-formula-test"
+    ],
+    "二次": [
+      "math-formula-test"
+    ],
+    "次方": [
+      "math-formula-test"
+    ],
+    "程的": [
+      "math-formula-test"
+    ],
+    "的求": [
+      "math-formula-test"
+    ],
+    "求根": [
+      "math-formula-test"
+    ],
+    "根公": [
+      "math-formula-test"
+    ],
+    "圆": [
+      "math-formula-test"
+    ],
+    "面": [
+      "math-formula-test"
+    ],
+    "积": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "圆的": [
+      "math-formula-test"
+    ],
+    "的面": [
+      "math-formula-test"
+    ],
+    "面积": [
+      "math-formula-test"
+    ],
+    "积公": [
+      "math-formula-test"
+    ],
+    "微": [
+      "math-formula-test"
+    ],
+    "分": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "微积": [
+      "math-formula-test"
+    ],
+    "积分": [
+      "math-formula-test"
+    ],
+    "定积": [
+      "math-formula-test"
+    ],
+    "分示": [
+      "math-formula-test"
+    ],
+    "示例": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "导": [
+      "math-formula-test"
+    ],
+    "导数": [
+      "math-formula-test"
+    ],
+    "数示": [
+      "math-formula-test"
+    ],
+    "线": [
+      "math-formula-test"
+    ],
+    "性": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "代": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "线性": [
+      "math-formula-test"
+    ],
+    "性代": [
+      "math-formula-test"
+    ],
+    "代数": [
+      "math-formula-test"
+    ],
+    "矩": [
+      "math-formula-test"
+    ],
+    "阵": [
+      "math-formula-test"
+    ],
+    "乘": [
+      "math-formula-test"
+    ],
+    "法": [
+      "math-formula-test"
+    ],
+    "矩阵": [
+      "math-formula-test"
+    ],
+    "阵乘": [
+      "math-formula-test"
+    ],
+    "乘法": [
+      "math-formula-test"
+    ],
+    "列": [
+      "math-formula-test"
+    ],
+    "计": [
+      "math-formula-test"
+    ],
+    "算": [
+      "math-formula-test"
+    ],
+    "行列": [
+      "math-formula-test"
+    ],
+    "列式": [
+      "math-formula-test"
+    ],
+    "式计": [
+      "math-formula-test"
+    ],
+    "计算": [
+      "math-formula-test"
+    ],
+    "和": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "与": [
+      "math-formula-test"
+    ],
+    "求和": [
+      "math-formula-test"
+    ],
+    "和与": [
+      "math-formula-test"
+    ],
+    "与乘": [
+      "math-formula-test"
+    ],
+    "乘积": [
+      "math-formula-test"
+    ],
+    "和符": [
+      "math-formula-test"
+    ],
+    "积符": [
+      "math-formula-test"
+    ],
+    "极": [
+      "math-formula-test"
+    ],
+    "限": [
+      "math-formula-test"
+    ],
+    "义": [
+      "math-formula-test"
+    ],
+    "限定": [
+      "math-formula-test"
+    ],
+    "定义": [
+      "math-formula-test"
+    ],
+    "统": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "统计": [
+      "math-formula-test"
+    ],
+    "计学": [
+      "math-formula-test"
+    ],
+    "正": [
+      "math-formula-test"
+    ],
+    "态": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "布": [
+      "math-formula-test"
+    ],
+    "概": [
+      "math-formula-test"
+    ],
+    "率": [
+      "math-formula-test"
+    ],
+    "密": [
+      "math-formula-test"
+    ],
+    "度": [
+      "math-formula-test"
+    ],
+    "函": [
+      "math-formula-test"
+    ],
+    "正态": [
+      "math-formula-test"
+    ],
+    "态分": [
+      "math-formula-test"
+    ],
+    "分布": [
+      "math-formula-test"
+    ],
+    "布概": [
+      "math-formula-test"
+    ],
+    "概率": [
+      "math-formula-test"
+    ],
+    "率密": [
+      "math-formula-test"
+    ],
+    "密度": [
+      "math-formula-test"
+    ],
+    "度函": [
+      "math-formula-test"
+    ],
+    "函数": [
+      "math-formula-test"
+    ],
+    "贝": [
+      "math-formula-test"
+    ],
+    "叶": [
+      "math-formula-test"
+    ],
+    "斯": [
+      "math-formula-test"
+    ],
+    "贝叶": [
+      "math-formula-test"
+    ],
+    "叶斯": [
+      "math-formula-test"
+    ],
+    "斯定": [
+      "math-formula-test"
+    ],
+    "复": [
+      "math-formula-test"
+    ],
+    "杂": [
+      "math-formula-test"
+    ],
+    "复杂": [
+      "math-formula-test"
+    ],
+    "杂公": [
+      "math-formula-test"
+    ],
+    "式示": [
+      "math-formula-test"
+    ],
+    "傅": [
+      "math-formula-test"
+    ],
+    "里": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "变": [
+      "math-formula-test"
+    ],
+    "换": [
+      "math-formula-test"
+    ],
+    "傅里": [
+      "math-formula-test"
+    ],
+    "里叶": [
+      "math-formula-test"
+    ],
+    "叶变": [
+      "math-formula-test"
+    ],
+    "变换": [
+      "math-formula-test"
+    ],
+    "薛": [
+      "math-formula-test"
+    ],
+    "谔": [
+      "math-formula-test"
+    ],
+    "薛定": [
+      "math-formula-test"
+    ],
+    "定谔": [
+      "math-formula-test"
+    ],
+    "谔方": [
+      "math-formula-test"
+    ],
+    "分式": [
+      "math-formula-test"
+    ],
+    "式和": [
+      "math-formula-test"
+    ],
+    "和根": [
+      "math-formula-test"
+    ],
+    "根号": [
+      "math-formula-test"
+    ],
+    "杂的": [
+      "math-formula-test"
+    ],
+    "的分": [
+      "math-formula-test"
+    ],
+    "嵌": [
+      "math-formula-test"
+    ],
+    "套": [
+      "math-formula-test"
+    ],
+    "嵌套": [
+      "math-formula-test"
+    ],
+    "套根": [
+      "math-formula-test"
+    ],
+    "总": [
+      "math-formula-test"
+    ],
+    "结": [
+      "math-formula-test"
+    ],
+    "支": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "持": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "完": [
+      "math-formula-test"
+    ],
+    "整": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "支持": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "持完": [
+      "math-formula-test"
+    ],
+    "完整": [
+      "math-formula-test"
+    ],
+    "整的": [
+      "math-formula-test"
+    ],
+    "语": [
+      "math-formula-test"
+    ],
+    "学语": [
+      "math-formula-test"
+    ],
+    "语法": [
+      "math-formula-test"
+    ],
+    "可": [
+      "math-formula-test"
+    ],
+    "以": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "各": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "种": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "可以": [
+      "math-formula-test"
+    ],
+    "以渲": [
+      "math-formula-test"
+    ],
+    "染各": [
+      "math-formula-test"
+    ],
+    "各种": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "种复": [
+      "math-formula-test"
+    ],
+    "无": [
+      "math-formula-test"
+    ],
+    "论": [
+      "math-formula-test"
+    ],
+    "简": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "无论": [
+      "math-formula-test"
+    ],
+    "论是": [
+      "math-formula-test"
+    ],
+    "是简": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "简单": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "单的": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "的代": [
+      "math-formula-test"
+    ],
+    "数公": [
+      "math-formula-test"
+    ],
+    "还": [
+      "math-formula-test"
+    ],
+    "还是": [
+      "math-formula-test"
+    ],
+    "是复": [
+      "math-formula-test"
+    ],
+    "的微": [
+      "math-formula-test"
+    ],
+    "都": [
+      "math-formula-test"
+    ],
+    "确": [
+      "math-formula-test"
+    ],
+    "都能": [
+      "math-formula-test"
+    ],
+    "能正": [
+      "math-formula-test"
+    ],
+    "正确": [
+      "math-formula-test"
+    ],
+    "确显": [
+      "math-formula-test"
+    ],
+    "得": [
+      "math-formula-test"
+    ],
+    "非": [
+      "math-formula-test"
+    ],
+    "常": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "适": [
+      "math-formula-test"
+    ],
+    "合": [
+      "math-formula-test"
+    ],
+    "记": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "录": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "技": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "术": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "笔": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "这使": [
+      "math-formula-test"
+    ],
+    "使得": [
+      "math-formula-test"
+    ],
+    "得博": [
+      "math-formula-test"
+    ],
+    "客非": [
+      "math-formula-test"
+    ],
+    "非常": [
+      "math-formula-test"
+    ],
+    "常适": [
+      "math-formula-test"
+    ],
+    "适合": [
+      "math-formula-test"
+    ],
+    "合记": [
+      "math-formula-test"
+    ],
+    "记录": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "录技": [
+      "math-formula-test"
+    ],
+    "技术": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "术笔": [
+      "math-formula-test"
+    ],
+    "笔记": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "特": [
+      "math-formula-test"
+    ],
+    "别": [
+      "math-formula-test"
+    ],
+    "涉": [
+      "math-formula-test"
+    ],
+    "及": [
+      "math-formula-test"
+    ],
+    "到": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "推": [
+      "math-formula-test"
+    ],
+    "容": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "特别": [
+      "math-formula-test"
+    ],
+    "别是": [
+      "math-formula-test"
+    ],
+    "是涉": [
+      "math-formula-test"
+    ],
+    "涉及": [
+      "math-formula-test"
+    ],
+    "及到": [
+      "math-formula-test"
+    ],
+    "到数": [
+      "math-formula-test"
+    ],
+    "学推": [
+      "math-formula-test"
+    ],
+    "推导": [
+      "math-formula-test"
+    ],
+    "导的": [
+      "math-formula-test"
+    ],
+    "的内": [
+      "math-formula-test",
+      "welcome-to-my-blog"
+    ],
+    "内容": [
+      "math-formula-test",
       "welcome-to-my-blog"
     ],
     "欢迎来到我的技术博客": [
@@ -26,9 +1475,6 @@
       "welcome-to-my-blog"
     ],
     "用于记录和分享编程学习笔记和技术思考": [
-      "welcome-to-my-blog"
-    ],
-    "博客": [
       "welcome-to-my-blog"
     ],
     "next": [
@@ -109,9 +1555,6 @@
     "框架": [
       "welcome-to-my-blog"
     ],
-    "使用": [
-      "welcome-to-my-blog"
-    ],
     "app": [
       "welcome-to-my-blog"
     ],
@@ -175,9 +1618,6 @@
     "这个博客主要是为我自己服务的": [
       "welcome-to-my-blog"
     ],
-    "用于": [
-      "welcome-to-my-blog"
-    ],
     "记录学习笔记": [
       "welcome-to-my-blog"
     ],
@@ -199,30 +1639,6 @@
     "迎": [
       "welcome-to-my-blog"
     ],
-    "来": [
-      "welcome-to-my-blog"
-    ],
-    "到": [
-      "welcome-to-my-blog"
-    ],
-    "我": [
-      "welcome-to-my-blog"
-    ],
-    "的": [
-      "welcome-to-my-blog"
-    ],
-    "技": [
-      "welcome-to-my-blog"
-    ],
-    "术": [
-      "welcome-to-my-blog"
-    ],
-    "博": [
-      "welcome-to-my-blog"
-    ],
-    "客": [
-      "welcome-to-my-blog"
-    ],
     "欢迎": [
       "welcome-to-my-blog"
     ],
@@ -241,19 +1657,7 @@
     "的技": [
       "welcome-to-my-blog"
     ],
-    "技术": [
-      "welcome-to-my-blog"
-    ],
     "术博": [
-      "welcome-to-my-blog"
-    ],
-    "这": [
-      "welcome-to-my-blog"
-    ],
-    "是": [
-      "welcome-to-my-blog"
-    ],
-    "个": [
       "welcome-to-my-blog"
     ],
     "人": [
@@ -274,40 +1678,13 @@
     "人技": [
       "welcome-to-my-blog"
     ],
-    "用": [
-      "welcome-to-my-blog"
-    ],
-    "于": [
-      "welcome-to-my-blog"
-    ],
-    "记": [
-      "welcome-to-my-blog"
-    ],
-    "录": [
-      "welcome-to-my-blog"
-    ],
-    "和": [
-      "welcome-to-my-blog"
-    ],
-    "分": [
-      "welcome-to-my-blog"
-    ],
     "享": [
       "welcome-to-my-blog"
     ],
     "编": [
       "welcome-to-my-blog"
     ],
-    "程": [
-      "welcome-to-my-blog"
-    ],
-    "学": [
-      "welcome-to-my-blog"
-    ],
     "习": [
-      "welcome-to-my-blog"
-    ],
-    "笔": [
       "welcome-to-my-blog"
     ],
     "思": [
@@ -317,9 +1694,6 @@
       "welcome-to-my-blog"
     ],
     "于记": [
-      "welcome-to-my-blog"
-    ],
-    "记录": [
       "welcome-to-my-blog"
     ],
     "录和": [
@@ -346,9 +1720,6 @@
     "习笔": [
       "welcome-to-my-blog"
     ],
-    "笔记": [
-      "welcome-to-my-blog"
-    ],
     "记和": [
       "welcome-to-my-blog"
     ],
@@ -364,9 +1735,6 @@
     "开": [
       "welcome-to-my-blog"
     ],
-    "篇": [
-      "welcome-to-my-blog"
-    ],
     "相": [
       "welcome-to-my-blog"
     ],
@@ -377,12 +1745,6 @@
       "welcome-to-my-blog"
     ],
     "相关": [
-      "welcome-to-my-blog"
-    ],
-    "一": [
-      "welcome-to-my-blog"
-    ],
-    "基": [
       "welcome-to-my-blog"
     ],
     "是一": [
@@ -406,13 +1768,7 @@
     "静": [
       "welcome-to-my-blog"
     ],
-    "态": [
-      "welcome-to-my-blog"
-    ],
     "系": [
-      "welcome-to-my-blog"
-    ],
-    "统": [
       "welcome-to-my-blog"
     ],
     "构建": [
@@ -445,16 +1801,7 @@
     "目": [
       "welcome-to-my-blog"
     ],
-    "为": [
-      "welcome-to-my-blog"
-    ],
     "了": [
-      "welcome-to-my-blog"
-    ],
-    "整": [
-      "welcome-to-my-blog"
-    ],
-    "理": [
       "welcome-to-my-blog"
     ],
     "主要": [
@@ -514,9 +1861,6 @@
     "作": [
       "welcome-to-my-blog"
     ],
-    "名": [
-      "welcome-to-my-blog"
-    ],
     "发": [
       "welcome-to-my-blog"
     ],
@@ -541,34 +1885,16 @@
     "发者": [
       "welcome-to-my-blog"
     ],
-    "在": [
-      "welcome-to-my-blog"
-    ],
     "日": [
       "welcome-to-my-blog"
     ],
-    "常": [
-      "welcome-to-my-blog"
-    ],
     "工": [
-      "welcome-to-my-blog"
-    ],
-    "中": [
-      "welcome-to-my-blog"
-    ],
-    "会": [
       "welcome-to-my-blog"
     ],
     "接": [
       "welcome-to-my-blog"
     ],
     "触": [
-      "welcome-to-my-blog"
-    ],
-    "各": [
-      "welcome-to-my-blog"
-    ],
-    "种": [
       "welcome-to-my-blog"
     ],
     "样": [
@@ -619,9 +1945,6 @@
     "到各": [
       "welcome-to-my-blog"
     ],
-    "各种": [
-      "welcome-to-my-blog"
-    ],
     "种各": [
       "welcome-to-my-blog"
     ],
@@ -640,28 +1963,16 @@
     "识点": [
       "welcome-to-my-blog"
     ],
-    "如": [
-      "welcome-to-my-blog"
-    ],
     "果": [
       "welcome-to-my-blog"
     ],
     "只": [
       "welcome-to-my-blog"
     ],
-    "简": [
-      "welcome-to-my-blog"
-    ],
-    "单": [
-      "welcome-to-my-blog"
-    ],
     "软": [
       "welcome-to-my-blog"
     ],
     "件": [
-      "welcome-to-my-blog"
-    ],
-    "里": [
       "welcome-to-my-blog"
     ],
     "如果": [
@@ -671,15 +1982,6 @@
       "welcome-to-my-blog"
     ],
     "只是": [
-      "welcome-to-my-blog"
-    ],
-    "是简": [
-      "welcome-to-my-blog"
-    ],
-    "简单": [
-      "welcome-to-my-blog"
-    ],
-    "单的": [
       "welcome-to-my-blog"
     ],
     "的记": [
@@ -710,9 +2012,6 @@
       "welcome-to-my-blog"
     ],
     "很": [
-      "welcome-to-my-blog"
-    ],
-    "容": [
       "welcome-to-my-blog"
     ],
     "易": [
@@ -758,9 +2057,6 @@
       "welcome-to-my-blog"
     ],
     "乏": [
-      "welcome-to-my-blog"
-    ],
-    "性": [
       "welcome-to-my-blog"
     ],
     "而且": [
@@ -868,9 +2164,6 @@
     "需": [
       "welcome-to-my-blog"
     ],
-    "内": [
-      "welcome-to-my-blog"
-    ],
     "通过": [
       "welcome-to-my-blog"
     ],
@@ -898,12 +2191,6 @@
     "要的": [
       "welcome-to-my-blog"
     ],
-    "的内": [
-      "welcome-to-my-blog"
-    ],
-    "内容": [
-      "welcome-to-my-blog"
-    ],
     "维": [
       "welcome-to-my-blog"
     ],
@@ -929,9 +2216,6 @@
       "welcome-to-my-blog"
     ],
     "对": [
-      "welcome-to-my-blog"
-    ],
-    "再": [
       "welcome-to-my-blog"
     ],
     "写作": [
@@ -976,9 +2260,6 @@
     "期": [
       "welcome-to-my-blog"
     ],
-    "积": [
-      "welcome-to-my-blog"
-    ],
     "累": [
       "welcome-to-my-blog"
     ],
@@ -1016,12 +2297,6 @@
       "welcome-to-my-blog"
     ],
     "术栈": [
-      "welcome-to-my-blog"
-    ],
-    "使": [
-      "welcome-to-my-blog"
-    ],
-    "以": [
       "welcome-to-my-blog"
     ],
     "下": [
@@ -1075,22 +2350,10 @@
     "安全": [
       "welcome-to-my-blog"
     ],
-    "式": [
-      "welcome-to-my-blog"
-    ],
     "样式": [
       "welcome-to-my-blog"
     ],
     "式框": [
-      "welcome-to-my-blog"
-    ],
-    "支": [
-      "welcome-to-my-blog"
-    ],
-    "持": [
-      "welcome-to-my-blog"
-    ],
-    "支持": [
       "welcome-to-my-blog"
     ],
     "持在": [
@@ -1102,19 +2365,7 @@
     "组": [
       "welcome-to-my-blog"
     ],
-    "示": [
-      "welcome-to-my-blog"
-    ],
-    "例": [
-      "welcome-to-my-blog"
-    ],
-    "代": [
-      "welcome-to-my-blog"
-    ],
     "码": [
-      "welcome-to-my-blog"
-    ],
-    "示例": [
       "welcome-to-my-blog"
     ],
     "例代": [
@@ -1141,28 +2392,10 @@
     "码示": [
       "welcome-to-my-blog"
     ],
-    "测": [
-      "welcome-to-my-blog"
-    ],
-    "试": [
-      "welcome-to-my-blog"
-    ],
     "高": [
       "welcome-to-my-blog"
     ],
     "亮": [
-      "welcome-to-my-blog"
-    ],
-    "功": [
-      "welcome-to-my-blog"
-    ],
-    "能": [
-      "welcome-to-my-blog"
-    ],
-    "于测": [
-      "welcome-to-my-blog"
-    ],
-    "测试": [
       "welcome-to-my-blog"
     ],
     "试代": [
@@ -1177,9 +2410,6 @@
     "亮功": [
       "welcome-to-my-blog"
     ],
-    "功能": [
-      "welcome-to-my-blog"
-    ],
     "图": [
       "welcome-to-my-blog"
     ],
@@ -1192,9 +2422,6 @@
     "片支": [
       "welcome-to-my-blog"
     ],
-    "显": [
-      "welcome-to-my-blog"
-    ],
     "客支": [
       "welcome-to-my-blog"
     ],
@@ -1204,19 +2431,10 @@
     "片显": [
       "welcome-to-my-blog"
     ],
-    "显示": [
-      "welcome-to-my-blog"
-    ],
     "自": [
       "welcome-to-my-blog"
     ],
     "动": [
-      "welcome-to-my-blog"
-    ],
-    "进": [
-      "welcome-to-my-blog"
-    ],
-    "行": [
       "welcome-to-my-blog"
     ],
     "优": [
@@ -1232,9 +2450,6 @@
       "welcome-to-my-blog"
     ],
     "动进": [
-      "welcome-to-my-blog"
-    ],
-    "进行": [
       "welcome-to-my-blog"
     ],
     "行优": [
@@ -1286,9 +2501,6 @@
       "welcome-to-my-blog"
     ],
     "录学": [
-      "welcome-to-my-blog"
-    ],
-    "方": [
       "welcome-to-my-blog"
     ],
     "案": [

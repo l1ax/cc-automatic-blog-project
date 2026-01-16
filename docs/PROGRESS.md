@@ -4,10 +4,10 @@
 
 | Field | Value |
 |-------|-------|
-| **Current Phase** | Phase 4 - Responsive Design & Polish |
-| **Current Task** | Task 4.8 Complete. Next: Task 4.7 - Implement dark/light theme toggle (optional) or Phase 5 |
+| **Current Phase** | Phase 5 - Advanced Features |
+| **Current Task** | Task 5.1/5.2 Complete. Next: Task 5.3 - Integrate Mermaid for diagrams |
 | **Blocker** | None |
-| **Last Action** | Added favicon and comprehensive SEO meta tags with Open Graph, Twitter Cards, sitemap, robots.txt, and structured data (JSON-LD) |
+| **Last Action** | Integrated KaTeX for math formula rendering with remark-math and rehype-katex plugins. Added MathBlock component and created test article with various LaTeX formulas. |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -18,7 +18,7 @@
 |-------|-------|
 | **Working Directory** | /Users/cong/chenzhicong/cc-automatic-blog-project |
 | **Git Branch** | main |
-| **Last Commit** | TBD |
+| **Last Commit** | eb69149 |
 
 ---
 
@@ -751,7 +751,7 @@ None
 
 - [x] **Task 4.8**: Add favicon and meta tags for SEO
   - **Completed**: 2026-01-17
-  - **Commit**: TBD
+  - **Commit**: eb69149
   - **Files Created**:
     - `app/icon.tsx` - Favicon icon generator (32x32 PNG)
     - `app/apple-icon.tsx` - Apple touch icon generator (180x180 PNG)
@@ -819,8 +819,46 @@ None
 
 ### Phase 5: Advanced Features
 
-- [ ] **Task 5.1**: Integrate KaTeX for math formula rendering
-- [ ] **Task 5.2**: Create MDX component for math equations
+- [x] **Task 5.1/5.2**: Integrate KaTeX for math formula rendering
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `components/math-block.tsx` - MathBlock component for KaTeX rendering
+    - `posts/2026-01-17-math-formula-test.md` - Test article with math formulas
+  - **Files Modified**:
+    - `components/mdx-content.tsx` - Added remark-math and rehype-katex plugins
+  - **Dependencies Added**:
+    - katex@0.16.11 - LaTeX math rendering library
+    - react-katex@3.0.1 - React component wrapper for KaTeX
+    - @types/katex@0.16.7 - TypeScript definitions for KaTeX
+    - remark-math@6.0.0 - Remark plugin for parsing math syntax
+    - rehype-katex@7.0.1 - Rehype plugin for rendering KaTeX
+  - **Features**:
+    - Inline math support using `$...$` syntax
+    - Block math support using `$$...$$` syntax
+    - Full LaTeX math syntax support via KaTeX
+    - Automatic font loading with KaTeX CSS
+    - Error handling for invalid formulas
+    - Responsive sizing for mobile and desktop
+  - **Math Syntax Supported**:
+    - Basic operations: $E = mc^2$, $a^2 + b^2 = c^2$
+    - Fractions: $\frac{a}{b}$
+    - Integrals: $\int_{a}^{b} f(x) dx$
+    - Summations: $\sum_{i=1}^{n} i$
+    - Matrices: $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$
+    - And many more LaTeX commands
+  - **Test Article Contents**:
+    - Inline formulas (E=mc², Euler's formula)
+    - Block formulas (quadratic formula, integrals, matrices)
+    - Complex examples (Fourier transform, Schrödinger equation)
+    - Chinese text with math formulas
+  - **Technical Implementation**:
+    - remark-math plugin parses `$` and `$$` delimiters in Markdown
+    - rehype-katex plugin converts math AST to KaTeX HTML
+    - KaTeX CSS loaded via ES import in mdx-content.tsx
+    - Math formulas rendered server-side at build time (static HTML)
+    - No client-side JavaScript needed for math rendering
+  - **Notes**: Build verified successfully. KaTeX is now integrated and fully functional. Math formulas can be written using standard LaTeX syntax with `$` for inline and `$$` for block display. The test article demonstrates various math capabilities.
 - [ ] **Task 5.3**: Integrate Mermaid for diagrams
 - [ ] **Task 5.4**: Add syntax highlighting for Mermaid code blocks
 - [ ] **Task 5.5**: Add related articles section at bottom of articles
@@ -933,8 +971,8 @@ None yet - project just started
 2. **Read PRD**: `cat docs/PRD.md` - understand full requirements
 3. **Check git log**: `git log --oneline -10` - see recent commits
 4. **Check git status**: `git status` - see uncommitted changes
-5. **Current task is**: Task 4.8 Complete. Next: Task 4.7 (optional - dark/light theme toggle) or Phase 5 - Advanced Features
-6. **Next action should be**: Skip Task 4.7 (optional) and proceed to Phase 5, starting with Task 5.1 - Integrate KaTeX for math formula rendering
+5. **Current task is**: Task 5.1/5.2 Complete. Next: Task 5.3 - Integrate Mermaid for diagrams
+6. **Next action should be**: Proceed with Task 5.3 - Integrate Mermaid for diagram rendering (flowcharts, sequence diagrams, etc.)
 
 **Important Context to Remember:**
 - This is a personal tech blog for knowledge management, not public engagement
@@ -984,6 +1022,7 @@ None yet - project just started
 | 2026-01-17 04:45 | Task 4.5 Complete | Added custom 404 page with helpful navigation. Created app/not-found.tsx with large 404 heading, clear error message in Chinese, sad face illustration, two action buttons (Return to Home, About Blog), and helpful suggestions list. Responsive design with consistent dark theme styling and SEO metadata. Build verified successfully. |
 | 2026-01-17 05:00 | Task 4.6 Complete | Added image optimization with Next.js Image component. Created MDXImage component with AVIF/WebP support, lazy loading, loading skeleton, error handling, and caption support. Configured next.config.ts with remote patterns for external images. Integrated into MDXContent for automatic optimization of images in Markdown content. Build verified successfully. |
 | 2026-01-17 05:30 | Task 4.8 Complete | Added favicon and comprehensive SEO meta tags. Created icon.tsx, apple-icon.tsx, opengraph-image.tsx, twitter-image.tsx for dynamic image generation. Created sitemap.ts and robots.ts for search engine optimization. Updated layout.tsx with Open Graph, Twitter Cards, robots meta tags, and JSON-LD structured data. Updated blog/[slug]/page.tsx with article-specific SEO metadata and BlogPosting schema. Build verified successfully. |
+| 2026-01-17 05:45 | Task 5.1/5.2 Complete | Integrated KaTeX for math formula rendering. Added remark-math and rehype-katex plugins to MDXContent. Created MathBlock component for KaTeX rendering. Created test article (math-formula-test.md) with inline and block math formulas including integrals, matrices, Fourier transforms, and Schrödinger equation. Math formulas render server-side at build time using standard LaTeX syntax ($ for inline, $$ for block). Build verified successfully. |
 
 ---
 
