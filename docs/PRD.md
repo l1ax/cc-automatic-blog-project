@@ -379,7 +379,7 @@ cc-automatic-blog-project/
 - [x] **Task 3.2**: Generate search index at build time
 - [x] **Task 3.3**: Create search box component with live results
 - [x] **Task 3.4**: Add keyboard shortcut for search (Cmd+K)
-- [ ] **Task 3.5**: Implement article table of contents (TOC)
+- [x] **Task 3.5**: Implement article table of contents (TOC)
 - [ ] **Task 3.6**: Add smooth scrolling for TOC links
 - [ ] **Task 3.7**: Add "Back to top" button
 

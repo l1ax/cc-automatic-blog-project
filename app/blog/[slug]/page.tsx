@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getArticleBySlug, getAllArticleSlugs } from '@/lib/content';
 import { MDXContent } from '@/components/mdx-content';
+import { TableOfContents } from '@/components/table-of-contents';
+import { extractToc } from '@/lib/toc';
 
 interface PageProps {
   params: Promise<{
@@ -42,8 +44,14 @@ export default async function BlogArticlePage({ params }: PageProps) {
     notFound();
   }
 
+  // Extract table of contents from article content
+  const toc = extractToc(article.content);
+
   return (
     <article className="min-h-screen">
+      {/* Table of Contents - fixed on desktop */}
+      {toc.length > 0 && <TableOfContents toc={toc} />}
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Back to Home */}
         <Link

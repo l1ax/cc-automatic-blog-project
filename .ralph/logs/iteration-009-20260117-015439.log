@@ -1,0 +1,28 @@
+Task 3.4 is now complete. Here's a summary of what was implemented:
+
+## Task 3.4 Complete: Add keyboard shortcut for search (Cmd+K)
+
+### Changes Made:
+
+1. **Global Keyboard Shortcut** (`components/search-box.tsx:68-80`)
+   - Added a `useEffect` hook that listens for keyboard events at the document level
+   - Detects `Cmd+K` (macOS) or `Ctrl+K` (Windows/Linux) key combinations
+   - When pressed, focuses the search input from anywhere on the page
+
+2. **Visual kbd Badge** (`components/search-box.tsx:156-161`)
+   - Added a visual indicator showing "⌘K" inside the search input
+   - Styled using the HTML `<kbd>` element with Tailwind CSS
+   - Uses secondary background with border for a keyboard key appearance
+   - Hidden on mobile devices (`hidden sm:inline-flex`) to save space
+   - Hidden when there's text in the search input (the clear button takes priority)
+
+3. **Updated Input Styling**
+   - Changed right padding from `pr-4` to `pr-16` to accommodate the kbd badge
+
+### Files Modified:
+- `components/search-box.tsx` - Added keyboard shortcut and kbd badge
+- `docs/PRD.md` - Marked Task 3.4 as complete
+- `docs/PROGRESS.md` - Updated progress tracking with completion details
+
+### Commit:
+- `fdbd35c` - feat: add keyboard shortcut (Cmd+K/Ctrl+K) to focus search input

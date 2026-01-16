@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 3 - Search & Navigation |
-| **Current Task** | Task 3.4 Complete. Next: Task 3.5 - Implement article table of contents (TOC) |
+| **Current Task** | Task 3.5 Complete. Next: Task 3.7 - Add "Back to top" button (Task 3.6 smooth scrolling already implemented) |
 | **Blocker** | None |
-| **Last Action** | Added keyboard shortcut (Cmd+K/Ctrl+K) to focus search input with visual kbd badge |
+| **Last Action** | Implemented article table of contents (TOC) with auto-extraction, active tracking, and smooth scrolling |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -410,12 +410,45 @@
     - Mobile responsive (hidden on small screens)
   - **Notes**: Build verified successfully. Search box is fully functional with live search results. The search index loads on demand and results appear instantly as you type. Keyboard navigation allows quick selection of results.
 
+- [x] **Task 3.5**: Implement article table of contents (TOC)
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `lib/toc.ts` - TOC extraction utilities with heading ID generation
+    - `components/table-of-contents.tsx` - Interactive TOC component with active tracking
+  - **Files Modified**:
+    - `components/mdx-content.tsx` - Added IDs to all headings (h1-h4) for TOC linking
+    - `app/blog/[slug]/page.tsx` - Integrated TableOfContents component
+  - **Features**:
+    - Auto-extraction of headings from Markdown content
+    - URL-friendly ID generation for headings (supports Chinese characters)
+    - Fixed TOC sidebar on desktop (hidden on mobile/tablet)
+    - Intersection Observer for active heading tracking
+    - Click-to-scroll with smooth scrolling and header offset
+    - Collapsible TOC section
+    - Hierarchical indentation based on heading level
+    - Active heading highlighting with orange accent color
+    - `scroll-mt-24` CSS for proper scroll offset
+  - **Styling**:
+    - Fixed position on the right side of article content
+    - Orange accent for active heading
+    - Hover effects for inactive headings
+    - Proper spacing and indentation for hierarchy
+    - Hidden on smaller screens (lg breakpoint)
+  - **Technical Implementation**:
+    - Client-side component ("use client")
+    - Uses Intersection Observer API for efficient scroll tracking
+    - Generates unique IDs from heading text (removes markdown syntax)
+    - Captures ref value properly for React Hook cleanup
+    - Smooth scroll with header offset calculation
+  - **Notes**: Build verified successfully. TOC is fully functional with active heading tracking and smooth scrolling. The component only renders on desktop screens (lg breakpoint) to save space on mobile devices.
+
 ### In Progress
 
-- [ ] **Task 3.5**: Implement article table of contents (TOC)
+- [ ] **Task 3.6**: Add smooth scrolling for TOC links
   - **Priority**: P1
-  - **Dependencies**: Task 3.4
-  - **Notes**: Next task - auto-generate TOC from article headings
+  - **Dependencies**: Task 3.5
+  - **Notes**: Already implemented with TOC - smooth scrolling is included in Task 3.5
 
 ### Pending
 
@@ -429,8 +462,8 @@
 - [x] **Task 3.2**: Generate search index at build time
 - [x] **Task 3.3**: Create search box component with live results
 - [x] **Task 3.4**: Add keyboard shortcut for search (Cmd+K)
-- [ ] **Task 3.5**: Implement article table of contents (TOC)
-- [ ] **Task 3.6**: Add smooth scrolling for TOC links
+- [x] **Task 3.5**: Implement article table of contents (TOC)
+- [ ] **Task 3.6**: Add smooth scrolling for TOC links (already implemented)
 - [ ] **Task 3.7**: Add "Back to top" button
 
 ### Phase 4: Responsive Design & Polish
@@ -560,8 +593,8 @@ None yet - project just started
 2. **Read PRD**: `cat docs/PRD.md` - understand full requirements
 3. **Check git log**: `git log --oneline -10` - see recent commits
 4. **Check git status**: `git status` - see uncommitted changes
-5. **Current task is**: Task 3.5 - Implement article table of contents (TOC)
-6. **Next action should be**: Auto-generate TOC from article headings with click-to-scroll functionality
+5. **Current task is**: Task 3.7 - Add "Back to top" button (Task 3.6 smooth scrolling already implemented)
+6. **Next action should be**: Add floating "Back to top" button that appears when scrolling down
 
 **Important Context to Remember:**
 - This is a personal tech blog for knowledge management, not public engagement
@@ -601,6 +634,7 @@ None yet - project just started
 | 2026-01-17 02:50 | Task 3.2 Complete | Generated search index at build time. Created build-index.ts with inverted index for efficient client-side search. Added client-search.ts for loading and searching pre-built index. Search index is served as static JSON from public/search-index.json. Build script integration complete. |
 | 2026-01-17 03:00 | Task 3.3 Complete | Created SearchBox component with live search results dropdown. Integrated into header navigation. Fixed module bundling issues by creating shared types.ts and removing sync wrappers with Node.js imports from client bundle. Build verified successfully. |
 | 2026-01-17 03:15 | Task 3.4 Complete | Added global keyboard shortcut (Cmd+K/Ctrl+K) to focus search input. Added visual kbd badge showing the keyboard shortcut (⌘K) on desktop. Badge is hidden on mobile to save space. Build verified successfully. |
+| 2026-01-17 03:30 | Task 3.5 Complete | Implemented article table of contents (TOC) with auto-extraction from headings. Created lib/toc.ts with extractToc and generateHeadingId utilities. Created TableOfContents component with Intersection Observer for active tracking, collapsible UI, and smooth scrolling. Updated MDXContent to add IDs to all headings (h1-h4). Integrated TOC into article detail page. Hidden on mobile/tablet, visible on desktop. Build verified successfully. |
 
 ---
 

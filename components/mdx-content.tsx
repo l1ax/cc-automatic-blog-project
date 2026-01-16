@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { CodeBlock } from './code-block';
+import { generateHeadingId } from '@/lib/toc';
 
 interface MDXContentProps {
   content: string;
@@ -15,18 +16,38 @@ export function MDXContent({ content }: MDXContentProps) {
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw]}
       components={{
-        h1: ({ node, ...props }) => (
-          <h1 className="text-3xl sm:text-4xl font-bold text-text-primary mt-12 mb-6 first:mt-0" {...props} />
-        ),
-        h2: ({ node, ...props }) => (
-          <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mt-10 mb-5" {...props} />
-        ),
-        h3: ({ node, ...props }) => (
-          <h3 className="text-xl sm:text-2xl font-semibold text-text-primary mt-8 mb-4" {...props} />
-        ),
-        h4: ({ node, ...props }) => (
-          <h4 className="text-lg sm:text-xl font-semibold text-text-primary mt-6 mb-3" {...props} />
-        ),
+        h1: ({ node, children, ...props }) => {
+          const id = generateHeadingId(String(children));
+          return (
+            <h1 id={id} className="text-3xl sm:text-4xl font-bold text-text-primary mt-12 mb-6 first:mt-0 scroll-mt-24" {...props}>
+              {children}
+            </h1>
+          );
+        },
+        h2: ({ node, children, ...props }) => {
+          const id = generateHeadingId(String(children));
+          return (
+            <h2 id={id} className="text-2xl sm:text-3xl font-bold text-text-primary mt-10 mb-5 scroll-mt-24" {...props}>
+              {children}
+            </h2>
+          );
+        },
+        h3: ({ node, children, ...props }) => {
+          const id = generateHeadingId(String(children));
+          return (
+            <h3 id={id} className="text-xl sm:text-2xl font-semibold text-text-primary mt-8 mb-4 scroll-mt-24" {...props}>
+              {children}
+            </h3>
+          );
+        },
+        h4: ({ node, children, ...props }) => {
+          const id = generateHeadingId(String(children));
+          return (
+            <h4 id={id} className="text-lg sm:text-xl font-semibold text-text-primary mt-6 mb-3 scroll-mt-24" {...props}>
+              {children}
+            </h4>
+          );
+        },
         p: ({ node, ...props }) => (
           <p className="text-text-secondary leading-relaxed mb-6" {...props} />
         ),
