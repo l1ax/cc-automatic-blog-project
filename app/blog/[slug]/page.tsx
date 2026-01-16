@@ -183,6 +183,26 @@ export default async function BlogArticlePage({ params }: PageProps) {
               <time dateTime={article.date}>{article.date}</time>
             </div>
 
+            {article.readingTime && (
+              <div className="flex items-center">
+                <span className="w-1 h-1 bg-text-muted rounded-full mr-1.5 sm:mr-2"></span>
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 sm:mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>{article.readingTime} 分钟阅读</span>
+              </div>
+            )}
+
             {article.category && (
               <div className="flex items-center">
                 <span className="w-1 h-1 bg-text-muted rounded-full mr-1.5 sm:mr-2"></span>

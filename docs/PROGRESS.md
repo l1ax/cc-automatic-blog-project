@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 5 - Advanced Features |
-| **Current Task** | Task 5.5 Complete. Next: Task 5.6 - Implement reading time estimation |
+| **Current Task** | Task 5.6 Complete. Next: Task 5.7 - Add copy button to code blocks |
 | **Blocker** | None |
-| **Last Action** | Added related articles section at bottom of articles. Created getRelatedArticles function in lib/content.ts with smart scoring algorithm (tags > category > recency). Created RelatedArticles component with responsive grid layout and hover effects. Integrated into article detail page. |
+| **Last Action** | Added reading time display to article detail page. Reading time calculation already existed in LocalMDXProvider (~200 words/min excluding code blocks). Added clock icon and "X 分钟阅读" display to article header metadata section. |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -982,7 +982,27 @@ None
     - Component receives related articles as props
     - No client-side JavaScript for recommendations (SSG)
   - **Notes**: Build verified successfully. Related articles section now appears at the bottom of each article, recommending content based on shared tags and categories. The scoring algorithm ensures the most relevant articles appear first.
-- [ ] **Task 5.6**: Implement reading time estimation
+
+- [x] **Task 5.6**: Implement reading time estimation
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Modified**:
+    - `app/blog/[slug]/page.tsx` - Added reading time display to article detail page
+  - **Features**:
+    - Reading time calculation based on ~200 words per minute average
+    - Excludes code blocks and inline code from word count
+    - Displayed on homepage article cards with clock icon
+    - Displayed on article detail page header with clock icon
+    - Shown as "X 分钟阅读" format
+    - Consistent styling with other metadata (date, category)
+  - **Technical Implementation**:
+    - calculateReadingTime() function in lib/providers/local-mdx.ts
+    - Removes code blocks (```...```) and inline code (`...`)
+    - Converts markdown links to plain text
+    - Splits by whitespace to count words
+    - Returns minimum 1 minute, rounded up
+  - **Notes**: Build verified successfully. Reading time estimation was already implemented in the content provider and homepage cards. This task added reading time display to the article detail page header for consistency.
+
 - [ ] **Task 5.7**: Add copy button to code blocks
 
 ### Phase 6: Deployment & CI/CD
@@ -1156,6 +1176,7 @@ None yet - project just started
 | 2026-01-17 06:00 | Task 5.3 Complete | Integrated Mermaid for diagram rendering. Created MermaidDiagram component with client-side rendering using mermaid@11.6.0. Added dark theme customization matching blog's orange accent colors. Integrated MermaidDiagram into MDXContent to detect mermaid code blocks. Created test article (mermaid-diagram-test.md) with 10 different diagram types: flowcharts, sequence diagrams, state diagrams, class diagrams, ER diagrams, Gantt charts, pie charts, Git graphs, mindmaps, and timelines. All diagrams support Chinese text and responsive layout with horizontal scrolling. Build verified successfully. |
 | 2026-01-17 06:15 | Task 5.4 Complete | Added syntax highlighting for Mermaid code blocks. Enhanced MermaidDiagram component with toggle button to switch between rendered diagram and syntax highlighted code view. Added header bar with "Mermaid Diagram" label and toggle button. Uses react-syntax-highlighter with VSCode Dark Plus theme for Mermaid syntax highlighting. Styled consistently with code blocks. Build verified successfully. |
 | 2026-01-17 06:30 | Task 5.5 Complete | Added related articles section at bottom of articles. Created getRelatedArticles function in lib/content.ts with smart scoring algorithm (shared tags: 10 points each, same category: 5 points, recency bonus: decreases over time). Created RelatedArticles component with responsive grid layout (1→2→3 columns), article cards showing title/date/reading time/summary/tags, hover effects with orange accent, "阅读更多" arrow that slides on hover. Integrated into article detail page between content and footer. Build verified successfully. |
+| 2026-01-17 06:45 | Task 5.6 Complete | Added reading time display to article detail page. Reading time calculation already existed in LocalMDXProvider (~200 words/min excluding code blocks). Added clock icon and "X 分钟阅读" display to article header metadata section, positioned between date and category. Consistent styling with existing metadata elements. Build verified successfully. |
 
 ---
 
