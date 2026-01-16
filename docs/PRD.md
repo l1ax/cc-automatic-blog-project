@@ -86,12 +86,12 @@
     - [ ] 每篇文章显示阅读时间估算
   - **Priority**: P0
 
-- [ ] **US-002**: 作为博客作者，我想要阅读单篇文章，以便获取完整的技术内容
+- [x] **US-002**: 作为博客作者，我想要阅读单篇文章，以便获取完整的技术内容
   - **Acceptance Criteria**:
-    - [ ] 支持 Markdown 完整渲染（标题、列表、引用、表格等）
-    - [ ] 代码块支持语法高亮（至少支持主流语言）
-    - [ ] 右侧显示文章目录（TOC），点击可跳转
-    - [ ] 文章底部显示相关文章推荐
+    - [x] 支持 Markdown 完整渲染（标题、列表、引用、表格等）
+    - [x] 代码块支持语法高亮（至少支持主流语言）
+    - [x] 右侧显示文章目录（TOC），点击可跳转
+    - [x] 文章底部显示相关文章推荐
   - **Priority**: P0
 
 - [ ] **US-003**: 作为博客作者，我想要搜索文章内容，以便快速找到需要的信息
@@ -412,7 +412,7 @@ cc-automatic-blog-project/
 - [x] **Task 5.2**: Create MDX component for math equations
 - [x] **Task 5.3**: Integrate Mermaid for diagrams
 - [x] **Task 5.4**: Add syntax highlighting for Mermaid code blocks
-- [ ] **Task 5.5**: Add related articles section at bottom of articles
+- [x] **Task 5.5**: Add related articles section at bottom of articles
 - [ ] **Task 5.6**: Implement reading time estimation
 - [ ] **Task 5.7**: Add copy button to code blocks
 

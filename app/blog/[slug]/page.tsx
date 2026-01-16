@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getArticleBySlug, getAllArticleSlugs } from '@/lib/content';
+import { getArticleBySlug, getAllArticleSlugs, getRelatedArticles } from '@/lib/content';
 import { MDXContent } from '@/components/mdx-content';
 import { TableOfContents } from '@/components/table-of-contents';
+import { RelatedArticles } from '@/components/related-articles';
 import { extractToc } from '@/lib/toc';
 import type { Metadata } from 'next';
 
@@ -84,6 +85,14 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   // Extract table of contents from article content
   const toc = extractToc(article.content);
+
+  // Get related articles
+  const relatedArticles = await getRelatedArticles(
+    article.slug,
+    article.tags || [],
+    article.category,
+    3
+  );
 
   // Generate structured data for this article
   const structuredData = {
@@ -209,6 +218,9 @@ export default async function BlogArticlePage({ params }: PageProps) {
         <div className="prose prose-invert prose-base sm:prose-lg max-w-none reading-width">
           <MDXContent content={article.content} />
         </div>
+
+        {/* Related Articles */}
+        <RelatedArticles articles={relatedArticles} />
 
         {/* Article Footer */}
         <footer className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-divider">

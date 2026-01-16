@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 5 - Advanced Features |
-| **Current Task** | Task 5.4 Complete. Next: Task 5.5 - Add related articles section at bottom of articles |
+| **Current Task** | Task 5.5 Complete. Next: Task 5.6 - Implement reading time estimation |
 | **Blocker** | None |
-| **Last Action** | Added syntax highlighting for Mermaid code blocks with toggle button. Enhanced MermaidDiagram component to switch between rendered diagram and syntax highlighted code view. Uses react-syntax-highlighter with VSCode Dark Plus theme. |
+| **Last Action** | Added related articles section at bottom of articles. Created getRelatedArticles function in lib/content.ts with smart scoring algorithm (tags > category > recency). Created RelatedArticles component with responsive grid layout and hover effects. Integrated into article detail page. |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -947,7 +947,41 @@ None
     - Existing mermaid rendering for diagram view
   - **Notes**: Build verified successfully. Mermaid diagrams now have a toggle button to view the raw Mermaid source code with syntax highlighting. This is useful for users who want to see or copy the diagram definition.
 
-- [ ] **Task 5.5**: Add related articles section at bottom of articles
+- [x] **Task 5.5**: Add related articles section at bottom of articles
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `components/related-articles.tsx` - RelatedArticles component
+  - **Files Modified**:
+    - `lib/content.ts` - Added getRelatedArticles function
+    - `app/blog/[slug]/page.tsx` - Integrated RelatedArticles component
+  - **Features**:
+    - Smart related article recommendation based on:
+      - Shared tags (highest priority: 10 points per shared tag)
+      - Same category (medium priority: 5 points)
+      - Recency bonus (lower priority: decreases over time)
+    - Excludes current article from recommendations
+    - Configurable limit (default: 3 articles)
+    - Responsive grid layout (1 column on mobile, 2 on tablet, 3 on desktop)
+    - Article cards showing title, date, reading time, summary, and tags
+    - "View all articles" link at bottom
+    - Hover effects with orange accent color
+    - Consistent styling with blog's dark theme
+  - **Styling**:
+    - Section header with icon and "相关文章" title
+    - Grid layout with responsive breakpoints (md:grid-cols-2 lg:grid-cols-3)
+    - Article cards with tertiary background and border
+    - Hover effects: border color change, shadow effect, title color change
+    - Arrow icon that slides on hover ("阅读更多")
+    - Truncated text (line-clamp-2) for titles and summaries
+    - Tag badges with overflow indicator (+N for extra tags)
+  - **Technical Implementation**:
+    - Server-side function in lib/content.ts for scoring and ranking
+    - Scoring algorithm: shared tags > same category > recency
+    - Async function integrated into article detail page
+    - Component receives related articles as props
+    - No client-side JavaScript for recommendations (SSG)
+  - **Notes**: Build verified successfully. Related articles section now appears at the bottom of each article, recommending content based on shared tags and categories. The scoring algorithm ensures the most relevant articles appear first.
 - [ ] **Task 5.6**: Implement reading time estimation
 - [ ] **Task 5.7**: Add copy button to code blocks
 
@@ -1121,6 +1155,7 @@ None yet - project just started
 | 2026-01-17 05:45 | Task 5.1/5.2 Complete | Integrated KaTeX for math formula rendering. Added remark-math and rehype-katex plugins to MDXContent. Created MathBlock component for KaTeX rendering. Created test article (math-formula-test.md) with inline and block math formulas including integrals, matrices, Fourier transforms, and Schrödinger equation. Math formulas render server-side at build time using standard LaTeX syntax ($ for inline, $$ for block). Build verified successfully. |
 | 2026-01-17 06:00 | Task 5.3 Complete | Integrated Mermaid for diagram rendering. Created MermaidDiagram component with client-side rendering using mermaid@11.6.0. Added dark theme customization matching blog's orange accent colors. Integrated MermaidDiagram into MDXContent to detect mermaid code blocks. Created test article (mermaid-diagram-test.md) with 10 different diagram types: flowcharts, sequence diagrams, state diagrams, class diagrams, ER diagrams, Gantt charts, pie charts, Git graphs, mindmaps, and timelines. All diagrams support Chinese text and responsive layout with horizontal scrolling. Build verified successfully. |
 | 2026-01-17 06:15 | Task 5.4 Complete | Added syntax highlighting for Mermaid code blocks. Enhanced MermaidDiagram component with toggle button to switch between rendered diagram and syntax highlighted code view. Added header bar with "Mermaid Diagram" label and toggle button. Uses react-syntax-highlighter with VSCode Dark Plus theme for Mermaid syntax highlighting. Styled consistently with code blocks. Build verified successfully. |
+| 2026-01-17 06:30 | Task 5.5 Complete | Added related articles section at bottom of articles. Created getRelatedArticles function in lib/content.ts with smart scoring algorithm (shared tags: 10 points each, same category: 5 points, recency bonus: decreases over time). Created RelatedArticles component with responsive grid layout (1→2→3 columns), article cards showing title/date/reading time/summary/tags, hover effects with orange accent, "阅读更多" arrow that slides on hover. Integrated into article detail page between content and footer. Build verified successfully. |
 
 ---
 

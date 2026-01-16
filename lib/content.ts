@@ -67,3 +67,54 @@ export async function searchArticles(
 ): Promise<import('./providers/types').ArticleMetadata[]> {
   return contentProvider.searchArticles({ query, limit });
 }
+
+/**
+ * Get related articles based on shared tags, category, and recency
+ * @param currentSlug - The slug of the current article (will be excluded from results)
+ * @param currentTags - Tags of the current article for finding related content
+ * @param currentCategory - Category of the current article (optional)
+ * @param limit - Maximum number of related articles to return (default: 3)
+ */
+export async function getRelatedArticles(
+  currentSlug: string,
+  currentTags: string[] = [],
+  currentCategory?: string,
+  limit: number = 3
+): Promise<import('./providers/types').ArticleMetadata[]> {
+  const allArticles = await contentProvider.getAllArticles();
+
+  // Filter out the current article
+  const otherArticles = allArticles.filter(article => article.slug !== currentSlug);
+
+  // Score each article based on relevance
+  const scoredArticles = otherArticles.map(article => {
+    let score = 0;
+
+    // Tag matching (highest priority)
+    if (article.tags && currentTags.length > 0) {
+      const sharedTags = article.tags.filter(tag => currentTags.includes(tag));
+      score += sharedTags.length * 10;
+    }
+
+    // Category matching (medium priority)
+    if (article.category && currentCategory && article.category === currentCategory) {
+      score += 5;
+    }
+
+    // Recency bonus (lower priority, but helps as fallback)
+    // More recent articles get a small bonus
+    const articleDate = new Date(article.date);
+    const now = new Date();
+    const daysSincePublication = Math.floor((now.getTime() - articleDate.getTime()) / (1000 * 60 * 60 * 24));
+    const recencyBonus = Math.max(0, 5 - daysSincePublication / 365); // Decreases over time, min 0
+    score += recencyBonus;
+
+    return { article, score };
+  });
+
+  // Sort by score (descending) and return top results
+  return scoredArticles
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(item => item.article);
+}
