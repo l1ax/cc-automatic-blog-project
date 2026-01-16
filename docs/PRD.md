@@ -427,10 +427,10 @@ cc-automatic-blog-project/
 - [x] **Task 6.1**: Configure Vercel project with GitHub integration
 - [x] **Task 6.2**: Set up automatic deployment on push to main branch
 - [x] **Task 6.3**: Add build optimization (bundle analysis)
-- [ ] **Task 6.4**: Configure custom domain (if applicable)
-- [ ] **Task 6.5**: Set up environment variables for any API keys
-- [ ] **Task 6.6**: Add pre-deployment checks (type checking, linting)
-- [ ] **Task 6.7**: Create deployment documentation
+- [x] **Task 6.4**: Configure custom domain (if applicable)
+- [x] **Task 6.5**: Set up environment variables for any API keys
+- [x] **Task 6.6**: Add pre-deployment checks (type checking, linting)
+- [x] **Task 6.7**: Create deployment documentation
 
 **Phase 6 Verification**: Git push 后自动部署成功，无构建错误
 

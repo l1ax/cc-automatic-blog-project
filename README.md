@@ -54,6 +54,8 @@ npm run build         # Build Next.js application
 
 ## Deployment
 
+> **For comprehensive deployment instructions, see [Deployment Guide](docs/DEPLOYMENT.md)**
+
 ### Option 1: Deploy via Vercel Dashboard (Recommended)
 
 This is the easiest method for automatic deployments:

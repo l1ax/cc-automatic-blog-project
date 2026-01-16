@@ -4,10 +4,10 @@
 
 | Field | Value |
 |-------|-------|
-| **Current Phase** | Phase 6 - Deployment & CI/CD |
-| **Current Task** | Task 6.3 Complete. Next: Task 6.4 - Configure custom domain (if applicable) |
+| **Current Phase** | Phase 7 - Testing & Documentation |
+| **Current Task** | Phase 6 Complete. Next: Task 7.1 - Add unit tests for utility functions |
 | **Blocker** | None |
-| **Last Action** | Added build optimization with bundle analysis. Installed @next/bundle-analyzer, configured next.config.ts with bundle analyzer plugin, added build:analyze script, and created comprehensive BUILD_OPTIMIZATION.md documentation. |
+| **Last Action** | Completed Phase 6: Deployment & CI/CD. Created comprehensive DEPLOYMENT.md documentation with deployment methods, environment variables, custom domain setup, CI/CD pipeline, build optimization, troubleshooting guide, deployment checklist, and advanced topics. |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -1128,10 +1128,96 @@ None
     - Troubleshooting guide
   - **Notes**: Build verified successfully. Bundle analyzer is now configured and ready to use. Run `npm run build:analyze` to generate interactive bundle reports. The BUILD_OPTIMIZATION.md guide provides comprehensive documentation for build optimization best practices.
 
-- [ ] **Task 6.4**: Configure custom domain (if applicable)
-- [ ] **Task 6.5**: Set up environment variables for any API keys
-- [ ] **Task 6.6**: Add pre-deployment checks (type checking, linting)
-- [ ] **Task 6.7**: Create deployment documentation
+- [x] **Task 6.4**: Configure custom domain (if applicable)
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Notes**: This task is optional and manual. Documentation provided in DEPLOYMENT.md for users who want to configure a custom domain. The guide covers:
+    - Vercel-provided subdomain (free)
+    - Custom domain configuration
+    - DNS setup for various providers
+    - Cloudflare integration
+    - SSL certificate management
+  - **User Action Required**:
+    - Custom domain configuration is done via Vercel dashboard
+    - DNS records must be configured with domain provider
+    - DNS propagation takes 5-30 minutes
+    - Vercel automatically issues SSL certificates
+
+- [x] **Task 6.5**: Set up environment variables for any API keys
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `.env.example` - Environment variables template
+  - **Features**:
+    - .env.example template for reference
+    - NEXT_PUBLIC_SITE_URL variable documented
+    - Environment variable configuration instructions in README.md
+    - Vercel environment variable setup instructions in DEPLOYMENT.md
+  - **Documented Variables**:
+    - NEXT_PUBLIC_SITE_URL - Production URL for sitemap/OG tags
+    - ANALYZE - Enable bundle analyzer
+  - **Notes**: No API keys are required for this blog's core functionality. Environment variables are optional and documented. Users can configure them via Vercel dashboard or .env.local for local development.
+
+- [x] **Task 6.6**: Add pre-deployment checks (type checking, linting)
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD (already implemented in Task 6.1)
+  - **Files Modified**:
+    - `.github/workflows/ci.yml` - CI workflow with pre-deployment checks (from Task 6.1)
+    - `package.json` - Scripts for type checking and linting (from Task 6.3)
+  - **Features**:
+    - GitHub Actions CI workflow with separate jobs:
+      - type-check: TypeScript validation with tsc --noEmit
+      - lint: ESLint code quality checks
+      - build: Production build (depends on type-check and lint passing)
+    - Build job requires both type-check and lint to pass before running
+    - Scripts available for local testing:
+      - npm run type-check
+      - npm run lint
+    - CI runs on push to main and pull requests
+    - Branch protection can require these checks before merging
+  - **CI Jobs**:
+    - type-check job validates TypeScript types
+    - lint job checks code quality with ESLint
+    - build job only runs if type-check and lint pass
+  - **Notes**: Pre-deployment checks were already implemented in Task 6.1's CI workflow. The type-check and lint scripts were added in Task 6.3. No additional code changes were needed for this task.
+
+- [x] **Task 6.7**: Create deployment documentation
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `docs/DEPLOYMENT.md` - Comprehensive deployment guide
+  - **Files Modified**:
+    - `README.md` - Added link to DEPLOYMENT.md
+  - **Features**:
+    - Comprehensive deployment guide covering:
+      - Quick start deployment (5 minutes)
+      - Multiple deployment methods (Vercel Dashboard, CLI, REST API)
+      - Environment variables configuration
+      - Custom domain setup with DNS instructions
+      - Pre-deployment checks (type checking, linting, build verification)
+      - CI/CD pipeline documentation
+      - Build optimization and bundle analysis
+      - Troubleshooting guide with common issues and solutions
+      - Deployment checklist for pre/post-deployment verification
+      - Advanced topics (zero-downtime deployments, rollbacks, preview deployments)
+      - Support resources and links to official documentation
+    - Quick reference in README.md linking to full guide
+  - **Sections Covered**:
+    - Quick Start - Fastest deployment method
+    - Deployment Methods - Dashboard, CLI, and API options
+    - Environment Variables - Configuration guide
+    - Custom Domain Configuration - DNS setup with multiple providers
+    - Pre-deployment Checks - Type checking, linting, build verification
+    - CI/CD Pipeline - GitHub Actions workflow documentation
+    - Build Optimization - Bundle analysis and performance tips
+    - Troubleshooting - Common issues and solutions
+    - Deployment Checklist - Pre and post-deployment verification
+    - Advanced Topics - Zero-downtime, rollbacks, preview deployments
+  - **Notes**: Build verified successfully. The DEPLOYMENT.md guide provides comprehensive documentation for deploying the blog to Vercel, including troubleshooting, custom domain setup, and advanced deployment scenarios. README.md now links to this guide for users seeking detailed deployment instructions.
+
+### Phase 6: Deployment & CI/CD
+
+**All tasks completed!**
 
 ### Phase 7: Testing & Documentation
 
