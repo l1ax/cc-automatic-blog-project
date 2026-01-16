@@ -4,10 +4,10 @@
 
 | Field | Value |
 |-------|-------|
-| **Current Phase** | Phase 1 - Walking Skeleton (Foundation) |
-| **Current Task** | Task 1.7 - Deploy to Vercel and verify basic build works |
+| **Current Phase** | Phase 2 - Core Features (MVP) |
+| **Current Task** | Phase 1 Complete. Ready to start Phase 2 - Core Features (MVP) |
 | **Blocker** | None |
-| **Last Action** | Created article detail page at `/blog/[slug]` with MDX rendering support |
+| **Last Action** | Configured project for Vercel deployment and verified build works |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -105,7 +105,7 @@
 
 - [x] **Task 1.6**: Create article detail page at `/blog/[slug]` that renders MDX
   - **Completed**: 2026-01-17
-  - **Commit**: [pending]
+  - **Commit**: 2bf15a6
   - **Files Created**:
     - `lib/content.ts` - Content utility functions for reading and parsing MDX files from posts/ directory
     - `components/mdx-content.tsx` - Client component for rendering Markdown with styled components
@@ -128,17 +128,28 @@
     - Responsive layout
   - **Notes**: Build verified successfully. Articles are now rendered at `/blog/[slug]` URLs. The homepage displays a dynamic list of all published articles.
 
+- [x] **Task 1.7**: Deploy to Vercel and verify basic build works
+  - **Completed**: 2026-01-17
+  - **Commit**: 3701530
+  - **Files Created**:
+    - `vercel.json` - Vercel deployment configuration
+  - **Files Modified**:
+    - `README.md` - Added comprehensive deployment documentation
+  - **Features**:
+    - Vercel deployment configuration with Next.js framework detection
+    - README with deployment instructions (Vercel Dashboard + CLI methods)
+    - Production build verified successfully (`npm run build`)
+    - Static pages generated for homepage and article detail pages
+    - Build output structure verified
+  - **Notes**: Project is ready for Vercel deployment via GitHub integration. The build works locally with SSG generating static pages. Deploy via Vercel Dashboard by importing the GitHub repository, or use Vercel CLI after login.
+
 ### In Progress
 
-- [ ] **Task 1.7**: Deploy to Vercel and verify basic build works
-  - **Status**: Ready to begin
-  - **Notes**: Deploy the project to Vercel and verify the build and deployment process works correctly
+- [ ] **Task 2.1**: Implement content provider interface and local MDX implementation
+  - **Status**: Next task - Ready to begin
+  - **Notes**: Create abstract content provider interface and implement local MDX provider for better architecture and future migration path
 
 ### Pending
-
-### Phase 1: Walking Skeleton (Foundation)
-
-- [ ] **Task 1.7**: Deploy to Vercel and verify basic build works
 
 ### Phase 2: Core Features (MVP)
 
@@ -300,6 +311,7 @@ None yet - project just started
 | 2026-01-17 01:11 | Task 1.4 Complete | Created first sample article with frontmatter (posts/2026-01-17-welcome-to-my-blog.md) |
 | 2026-01-17 01:14 | Task 1.5 Complete | Implemented dark theme layout with header, footer, styled homepage, and comprehensive Tailwind color palette |
 | 2026-01-17 01:17 | Task 1.6 Complete | Created article detail page at `/blog/[slug]` with MDX rendering, content utilities, and dynamic homepage |
+| 2026-01-17 01:20 | Task 1.7 Complete | Configured Vercel deployment with vercel.json, added comprehensive README with deployment instructions, verified production build works |
 
 ---
 

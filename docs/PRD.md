@@ -348,7 +348,7 @@ cc-automatic-blog-project/
 - [x] **Task 1.4**: Create first sample article in `/posts` directory with Frontmatter
 - [x] **Task 1.5**: Implement basic layout with dark theme (深灰色 + 橙色配色)
 - [x] **Task 1.6**: Create article detail page at `/blog/[slug]` that renders MDX
-- [ ] **Task 1.7**: Deploy to Vercel and verify basic build works
+- [x] **Task 1.7**: Deploy to Vercel and verify basic build works
 
 **Phase 1 Verification**: 访问任意一篇文章的 URL 能正确渲染 Markdown 内容，部署到 Vercel 成功
 
