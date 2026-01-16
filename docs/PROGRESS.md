@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 2 - Core Features (MVP) |
-| **Current Task** | Task 2.6 Complete. Next: Task 2.7 - Create tag page at `/blog/tag/[tag]` |
+| **Current Task** | Task 2.7 Complete. Next: Task 2.8 - Add About page |
 | **Blocker** | None |
-| **Last Action** | Implemented tag filtering functionality with TagFilter component using URL search params |
+| **Last Action** | Created tag pages at `/blog/tag/[tag]` with SSG, breadcrumb navigation, and article list |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -253,17 +253,40 @@
     - Maintains other URL params when filtering
   - **Notes**: Build verified successfully. Tag filtering is fully functional on the homepage. The URL-based approach ensures shareable links and SSR compatibility.
 
+- [x] **Task 2.7**: Create tag page at `/blog/tag/[tag]`
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `app/blog/tag/[tag]/page.tsx` - Dynamic route for tag pages
+  - **Features**:
+    - Static generation with `generateStaticParams` for all tags
+    - SEO metadata generation per tag page
+    - Tag-decoded URLs (supports Chinese characters)
+    - Breadcrumb navigation (首页 / 标签 / [tag])
+    - Article count display
+    - ArticleCard component reuse for consistent styling
+    - "Back to home" link
+    - 404 handling for non-existent tags
+    - Responsive layout with proper spacing
+  - **URL Structure**:
+    - Tag pages are accessible at `/blog/tag/[encoded-tag]`
+    - Chinese tags are URL-encoded (e.g., `/blog/tag/%E5%8D%9A%E5%AE%A2`)
+  - **Styling**:
+    - Consistent with existing page design
+    - Orange accent bar for header
+    - Proper spacing and typography
+  - **Notes**: Build verified successfully. Tag pages are generated at build time with SSG. The breadcrumb navigation provides clear context for users.
+
 ### In Progress
 
-- [ ] **Task 2.7**: Create tag page at `/blog/tag/[tag]`
+- [ ] **Task 2.8**: Add About page
   - **Status**: Next task - Ready to begin
-  - **Notes**: Create dedicated pages for each tag with article list
+  - **Notes**: Create an About page with personal introduction
 
 ### Pending
 
 ### Phase 2: Core Features (MVP)
 
-- [ ] **Task 2.7**: Create tag page at `/blog/tag/[tag]`
 - [ ] **Task 2.8**: Add About page
 
 ### Phase 3: Search & Navigation
@@ -429,6 +452,7 @@ None yet - project just started
 | 2026-01-17 01:44 | Tasks 2.2/2.3/2.5 Complete | Created ArticleCard component with comprehensive metadata display (date, reading time, tags, category) and enhanced hover effects; Refactored homepage to use the new component |
 | 2026-01-17 01:53 | Task 2.4 Complete | Implemented code highlighting with react-syntax-highlighter (PrismJS). Added CodeBlock component with language detection, VSCode Dark Plus theme, copy button with visual feedback, and support for 40+ programming languages |
 | 2026-01-17 02:00 | Task 2.6 Complete | Implemented tag filtering functionality with TagFilter component using URL search params. Added client-side interactive tag buttons with active state highlighting, clear filter option, and shareable filtered URLs |
+| 2026-01-17 02:07 | Task 2.7 Complete | Created tag pages at `/blog/tag/[tag]` with SSG. Added breadcrumb navigation, SEO metadata, 404 handling, and consistent styling with existing pages. Tag URLs support Chinese characters with URL encoding. |
 
 ---
 

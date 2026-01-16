@@ -1,0 +1,30 @@
+Task 2.6 is now complete. Here's a summary of what was implemented:
+
+## Task 2.6 Complete: Tag Filtering Functionality
+
+### Files Created:
+- `components/tag-filter.tsx` - Client-side tag filter component with URL-based state
+
+### Files Modified:
+- `app/page.tsx` - Added searchParams prop and tag filtering logic
+- `docs/PRD.md` - Marked Task 2.6 as complete
+- `docs/PROGRESS.md` - Updated with completion details and moved Task 2.7 to In Progress
+
+### Features Implemented:
+1. **TagFilter Component** - Shows all available tags as clickable badges
+2. **URL-based Filtering** - Uses search params (e.g., `/?tag=Next.js`)
+3. **Active State Highlighting** - Selected tag shown with orange accent color
+4. **Clear Filter Link** - Appears when a tag is selected
+5. **"全部" Button** - Shows all articles
+6. **Article Count** - Updates based on current filter
+7. **SSR Friendly** - Server-side rendering compatible
+8. **Empty State** - Message when no articles match the selected tag
+
+### Technical Implementation:
+- Uses Next.js 15 async searchParams for type-safe URL param handling
+- Client-side TagFilter component for interactivity (useSearchParams hook)
+- Case-insensitive tag matching
+- Maintains other URL params when filtering
+- Shareable filtered URLs
+
+**Next Task:** Task 2.7 - Create tag page at `/blog/tag/[tag]`
