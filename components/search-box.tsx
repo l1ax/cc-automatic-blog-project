@@ -65,6 +65,20 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Global keyboard shortcut (Cmd+K / Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Check for Cmd+K (macOS) or Ctrl+K (Windows/Linux)
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        inputRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   // Keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!isOpen || results.length === 0) {
@@ -137,8 +151,14 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
             }
           }}
           placeholder={placeholder}
-          className="block w-full pl-10 pr-4 py-2 bg-bg-tertiary border border-border rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary focus:ring-1 focus:ring-accent-primary transition-colors duration-200"
+          className="block w-full pl-10 pr-16 py-2 bg-bg-tertiary border border-border rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-primary focus:ring-1 focus:ring-accent-primary transition-colors duration-200"
         />
+        {/* Keyboard shortcut badge */}
+        <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+          <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium text-text-muted bg-bg-secondary border border-border rounded">
+            <span className="text-[10px]">⌘</span>K
+          </kbd>
+        </div>
         {query && (
           <button
             onClick={() => {

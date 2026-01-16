@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 3 - Search & Navigation |
-| **Current Task** | Task 3.3 Complete. Next: Task 3.4 - Add keyboard shortcut for search (Cmd+K) |
+| **Current Task** | Task 3.4 Complete. Next: Task 3.5 - Implement article table of contents (TOC) |
 | **Blocker** | None |
-| **Last Action** | Created SearchBox component with live search results, integrated into header |
+| **Last Action** | Added keyboard shortcut (Cmd+K/Ctrl+K) to focus search input with visual kbd badge |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -412,7 +412,10 @@
 
 ### In Progress
 
-None
+- [ ] **Task 3.5**: Implement article table of contents (TOC)
+  - **Priority**: P1
+  - **Dependencies**: Task 3.4
+  - **Notes**: Next task - auto-generate TOC from article headings
 
 ### Pending
 
@@ -425,7 +428,7 @@ None
 - [x] **Task 3.1**: Integrate FlexSearch for client-side search
 - [x] **Task 3.2**: Generate search index at build time
 - [x] **Task 3.3**: Create search box component with live results
-- [ ] **Task 3.4**: Add keyboard shortcut for search (Cmd+K)
+- [x] **Task 3.4**: Add keyboard shortcut for search (Cmd+K)
 - [ ] **Task 3.5**: Implement article table of contents (TOC)
 - [ ] **Task 3.6**: Add smooth scrolling for TOC links
 - [ ] **Task 3.7**: Add "Back to top" button
@@ -557,8 +560,8 @@ None yet - project just started
 2. **Read PRD**: `cat docs/PRD.md` - understand full requirements
 3. **Check git log**: `git log --oneline -10` - see recent commits
 4. **Check git status**: `git status` - see uncommitted changes
-5. **Current task is**: Task 3.4 - Add keyboard shortcut for search (Cmd+K)
-6. **Next action should be**: Implement Cmd+K keyboard shortcut to focus search input
+5. **Current task is**: Task 3.5 - Implement article table of contents (TOC)
+6. **Next action should be**: Auto-generate TOC from article headings with click-to-scroll functionality
 
 **Important Context to Remember:**
 - This is a personal tech blog for knowledge management, not public engagement
@@ -597,6 +600,7 @@ None yet - project just started
 | 2026-01-17 02:32 | Task 3.1 Complete | Integrated FlexSearch for client-side search. Created SearchIndex class in lib/search.ts with Document-based indexing. Added flexsearch@0.7.43 and @types/flexsearch@0.7.5 dependencies. Build verified successfully. |
 | 2026-01-17 02:50 | Task 3.2 Complete | Generated search index at build time. Created build-index.ts with inverted index for efficient client-side search. Added client-search.ts for loading and searching pre-built index. Search index is served as static JSON from public/search-index.json. Build script integration complete. |
 | 2026-01-17 03:00 | Task 3.3 Complete | Created SearchBox component with live search results dropdown. Integrated into header navigation. Fixed module bundling issues by creating shared types.ts and removing sync wrappers with Node.js imports from client bundle. Build verified successfully. |
+| 2026-01-17 03:15 | Task 3.4 Complete | Added global keyboard shortcut (Cmd+K/Ctrl+K) to focus search input. Added visual kbd badge showing the keyboard shortcut (⌘K) on desktop. Badge is hidden on mobile to save space. Build verified successfully. |
 
 ---
 
