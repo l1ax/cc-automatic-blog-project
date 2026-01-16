@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 4 - Responsive Design & Polish |
-| **Current Task** | Task 4.5 - Add 404 page |
+| **Current Task** | Task 4.5 Complete. Next: Task 4.6 - Add image optimization (next/image) |
 | **Blocker** | None |
-| **Last Action** | Updated PROGRESS.md with Task 4.4 commit hash (421ce3f) |
+| **Last Action** | Added custom 404 page with helpful navigation and suggestions |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -669,7 +669,44 @@ None
     - Type-safe props with TypeScript interfaces
   - **Notes**: Build verified successfully. Loading states and skeleton screens are now fully implemented across all pages. The skeletons match the actual component structure and provide visual feedback during data fetching. The shimmer animation creates a polished loading experience.
 
-- [ ] **Task 4.5**: Add 404 page
+- [x] **Task 4.5**: Add 404 page
+  - **Completed**: 2026-01-17
+  - **Commit**: 6de980c
+  - **Files Created**:
+    - `app/not-found.tsx` - Custom 404 page component
+  - **Features**:
+    - Large 404 heading with orange accent color (#f97316)
+    - Clear error message in Chinese ("页面未找到")
+    - Helpful description explaining the page might not exist or was moved
+    - Sad face illustration with SVG icon in a styled container
+    - Two action buttons:
+      - "返回首页" (Return to Home) with primary orange styling
+      - "关于博客" (About Blog) with secondary styling
+    - Helpful suggestions list for users:
+      - Check URL spelling
+      - Use search box
+      - Browse homepage article list
+      - Filter by tags
+    - Responsive design with mobile-first approach
+    - Consistent dark theme styling (tertiary background, border colors)
+    - SEO metadata (title and description)
+    - Centered layout with proper spacing
+    - Hover effects on buttons
+    - SVG icons for visual elements
+  - **Styling**:
+    - 404 heading: text-8xl sm:text-9xl with accent-primary color
+    - Error message: text-2xl sm:text-3xl with proper hierarchy
+    - Buttons: Full width on mobile, inline on desktop (flex-col sm:flex-row)
+    - Suggestions card: Tertiary background with border
+    - Proper spacing and visual hierarchy
+  - **Technical Implementation**:
+    - Next.js App Router not-found.tsx file for automatic 404 handling
+    - Static rendering (○ 133 B)
+    - TypeScript for type safety
+    - Link components for internal navigation
+    - Metadata export for SEO
+  - **Notes**: Build verified successfully. The custom 404 page provides a user-friendly experience when navigating to non-existent URLs, with clear navigation options back to main content. The page follows the blog's design language with dark theme and orange accents.
+
 - [ ] **Task 4.6**: Add image optimization (next/image)
 - [ ] **Task 4.7**: Implement dark/light theme toggle (optional)
 - [ ] **Task 4.8**: Add favicon and meta tags for SEO
@@ -838,6 +875,7 @@ None yet - project just started
 | 2026-01-17 04:00 | Task 4.2 Complete | Added mobile navigation menu with hamburger icon and slide-in panel. Created MobileNav component with smooth animations, click-outside-to-close, body scroll lock, and proper accessibility. Integrated into header layout. Search box hidden on mobile to save space. Build verified successfully. |
 | 2026-01-17 04:15 | Task 4.3 Complete | Optimized typography for mobile reading. Added comprehensive CSS optimizations including 16px base font size, improved line heights (1.75 on mobile, 1.8 for Chinese), letter spacing optimization, reading width limits (65ch), text selection styling, and touch-friendly link spacing. Updated MDXContent and article page with responsive typography classes. Build verified successfully. |
 | 2026-01-17 04:30 | Task 4.4 Complete | Added loading states and skeleton screens for all pages. Created skeleton components (ArticleCardSkeleton, HeadingSkeleton, ParagraphSkeleton, SearchResultSkeleton) and loading.tsx files for global, article, and tag pages. Added shimmer animation CSS. Build verified successfully. |
+| 2026-01-17 04:45 | Task 4.5 Complete | Added custom 404 page with helpful navigation. Created app/not-found.tsx with large 404 heading, clear error message in Chinese, sad face illustration, two action buttons (Return to Home, About Blog), and helpful suggestions list. Responsive design with consistent dark theme styling and SEO metadata. Build verified successfully. |
 
 ---
 
