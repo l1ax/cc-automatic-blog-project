@@ -380,8 +380,8 @@ cc-automatic-blog-project/
 - [x] **Task 3.3**: Create search box component with live results
 - [x] **Task 3.4**: Add keyboard shortcut for search (Cmd+K)
 - [x] **Task 3.5**: Implement article table of contents (TOC)
-- [ ] **Task 3.6**: Add smooth scrolling for TOC links
-- [ ] **Task 3.7**: Add "Back to top" button
+- [x] **Task 3.6**: Add smooth scrolling for TOC links
+- [x] **Task 3.7**: Add "Back to top" button
 
 **Phase 3 Verification**: 搜索功能正常工作，TOC 能正确导航到文章各章节
 

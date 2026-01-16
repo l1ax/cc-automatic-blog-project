@@ -4,10 +4,10 @@
 
 | Field | Value |
 |-------|-------|
-| **Current Phase** | Phase 3 - Search & Navigation |
-| **Current Task** | Task 3.5 Complete. Next: Task 3.7 - Add "Back to top" button (Task 3.6 smooth scrolling already implemented) |
+| **Current Phase** | Phase 4 - Responsive Design & Polish |
+| **Current Task** | Task 3.7 Complete. Next: Task 4.1 - Implement mobile-first responsive design for all pages |
 | **Blocker** | None |
-| **Last Action** | Implemented article table of contents (TOC) with auto-extraction, active tracking, and smooth scrolling |
+| **Last Action** | Added "Back to top" button with smooth scrolling and fade-in animation |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -443,12 +443,47 @@
     - Smooth scroll with header offset calculation
   - **Notes**: Build verified successfully. TOC is fully functional with active heading tracking and smooth scrolling. The component only renders on desktop screens (lg breakpoint) to save space on mobile devices.
 
+- [x] **Task 3.6**: Add smooth scrolling for TOC links
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD (included with Task 3.5)
+  - **Notes**: Already implemented with Task 3.5 - smooth scrolling is included in the TOC component
+
+- [x] **Task 3.7**: Add "Back to top" button
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `components/back-to-top.tsx` - Back to top button component
+  - **Files Modified**:
+    - `app/layout.tsx` - Added BackToTop component and smooth scrolling to html
+  - **Features**:
+    - Fixed position button at bottom-right corner
+    - Appears after scrolling down 300px
+    - Smooth scroll animation to top
+    - Fade-in/slide-up animation when appearing
+    - Fade-out animation when hidden
+    - Orange accent color matching blog theme
+    - Circular button with up arrow icon
+    - Proper accessibility with aria-label
+    - Pointer events disabled when hidden
+  - **Styling**:
+    - Fixed position (bottom-8 right-8)
+    - Orange background (accent-primary) with hover state
+    - White text and icon
+    - Smooth transition animations (300ms)
+    - Shadow effect for elevation
+    - Responsive size (w-12 h-12)
+  - **Technical Implementation**:
+    - Client-side component ("use client")
+    - Uses useState for visibility tracking
+    - useEffect with scroll event listener
+    - Proper cleanup of event listener
+    - window.scrollTo with behavior: 'smooth'
+    - Tailwind's scroll-smooth utility class on html element
+  - **Notes**: Build verified successfully. Back to top button appears smoothly when scrolling down and provides smooth scroll animation back to top. The button is integrated into root layout so it appears on all pages.
+
 ### In Progress
 
-- [ ] **Task 3.6**: Add smooth scrolling for TOC links
-  - **Priority**: P1
-  - **Dependencies**: Task 3.5
-  - **Notes**: Already implemented with TOC - smooth scrolling is included in Task 3.5
+None
 
 ### Pending
 
@@ -458,13 +493,15 @@
 
 ### Phase 3: Search & Navigation
 
+**All tasks completed!**
+
 - [x] **Task 3.1**: Integrate FlexSearch for client-side search
 - [x] **Task 3.2**: Generate search index at build time
 - [x] **Task 3.3**: Create search box component with live results
 - [x] **Task 3.4**: Add keyboard shortcut for search (Cmd+K)
 - [x] **Task 3.5**: Implement article table of contents (TOC)
-- [ ] **Task 3.6**: Add smooth scrolling for TOC links (already implemented)
-- [ ] **Task 3.7**: Add "Back to top" button
+- [x] **Task 3.6**: Add smooth scrolling for TOC links
+- [x] **Task 3.7**: Add "Back to top" button
 
 ### Phase 4: Responsive Design & Polish
 
@@ -593,8 +630,8 @@ None yet - project just started
 2. **Read PRD**: `cat docs/PRD.md` - understand full requirements
 3. **Check git log**: `git log --oneline -10` - see recent commits
 4. **Check git status**: `git status` - see uncommitted changes
-5. **Current task is**: Task 3.7 - Add "Back to top" button (Task 3.6 smooth scrolling already implemented)
-6. **Next action should be**: Add floating "Back to top" button that appears when scrolling down
+5. **Current task is**: Task 4.1 - Implement mobile-first responsive design for all pages
+6. **Next action should be**: Review current responsive design state and implement mobile-first improvements
 
 **Important Context to Remember:**
 - This is a personal tech blog for knowledge management, not public engagement
@@ -635,6 +672,9 @@ None yet - project just started
 | 2026-01-17 03:00 | Task 3.3 Complete | Created SearchBox component with live search results dropdown. Integrated into header navigation. Fixed module bundling issues by creating shared types.ts and removing sync wrappers with Node.js imports from client bundle. Build verified successfully. |
 | 2026-01-17 03:15 | Task 3.4 Complete | Added global keyboard shortcut (Cmd+K/Ctrl+K) to focus search input. Added visual kbd badge showing the keyboard shortcut (⌘K) on desktop. Badge is hidden on mobile to save space. Build verified successfully. |
 | 2026-01-17 03:30 | Task 3.5 Complete | Implemented article table of contents (TOC) with auto-extraction from headings. Created lib/toc.ts with extractToc and generateHeadingId utilities. Created TableOfContents component with Intersection Observer for active tracking, collapsible UI, and smooth scrolling. Updated MDXContent to add IDs to all headings (h1-h4). Integrated TOC into article detail page. Hidden on mobile/tablet, visible on desktop. Build verified successfully. |
+| 2026-01-17 03:45 | Task 3.6 Complete | Smooth scrolling for TOC links already implemented in Task 3.5. No additional work needed. |
+| 2026-01-17 03:45 | Task 3.7 Complete | Added "Back to top" button with smooth scrolling animation. Created BackToTop component with fade-in/slide-up animation when scrolling down. Added scroll-smooth utility to html element. Button appears after 300px scroll, positioned at bottom-right corner with orange accent color matching blog theme. Build verified successfully. |
+| 2026-01-17 03:45 | Phase 3 Complete | All Phase 3 tasks completed. Search & Navigation features are now implemented: FlexSearch integration, build-time search index, search box with live results, keyboard shortcut, article TOC, smooth scrolling, and back to top button. |
 
 ---
 

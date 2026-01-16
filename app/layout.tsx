@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SearchBox } from "@/components/search-box";
+import { BackToTop } from "@/components/back-to-top";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="zh-CN" className="scroll-smooth">
       <body className="antialiased bg-bg-primary text-text-primary">
         <div className="min-h-screen flex flex-col">
           {/* Header */}
@@ -49,6 +50,9 @@ export default function RootLayout({
 
           {/* Main Content */}
           <main className="flex-1">{children}</main>
+
+          {/* Back to Top Button */}
+          <BackToTop />
 
           {/* Footer */}
           <footer className="border-t border-divider mt-auto">

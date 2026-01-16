@@ -1,0 +1,26 @@
+The commit was successful. Task 3.5 (Implement article table of contents) is now complete.
+
+## Summary
+
+I have successfully implemented **Task 3.5: Implement article table of contents (TOC)** with the following features:
+
+### Files Created:
+- `lib/toc.ts` - TOC extraction utilities with heading ID generation
+- `components/table-of-contents.tsx` - Interactive TOC component with active tracking
+
+### Files Modified:
+- `components/mdx-content.tsx` - Added IDs to all headings (h1-h4) for TOC linking
+- `app/blog/[slug]/page.tsx` - Integrated TableOfContents component
+
+### Features Implemented:
+1. **Auto-extraction** of headings from Markdown content
+2. **URL-friendly ID generation** for headings (supports Chinese characters)
+3. **Fixed TOC sidebar** on desktop (hidden on mobile/tablet)
+4. **Intersection Observer** for active heading tracking
+5. **Click-to-scroll** with smooth scrolling and header offset
+6. **Collapsible TOC** section
+7. **Hierarchical indentation** based on heading level
+8. **Active heading highlighting** with orange accent color
+9. **scroll-mt-24** CSS for proper scroll offset
+
+The build verified successfully and all changes have been committed.
