@@ -1,4 +1,9 @@
-export default function Home() {
+import Link from "next/link";
+import { getAllArticles } from "@/lib/content";
+
+export default async function Home() {
+  const articles = getAllArticles();
+
   return (
     <main className="min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -22,35 +27,52 @@ export default function Home() {
             <span className="w-1 h-6 bg-accent-primary mr-3"></span>
             最新文章
           </h2>
-          <div className="bg-bg-secondary rounded-lg p-6 border border-border hover:border-accent-primary transition-colors duration-200">
-            <div className="flex items-start justify-between mb-3">
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold text-text-primary mb-2">
-                  欢迎来到我的技术博客
-                </h3>
-                <p className="text-text-secondary mb-4 line-clamp-2">
-                  这是我的第一篇博客文章，介绍了这个博客系统的设计理念和未来的规划。
-                </p>
-                <div className="flex items-center space-x-4 text-sm text-text-muted">
-                  <span>2026-01-17</span>
-                  <span className="flex items-center">
-                    <span className="w-2 h-2 bg-accent-primary rounded-full mr-2"></span>
-                    博客相关
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-bg-tertiary text-text-secondary text-xs rounded-full border border-border">
-                博客
-              </span>
-              <span className="px-3 py-1 bg-bg-tertiary text-text-secondary text-xs rounded-full border border-border">
-                Next.js
-              </span>
-              <span className="px-3 py-1 bg-bg-tertiary text-text-secondary text-xs rounded-full border border-border">
-                开篇
-              </span>
-            </div>
+          <div className="space-y-6">
+            {articles.length === 0 ? (
+              <p className="text-text-secondary">暂无文章</p>
+            ) : (
+              articles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/blog/${article.slug}`}
+                  className="block bg-bg-secondary rounded-lg p-6 border border-border hover:border-accent-primary transition-colors duration-200"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-text-primary mb-2">
+                        {article.title}
+                      </h3>
+                      {article.summary && (
+                        <p className="text-text-secondary mb-4 line-clamp-2">
+                          {article.summary}
+                        </p>
+                      )}
+                      <div className="flex items-center space-x-4 text-sm text-text-muted">
+                        <span>{article.date}</span>
+                        {article.category && (
+                          <span className="flex items-center">
+                            <span className="w-2 h-2 bg-accent-primary rounded-full mr-2"></span>
+                            {article.category}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  {article.tags && article.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {article.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 bg-bg-tertiary text-text-secondary text-xs rounded-full border border-border"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </Link>
+              ))
+            )}
           </div>
         </section>
 

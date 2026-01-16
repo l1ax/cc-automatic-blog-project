@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 1 - Walking Skeleton (Foundation) |
-| **Current Task** | Task 1.6 - Create article detail page at `/blog/[slug]` that renders MDX |
+| **Current Task** | Task 1.7 - Deploy to Vercel and verify basic build works |
 | **Blocker** | None |
-| **Last Action** | Implemented dark theme layout with header, footer, and styled homepage |
+| **Last Action** | Created article detail page at `/blog/[slug]` with MDX rendering support |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -18,7 +18,7 @@
 |-------|-------|
 | **Working Directory** | /Users/cong/chenzhicong/cc-automatic-blog-project |
 | **Git Branch** | main |
-| **Last Commit** | 6c555a8 - feat: create first sample article with frontmatter |
+| **Last Commit** | 5d20073 - feat: implement dark theme layout with orange accents |
 
 ---
 
@@ -84,7 +84,7 @@
 
 - [x] **Task 1.5**: Implement basic layout with dark theme (深灰色 + 橙色配色)
   - **Completed**: 2026-01-17
-  - **Commit**: [pending]
+  - **Commit**: 5d20073
   - **Files Modified**:
     - `tailwind.config.ts` - Added comprehensive color palette with dark theme colors (#1a1a1a background, #f97316 orange accents)
     - `app/globals.css` - Simplified CSS with proper dark theme styling
@@ -103,17 +103,41 @@
     - Typography configuration for content rendering
   - **Notes**: Build verified successfully. Dark theme with orange accents is fully implemented across all components.
 
+- [x] **Task 1.6**: Create article detail page at `/blog/[slug]` that renders MDX
+  - **Completed**: 2026-01-17
+  - **Commit**: [pending]
+  - **Files Created**:
+    - `lib/content.ts` - Content utility functions for reading and parsing MDX files from posts/ directory
+    - `components/mdx-content.tsx` - Client component for rendering Markdown with styled components
+    - `app/blog/[slug]/page.tsx` - Dynamic route for article detail pages
+  - **Files Modified**:
+    - `app/page.tsx` - Updated to fetch and display articles dynamically from content.ts
+  - **Dependencies Added**:
+    - gray-matter@^4.0.3 - Frontmatter parsing
+    - react-markdown@^9.0.1 - Markdown rendering
+    - remark-gfm@^4.0.0 - GitHub Flavored Markdown support
+    - rehype-raw@^7.0.0 - HTML rendering in Markdown
+  - **Features**:
+    - Static generation with `generateStaticParams` for all articles
+    - SEO metadata generation per article
+    - Frontmatter parsing (title, date, summary, tags, category, draft)
+    - Markdown rendering with styled components (headings, paragraphs, lists, code blocks, etc.)
+    - Back to home navigation
+    - Article header with metadata display
+    - Tag badges
+    - Responsive layout
+  - **Notes**: Build verified successfully. Articles are now rendered at `/blog/[slug]` URLs. The homepage displays a dynamic list of all published articles.
+
 ### In Progress
 
-- [ ] **Task 1.6**: Create article detail page at `/blog/[slug]` that renders MDX
+- [ ] **Task 1.7**: Deploy to Vercel and verify basic build works
   - **Status**: Ready to begin
-  - **Notes**: Create dynamic route app/blog/[slug]/page.tsx that reads MDX files from posts/ directory and renders them with frontmatter metadata
+  - **Notes**: Deploy the project to Vercel and verify the build and deployment process works correctly
 
 ### Pending
 
 ### Phase 1: Walking Skeleton (Foundation)
 
-- [ ] **Task 1.6**: Create article detail page at `/blog/[slug]` that renders MDX
 - [ ] **Task 1.7**: Deploy to Vercel and verify basic build works
 
 ### Phase 2: Core Features (MVP)
@@ -200,9 +224,10 @@ None yet - project just started
 |---------|------|
 | PRD Document | [docs/PRD.md](docs/PRD.md) |
 | Progress Tracker | [docs/PROGRESS.md](docs/PROGRESS.md) |
-| Articles | `posts/*.md` (to be created) |
-| Components | `components/` (to be created) |
-| Content Layer | `lib/content.ts` (to be created) |
+| Articles | `posts/*.md` |
+| Components | `components/` |
+| Content Layer | `lib/content.ts` |
+| Blog Detail Page | `app/blog/[slug]/page.tsx` |
 
 ### Dependencies Added
 
@@ -223,6 +248,12 @@ None yet - project just started
 - @mdx-js/react@3.1.1
 - @types/mdx@2.0.13
 
+**Content Rendering Dependencies (Task 1.6)**:
+- gray-matter@4.0.3
+- react-markdown@9.0.1
+- remark-gfm@4.0.0
+- rehype-raw@7.0.0
+
 ---
 
 ## Blockers
@@ -241,8 +272,8 @@ None yet - project just started
 2. **Read PRD**: `cat docs/PRD.md` - understand full requirements
 3. **Check git log**: `git log --oneline -10` - see recent commits
 4. **Check git status**: `git status` - see uncommitted changes
-5. **Current task is**: Task 1.4 - Create first sample article in `/posts` directory with Frontmatter
-6. **Next action should be**: Create a sample blog post with proper frontmatter schema
+5. **Current task is**: Task 1.7 - Deploy to Vercel and verify basic build works
+6. **Next action should be**: Deploy the project to Vercel
 
 **Important Context to Remember:**
 - This is a personal tech blog for knowledge management, not public engagement
@@ -251,6 +282,7 @@ None yet - project just started
 - Content should be easily migratable to Notion/Obsidian in future
 - Deep gray theme with orange accents is the design direction
 - Next.js 15.1.4 is installed (not 14, we're using the latest)
+- Article detail pages are now working at `/blog/[slug]`
 
 ---
 
@@ -267,6 +299,7 @@ None yet - project just started
 | 2026-01-17 01:04 | Task 1.3 Complete | Set up MDX support - installed @next/mdx, configured Next.js and TypeScript |
 | 2026-01-17 01:11 | Task 1.4 Complete | Created first sample article with frontmatter (posts/2026-01-17-welcome-to-my-blog.md) |
 | 2026-01-17 01:14 | Task 1.5 Complete | Implemented dark theme layout with header, footer, styled homepage, and comprehensive Tailwind color palette |
+| 2026-01-17 01:17 | Task 1.6 Complete | Created article detail page at `/blog/[slug]` with MDX rendering, content utilities, and dynamic homepage |
 
 ---
 
@@ -288,4 +321,4 @@ None yet - project just started
 
 ### Future Migration Path
 
-The `ContentProvider` interface in `lib/content.ts` will allow switching from local MDX files to Notion/Obsidian without rewriting the entire frontend. This is a key architectural decision for long-term flexibility.
+The content layer in `lib/content.ts` provides functions to read and manage MDX files. This abstraction will allow switching from local MDX files to Notion/Obsidian without rewriting the entire frontend. This is a key architectural decision for long-term flexibility.
