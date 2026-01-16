@@ -1,37 +1,13 @@
 /**
  * Generate search index at build time
  * This script is run during the build process to create a search index JSON file
+ * This file is only for Node.js build scripts, not for client-side import
  */
 
 import { writeFile, mkdir, readdir } from 'fs/promises';
 import { join } from 'path';
-import { getAllArticles } from '../content';
-
-/**
- * Searchable article data for client-side search
- */
-export interface SearchableArticle {
-  slug: string;
-  title: string;
-  summary?: string;
-  tags?: string[];
-  category?: string;
-  date: string;
-  readingTime?: number;
-  content: string; // Full content for searching
-}
-
-/**
- * Build-time index data structure
- * Uses a simple inverted index for efficient client-side search
- */
-export interface BuildTimeIndex {
-  articles: SearchableArticle[];
-  indexed: {
-    // Map from token to array of article slugs
-    [token: string]: string[];
-  };
-}
+import { contentProvider } from '../providers/local-mdx';
+import type { SearchableArticle, BuildTimeIndex } from './types';
 
 /**
  * Tokenize text into searchable tokens
@@ -76,7 +52,7 @@ function tokenize(text: string): string[] {
  * Generate search index from all articles
  */
 export async function generateSearchIndex(): Promise<BuildTimeIndex> {
-  const articles = await getAllArticles();
+  const articles = await contentProvider.getAllArticles();
 
   // Read full content for each article
   const { readFile } = await import('fs/promises');

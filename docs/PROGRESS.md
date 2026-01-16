@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 3 - Search & Navigation |
-| **Current Task** | Task 3.2 Complete. Next: Task 3.3 - Create search box component with live results |
+| **Current Task** | Task 3.3 Complete. Next: Task 3.4 - Add keyboard shortcut for search (Cmd+K) |
 | **Blocker** | None |
-| **Last Action** | Generated search index at build time with inverted index for client-side search |
+| **Last Action** | Created SearchBox component with live search results, integrated into header |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -363,11 +363,56 @@
       - indexed: Map from token to article slugs
   - **Notes**: Build verified successfully. Search index is generated at build time and served as static JSON. The client-side search utilities are ready for integration with the search box component. Index contains 429 unique tokens for 1 article. Next step is to create the search box component.
 
+- [x] **Task 3.3**: Create search box component with live results
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `components/search-box.tsx` - Interactive search box component with live results
+    - `lib/search/types.ts` - Shared types for search functionality
+    - `lib/content-sync.ts` - Moved sync wrappers to separate file to avoid client-side bundling issues
+  - **Files Modified**:
+    - `app/layout.tsx` - Integrated SearchBox into header navigation
+    - `lib/search/client-search.ts` - Updated to use shared types
+    - `lib/search/build-index.ts` - Updated to use shared types
+    - `lib/search/index.ts` - Cleaned up exports, removed build-time imports from client bundle
+    - `lib/content.ts` - Removed sync wrappers with `fs` imports to avoid client-side bundling
+  - **Features**:
+    - SearchBox component with live search results dropdown
+    - Real-time search with debouncing (200ms)
+    - Search results display with title, summary, date, reading time
+    - Keyboard navigation support (Arrow keys, Enter, Escape)
+    - Click outside to close dropdown
+    - Clear search button (X) when input has text
+    - Empty state with helpful message when no results found
+    - Loading spinner during search
+    - Responsive dropdown with max-height and scrolling
+    - Styled to match blog's dark theme with orange accents
+    - Integrated into header navigation, hidden on small mobile screens
+  - **Technical Implementation**:
+    - Client-side component ("use client")
+    - Uses ClientSearchIndex singleton for search
+    - Loads search index from /search-index.json on first search
+    - Debounced search to avoid excessive queries
+    - Keyboard accessibility with arrow key navigation
+    - Click outside handler using useRef and event listeners
+  - **Bug Fixes**:
+    - Fixed module bundling issue by creating separate types.ts file
+    - Removed sync wrappers from content.ts that were pulling Node.js modules into client bundle
+    - Removed legacy search-legacy.ts file that was importing from content.ts
+    - Used type-only imports to prevent tree-shaking issues
+  - **Styling**:
+    - Consistent with blog's dark theme (#1a1a1a background, #f97316 orange accents)
+    - Tertiary background for search input
+    - Secondary background for dropdown results
+    - Hover effects on results (tertiary background)
+    - Arrow icon for navigation indicator
+    - Proper z-index layering (dropdown above content)
+    - Mobile responsive (hidden on small screens)
+  - **Notes**: Build verified successfully. Search box is fully functional with live search results. The search index loads on demand and results appear instantly as you type. Keyboard navigation allows quick selection of results.
+
 ### In Progress
 
-- [ ] **Task 3.3**: Create search box component with live results
-  - **Status**: Next task - Ready to begin
-  - **Notes**: Create interactive search box component with real-time search results
+None
 
 ### Pending
 
@@ -379,7 +424,7 @@
 
 - [x] **Task 3.1**: Integrate FlexSearch for client-side search
 - [x] **Task 3.2**: Generate search index at build time
-- [ ] **Task 3.3**: Create search box component with live results
+- [x] **Task 3.3**: Create search box component with live results
 - [ ] **Task 3.4**: Add keyboard shortcut for search (Cmd+K)
 - [ ] **Task 3.5**: Implement article table of contents (TOC)
 - [ ] **Task 3.6**: Add smooth scrolling for TOC links
@@ -512,8 +557,8 @@ None yet - project just started
 2. **Read PRD**: `cat docs/PRD.md` - understand full requirements
 3. **Check git log**: `git log --oneline -10` - see recent commits
 4. **Check git status**: `git status` - see uncommitted changes
-5. **Current task is**: Task 3.3 - Create search box component with live results
-6. **Next action should be**: Create SearchBox component with real-time search results display
+5. **Current task is**: Task 3.4 - Add keyboard shortcut for search (Cmd+K)
+6. **Next action should be**: Implement Cmd+K keyboard shortcut to focus search input
 
 **Important Context to Remember:**
 - This is a personal tech blog for knowledge management, not public engagement
@@ -551,6 +596,7 @@ None yet - project just started
 | 2026-01-17 02:14 | Phase 3 Start | Ready to begin Phase 3 - Search & Navigation. Next task: Task 3.1 - Integrate FlexSearch for client-side search. |
 | 2026-01-17 02:32 | Task 3.1 Complete | Integrated FlexSearch for client-side search. Created SearchIndex class in lib/search.ts with Document-based indexing. Added flexsearch@0.7.43 and @types/flexsearch@0.7.5 dependencies. Build verified successfully. |
 | 2026-01-17 02:50 | Task 3.2 Complete | Generated search index at build time. Created build-index.ts with inverted index for efficient client-side search. Added client-search.ts for loading and searching pre-built index. Search index is served as static JSON from public/search-index.json. Build script integration complete. |
+| 2026-01-17 03:00 | Task 3.3 Complete | Created SearchBox component with live search results dropdown. Integrated into header navigation. Fixed module bundling issues by creating shared types.ts and removing sync wrappers with Node.js imports from client bundle. Build verified successfully. |
 
 ---
 

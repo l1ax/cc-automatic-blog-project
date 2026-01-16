@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SearchBox } from "@/components/search-box";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,13 +20,13 @@ export default function RootLayout({
           {/* Header */}
           <header className="border-b border-divider bg-bg-primary sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-between items-center h-16">
-                <Link href="/" className="flex items-center space-x-2">
+              <div className="flex justify-between items-center h-16 gap-4">
+                <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
                   <span className="text-xl font-bold text-accent-primary">
                     Tech Blog
                   </span>
                 </Link>
-                <nav className="flex space-x-6">
+                <nav className="hidden sm:flex items-center space-x-6">
                   <Link
                     href="/"
                     className="text-text-secondary hover:text-accent-primary transition-colors duration-200"
@@ -39,6 +40,9 @@ export default function RootLayout({
                     关于
                   </Link>
                 </nav>
+                <div className="flex-1 max-w-md">
+                  <SearchBox placeholder="搜索文章..." />
+                </div>
               </div>
             </div>
           </header>

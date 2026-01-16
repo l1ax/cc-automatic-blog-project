@@ -1,0 +1,27 @@
+Task 3.2 is now complete. I have:
+
+1. **Created build-time search index generation** (`lib/search/build-index.ts`):
+   - Reads all articles from the content provider
+   - Extracts full content from Markdown files
+   - Strips code blocks and markdown syntax for clean search
+   - Tokenizes text supporting both English and Chinese (individual characters + bigrams)
+   - Creates an inverted index mapping tokens to article slugs
+   - Outputs the index to `public/search-index.json`
+
+2. **Created client-side search utilities** (`lib/search/client-search.ts`):
+   - `ClientSearchIndex` class for loading and searching the pre-built index
+   - Loads the search index via fetch API
+   - Scores results based on token frequency
+   - Singleton pattern for the search index instance
+
+3. **Updated build configuration**:
+   - Modified `package.json` to add `build:search` script using `tsx`
+   - Updated `build` script to run `build:search` before Next.js build
+   - Added `tsx@4.21.0` as a dev dependency
+
+4. **Maintained backward compatibility**:
+   - Renamed `lib/search.ts` to `lib/search/search-legacy.ts`
+   - Created `lib/search/index.ts` to export all search utilities
+   - Updated import paths in the legacy file
+
+The search index is now generated at build time and served as static JSON. The build completes successfully with the search index in the public directory.

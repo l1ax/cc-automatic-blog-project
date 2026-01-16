@@ -1,15 +1,9 @@
 /**
- * Search module exports
+ * Search module exports (client-side only)
  */
 
-// Build-time utilities
-export { generateSearchIndex, writeSearchIndex } from './build-index';
-export type { BuildTimeIndex, SearchableArticle } from './build-index';
+// Shared types
+export type { BuildTimeIndex, SearchableArticle, ClientSearchResult } from './types';
 
 // Client-side utilities
 export { ClientSearchIndex, getSearchIndex } from './client-search';
-export type { ClientSearchResult } from './client-search';
-
-// Legacy utilities (for backward compatibility)
-export { SearchIndex, createSearchIndex, generateSearchIndex as generateLegacySearchIndex } from './search-legacy';
-export type { SearchDocument, SearchResult } from './search-legacy';

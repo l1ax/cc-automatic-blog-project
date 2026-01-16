@@ -3,21 +3,7 @@
  * Loads and searches the pre-built search index
  */
 
-import type { BuildTimeIndex, SearchableArticle } from './build-index';
-
-/**
- * Search result with score
- */
-export interface ClientSearchResult {
-  slug: string;
-  title: string;
-  summary?: string;
-  tags?: string[];
-  category?: string;
-  date: string;
-  readingTime?: number;
-  score: number;
-}
+import type { BuildTimeIndex, ClientSearchResult } from './types';
 
 /**
  * Client-side search index
@@ -132,7 +118,7 @@ export class ClientSearchIndex {
           date: article.date,
           readingTime: article.readingTime,
           score,
-        } as ClientSearchResult;
+        } as ClientSearchResult | null;
       })
       .filter((r): r is ClientSearchResult => r !== null);
 
