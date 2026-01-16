@@ -1,0 +1,23 @@
+Task 6.2 is complete. Let me provide a summary:
+
+---
+
+## Task 6.2 Complete: Set up automatic deployment on push to main branch
+
+**What was done:**
+1. **Verified existing configuration** - The `vercel.json` file already had `git.deploymentEnabled.main: true` configured from Task 6.1, which enables automatic deployments
+2. **Updated README.md** - Added clear documentation showing the automatic deployment configuration and explaining that users just need to connect their GitHub repository to Vercel for it to work
+3. **Updated PRD.md** - Marked Task 6.2 as complete
+4. **Updated PROGRESS.md** - Added completion details and session history
+
+**Key points:**
+- Automatic deployment was already fully configured in `vercel.json` from Task 6.1
+- The `git.deploymentEnabled.main: true` setting ensures pushes to the main branch trigger automatic Vercel deployments
+- No additional code changes were required
+- Users only need to connect their GitHub repository to Vercel via the Vercel dashboard (manual step)
+
+**Commit:** `6d908a6` - docs: mark Task 6.2 complete and update README
+
+---
+
+**Next task:** Task 6.3 - Add build optimization (bundle analysis)
