@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 3 - Search & Navigation |
-| **Current Task** | Task 2.8 Complete. Next: Task 3.1 - Integrate FlexSearch for client-side search |
+| **Current Task** | Task 3.1 Complete. Next: Task 3.2 - Generate search index at build time |
 | **Blocker** | None |
-| **Last Action** | Created About page at `/about` with comprehensive information about the blog |
+| **Last Action** | Integrated FlexSearch for client-side search with SearchIndex class and utilities |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -305,11 +305,34 @@
     - Proper typography hierarchy
   - **Notes**: Build verified successfully. The About page provides comprehensive information about the blog's purpose, tech stack, features, and design philosophy. The page is fully responsive and follows the established design patterns.
 
+- [x] **Task 3.1**: Integrate FlexSearch for client-side search
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `lib/search.ts` - Search index utilities with FlexSearch integration
+  - **Dependencies Added**:
+    - flexsearch@0.7.43 - Fast client-side search library
+    - @types/flexsearch@0.7.5 - TypeScript definitions
+  - **Features**:
+    - SearchIndex class wrapping FlexSearch.Document for easy use
+    - Support for indexing title, summary, tags, category, and content fields
+    - Full tokenization for Chinese and English content
+    - Configurable search depth and relevance scoring
+    - createSearchIndex() utility to build index from article metadata
+    - generateSearchIndex() async function for build-time index generation
+    - SearchResult interface with slug, title, summary, tags, category
+  - **Configuration**:
+    - Tokenization: 'full' for better matching
+    - Threshold: 0 for exact matching
+    - Depth: 3 for relevance scoring
+    - Fields indexed: title, summary, tags, category, content
+  - **Notes**: Build verified successfully. FlexSearch is now integrated and ready for client-side search. The SearchIndex class provides a clean API for indexing and searching articles. Next step is to generate the index at build time and create the search box component.
+
 ### In Progress
 
-- [ ] **Task 3.1**: Integrate FlexSearch for client-side search
+- [ ] **Task 3.2**: Generate search index at build time
   - **Status**: Next task - Ready to begin
-  - **Notes**: Install FlexSearch and set up basic search functionality
+  - **Notes**: Create build-time index generation for client-side search
 
 ### Pending
 
@@ -429,6 +452,10 @@ None yet - project just started
 - react-syntax-highlighter@15.6.1
 - @types/react-syntax-highlighter@5.0.4
 
+**Search Dependencies (Task 3.1)**:
+- flexsearch@0.7.43
+- @types/flexsearch@0.7.5
+
 ---
 
 ## Blockers
@@ -484,6 +511,7 @@ None yet - project just started
 | 2026-01-17 02:14 | Task 2.8 Complete | Created About page at `/about` with comprehensive information sections (blog purpose, tech stack, features, future plans, design philosophy, contact). Added breadcrumb navigation, grid layout, SVG icons, and responsive design following established patterns. |
 | 2026-01-17 02:14 | Phase 2 Complete | All Phase 2 tasks completed. Core features (MVP) are now implemented: content provider architecture, article list/detail pages, code highlighting, tag filtering, tag pages, and About page. |
 | 2026-01-17 02:14 | Phase 3 Start | Ready to begin Phase 3 - Search & Navigation. Next task: Task 3.1 - Integrate FlexSearch for client-side search. |
+| 2026-01-17 02:32 | Task 3.1 Complete | Integrated FlexSearch for client-side search. Created SearchIndex class in lib/search.ts with Document-based indexing. Added flexsearch@0.7.43 and @types/flexsearch@0.7.5 dependencies. Build verified successfully. |
 
 ---
 
