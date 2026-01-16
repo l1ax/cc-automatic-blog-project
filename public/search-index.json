@@ -12,7 +12,7 @@
       "category": "博客相关",
       "date": "2026-01-17",
       "readingTime": 1,
-      "content": "欢迎来到我的技术博客 这是一个基于 Next.js 构建的静态博客系统，主要目的是为了记录和整理我的技术学习笔记。 为什么写博客？ 作为一名开发者，在日常工作和学习中会接触到各种各样的技术知识点。如果只是简单的记在笔记软件里，时间久了很容易遗忘，而且缺乏系统性。 写博客的好处： - 知识沉淀：将学到的知识系统化整理 - 快速检索：通过搜索快速找到需要的内容 - 思维梳理：写作过程本身就是对知识的再思考 - 长期积累：形成个人的知识库 技术栈 这个博客使用了以下技术： - Next.js 15：React 框架，使用 App Router - TypeScript：类型安全 - Tailwind CSS：样式框架 - MDX：支持在 Markdown 中使用 React 组件 示例代码 这里是一些代码示例，用于测试代码高亮功能： 期待 这个博客主要是为我自己服务的，用于： - 记录学习笔记 - 整理技术方案 - 沉淀项目经验 希望能通过写作的方式，让知识更加系统和持久。"
+      "content": "欢迎来到我的技术博客 这是一个基于 Next.js 构建的静态博客系统，主要目的是为了记录和整理我的技术学习笔记。 为什么写博客？ 作为一名开发者，在日常工作和学习中会接触到各种各样的技术知识点。如果只是简单的记在笔记软件里，时间久了很容易遗忘，而且缺乏系统性。 写博客的好处： - 知识沉淀：将学到的知识系统化整理 - 快速检索：通过搜索快速找到需要的内容 - 思维梳理：写作过程本身就是对知识的再思考 - 长期积累：形成个人的知识库 技术栈 这个博客使用了以下技术： - Next.js 15：React 框架，使用 App Router - TypeScript：类型安全 - Tailwind CSS：样式框架 - MDX：支持在 Markdown 中使用 React 组件 示例代码 这里是一些代码示例，用于测试代码高亮功能： 图片支持 博客支持图片显示，图片会自动进行优化处理： !Next.js Logo Next.js Logo 期待 这个博客主要是为我自己服务的，用于： - 记录学习笔记 - 整理技术方案 - 沉淀项目经验 希望能通过写作的方式，让知识更加系统和持久。"
     }
   ],
   "indexed": {
@@ -155,6 +155,18 @@
       "welcome-to-my-blog"
     ],
     "用于测试代码高亮功能": [
+      "welcome-to-my-blog"
+    ],
+    "图片支持": [
+      "welcome-to-my-blog"
+    ],
+    "博客支持图片显示": [
+      "welcome-to-my-blog"
+    ],
+    "图片会自动进行优化处理": [
+      "welcome-to-my-blog"
+    ],
+    "logo": [
       "welcome-to-my-blog"
     ],
     "期待": [
@@ -1168,10 +1180,76 @@
     "功能": [
       "welcome-to-my-blog"
     ],
-    "待": [
+    "图": [
+      "welcome-to-my-blog"
+    ],
+    "片": [
+      "welcome-to-my-blog"
+    ],
+    "图片": [
+      "welcome-to-my-blog"
+    ],
+    "片支": [
+      "welcome-to-my-blog"
+    ],
+    "显": [
+      "welcome-to-my-blog"
+    ],
+    "客支": [
+      "welcome-to-my-blog"
+    ],
+    "持图": [
+      "welcome-to-my-blog"
+    ],
+    "片显": [
+      "welcome-to-my-blog"
+    ],
+    "显示": [
       "welcome-to-my-blog"
     ],
     "自": [
+      "welcome-to-my-blog"
+    ],
+    "动": [
+      "welcome-to-my-blog"
+    ],
+    "进": [
+      "welcome-to-my-blog"
+    ],
+    "行": [
+      "welcome-to-my-blog"
+    ],
+    "优": [
+      "welcome-to-my-blog"
+    ],
+    "片会": [
+      "welcome-to-my-blog"
+    ],
+    "会自": [
+      "welcome-to-my-blog"
+    ],
+    "自动": [
+      "welcome-to-my-blog"
+    ],
+    "动进": [
+      "welcome-to-my-blog"
+    ],
+    "进行": [
+      "welcome-to-my-blog"
+    ],
+    "行优": [
+      "welcome-to-my-blog"
+    ],
+    "优化": [
+      "welcome-to-my-blog"
+    ],
+    "化处": [
+      "welcome-to-my-blog"
+    ],
+    "处理": [
+      "welcome-to-my-blog"
+    ],
+    "待": [
       "welcome-to-my-blog"
     ],
     "己": [

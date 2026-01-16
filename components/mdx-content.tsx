@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { CodeBlock } from './code-block';
+import { MDXImage } from './mdx-image';
 import { generateHeadingId } from '@/lib/toc';
 
 interface MDXContentProps {
@@ -118,6 +119,10 @@ export function MDXContent({ content }: MDXContentProps) {
         td: ({ node, ...props }) => (
           <td className="px-2 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-text-secondary" {...props} />
         ),
+        img: ({ node, src, alt, title, ...props }: any) => {
+          if (!src) return null;
+          return <MDXImage src={src} alt={alt || ''} title={title} />;
+        },
       }}
     >
       {content}

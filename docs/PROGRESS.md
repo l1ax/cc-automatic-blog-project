@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 4 - Responsive Design & Polish |
-| **Current Task** | Task 4.5 Complete. Next: Task 4.6 - Add image optimization (next/image) |
+| **Current Task** | Task 4.6 Complete. Next: Task 4.7 - Implement dark/light theme toggle (optional) |
 | **Blocker** | None |
-| **Last Action** | Added custom 404 page with helpful navigation and suggestions |
+| **Last Action** | Added image optimization with Next.js Image component, supporting AVIF/WebP, lazy loading, and error handling |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -707,7 +707,48 @@ None
     - Metadata export for SEO
   - **Notes**: Build verified successfully. The custom 404 page provides a user-friendly experience when navigating to non-existent URLs, with clear navigation options back to main content. The page follows the blog's design language with dark theme and orange accents.
 
-- [ ] **Task 4.6**: Add image optimization (next/image)
+- [x] **Task 4.6**: Add image optimization (next/image)
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `components/mdx-image.tsx` - Optimized MDX image component with Next.js Image
+  - **Files Modified**:
+    - `next.config.ts` - Added image optimization configuration
+    - `components/mdx-content.tsx` - Integrated MDXImage component
+    - `posts/2026-01-17-welcome-to-my-blog.md` - Added sample image for testing
+  - **Features**:
+    - Automatic image optimization using Next.js Image component
+    - AVIF and WebP format support for modern browsers
+    - Responsive image sizes for different devices
+    - Lazy loading for better performance
+    - Loading skeleton animation while image loads
+    - Error handling with fallback UI
+    - Image caption support via title attribute
+    - External image support with remote patterns configuration
+    - Consistent styling matching blog's dark theme
+  - **Image Configuration**:
+    - Remote patterns: All HTTPS domains supported
+    - Formats: AVIF, WebP (with fallback)
+    - Device sizes: 640, 750, 828, 1080, 1200, 1920, 2048, 3840
+    - Image sizes: 16, 32, 48, 64, 96, 128, 256, 384
+  - **Styling**:
+    - Responsive container with proper margins
+    - Rounded corners matching blog design
+    - Tertiary background during loading (pulse animation)
+    - Centered caption in muted text color
+    - Error state with clear messaging
+  - **Technical Implementation**:
+    - Client-side component ("use client")
+    - Next.js Image component with proper width/height
+    - Sizes attribute for responsive images
+    - State management for loading and error states
+    - Graceful error handling
+  - **Usage**:
+    - Markdown syntax: `![alt text](image_url "Title")`
+    - Supports both local and external images
+    - Title attribute becomes caption below image
+  - **Notes**: Build verified successfully. Images in Markdown content are now automatically optimized using Next.js Image component with AVIF/WebP support, responsive sizing, lazy loading, and proper error handling.
+
 - [ ] **Task 4.7**: Implement dark/light theme toggle (optional)
 - [ ] **Task 4.8**: Add favicon and meta tags for SEO
 
@@ -876,6 +917,7 @@ None yet - project just started
 | 2026-01-17 04:15 | Task 4.3 Complete | Optimized typography for mobile reading. Added comprehensive CSS optimizations including 16px base font size, improved line heights (1.75 on mobile, 1.8 for Chinese), letter spacing optimization, reading width limits (65ch), text selection styling, and touch-friendly link spacing. Updated MDXContent and article page with responsive typography classes. Build verified successfully. |
 | 2026-01-17 04:30 | Task 4.4 Complete | Added loading states and skeleton screens for all pages. Created skeleton components (ArticleCardSkeleton, HeadingSkeleton, ParagraphSkeleton, SearchResultSkeleton) and loading.tsx files for global, article, and tag pages. Added shimmer animation CSS. Build verified successfully. |
 | 2026-01-17 04:45 | Task 4.5 Complete | Added custom 404 page with helpful navigation. Created app/not-found.tsx with large 404 heading, clear error message in Chinese, sad face illustration, two action buttons (Return to Home, About Blog), and helpful suggestions list. Responsive design with consistent dark theme styling and SEO metadata. Build verified successfully. |
+| 2026-01-17 05:00 | Task 4.6 Complete | Added image optimization with Next.js Image component. Created MDXImage component with AVIF/WebP support, lazy loading, loading skeleton, error handling, and caption support. Configured next.config.ts with remote patterns for external images. Integrated into MDXContent for automatic optimization of images in Markdown content. Build verified successfully. |
 
 ---
 

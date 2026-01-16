@@ -66,6 +66,13 @@ fn main() {
 }
 ```
 
+## 图片支持
+
+博客支持图片显示，图片会自动进行优化处理：
+
+![Next.js Logo](https://nextjs.org/icons/next.svg)
+*Next.js Logo*
+
 ## 期待
 
 这个博客主要是为我自己服务的，用于：

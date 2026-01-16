@@ -396,7 +396,7 @@ cc-automatic-blog-project/
 - [x] **Task 4.3**: Optimize typography for mobile reading
 - [x] **Task 4.4**: Add loading states and skeleton screens
 - [x] **Task 4.5**: Add 404 page
-- [ ] **Task 4.6**: Add image optimization (next/image)
+- [x] **Task 4.6**: Add image optimization (next/image)
 - [ ] **Task 4.7**: Implement dark/light theme toggle (optional)
 - [ ] **Task 4.8**: Add favicon and meta tags for SEO
 
