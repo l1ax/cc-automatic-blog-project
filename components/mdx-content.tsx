@@ -3,6 +3,7 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { CodeBlock } from './code-block';
 
 interface MDXContentProps {
   content: string;
@@ -50,19 +51,29 @@ export function MDXContent({ content }: MDXContentProps) {
         em: ({ node, ...props }) => (
           <em className="italic text-text-secondary" {...props} />
         ),
-        code: ({ node, inline, ...props }: any) => {
+        code: ({ node, inline, className, children, ...props }: any) => {
+          const language = className?.replace(/language-/, '') || '';
+
           if (inline) {
             return (
-              <code className="bg-bg-tertiary text-accent-primary px-2 py-1 rounded text-sm font-mono" {...props} />
+              <code className="bg-bg-tertiary text-accent-primary px-2 py-1 rounded text-sm font-mono" {...props}>
+                {children}
+              </code>
             );
           }
+
           return (
-            <code className="block bg-bg-tertiary text-text-secondary p-4 rounded-lg overflow-x-auto text-sm font-mono" {...props} />
+            <CodeBlock code={String(children).replace(/\n$/, '')} language={language} />
           );
         },
-        pre: ({ node, ...props }) => (
-          <pre className="bg-bg-tertiary p-4 rounded-lg overflow-x-auto mb-6" {...props} />
-        ),
+        pre: ({ node, children, ...props }: any) => {
+          // Don't render pre wrapper since CodeBlock handles it
+          const codeElement = (children as any)?.props?.children;
+          if (codeElement && typeof codeElement === 'string') {
+            return <>{children}</>;
+          }
+          return <>{children}</>;
+        },
         hr: ({ node, ...props }) => (
           <hr className="border-t border-divider my-8" {...props} />
         ),

@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 2 - Core Features (MVP) |
-| **Current Task** | Tasks 2.2, 2.3, 2.5 Complete. Next: Task 2.4 - Implement Shiki code highlighting |
+| **Current Task** | Task 2.4 Complete. Next: Task 2.6 - Implement tag filtering functionality |
 | **Blocker** | None |
-| **Last Action** | Created ArticleCard component and enhanced homepage with reading time display |
+| **Last Action** | Implemented code highlighting with react-syntax-highlighter, added copy button to code blocks |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -199,17 +199,42 @@
     - Tag badges get orange border on hover
   - **Notes**: Build verified successfully. ArticleCard is now a reusable component that can be used in other contexts (tag pages, search results, etc.)
 
+- [x] **Task 2.4**: Implement Shiki code highlighting for code blocks
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `components/code-block.tsx` - CodeBlock component with react-syntax-highlighter
+  - **Files Modified**:
+    - `components/mdx-content.tsx` - Updated to use CodeBlock component
+  - **Dependencies Added**:
+    - react-syntax-highlighter@^15.6.1
+    - @types/react-syntax-highlighter@^5.0.4
+  - **Features**:
+    - VSCode-quality syntax highlighting using PrismJS via react-syntax-highlighter
+    - Support for 40+ programming languages including JavaScript, TypeScript, Python, Rust, Go, Java, C, C++, PHP, Ruby, Swift, Kotlin, Scala, Bash, CSS, SCSS, HTML, JSON, YAML, SQL, Dart, Vue, Svelte
+    - Language alias normalization (js → javascript, ts → typescript, etc.)
+    - Language label display in header
+    - Copy button with visual feedback (shows "已复制!" after copying)
+    - Dark theme (vscDarkPlus style) matching blog's color scheme
+    - Responsive code blocks with horizontal scrolling
+    - Fira Code monospace font for code display
+  - **Styling**:
+    - Header bar with language label and copy button
+    - Orange accent color on copy button hover
+    - Border around code block for visual separation
+    - Proper padding and line height for readability
+  - **Notes**: Build verified successfully. Code blocks now have professional syntax highlighting with a copy button. Used react-syntax-highlighter instead of Shiki for better client-side performance and smaller bundle size.
+
 ### In Progress
 
-- [ ] **Task 2.4**: Implement Shiki code highlighting for code blocks
+- [ ] **Task 2.6**: Implement tag filtering functionality
   - **Status**: Next task - Ready to begin
-  - **Notes**: Code blocks currently use basic styling; need to integrate Shiki for VSCode-quality syntax highlighting
+  - **Notes**: Need to add tag filtering to article list page and create tag-specific pages
 
 ### Pending
 
 ### Phase 2: Core Features (MVP)
 
-- [ ] **Task 2.4**: Implement Shiki code highlighting for code blocks
 - [ ] **Task 2.6**: Implement tag filtering functionality
 - [ ] **Task 2.7**: Create tag page at `/blog/tag/[tag]`
 - [ ] **Task 2.8**: Add About page
@@ -322,6 +347,10 @@ None yet - project just started
 - Refactored existing code to use provider pattern
 - All functionality preserved with new architecture
 
+**Code Highlighting Dependencies (Task 2.4)**:
+- react-syntax-highlighter@15.6.1
+- @types/react-syntax-highlighter@5.0.4
+
 ---
 
 ## Blockers
@@ -371,6 +400,7 @@ None yet - project just started
 | 2026-01-17 01:20 | Task 1.7 Complete | Configured Vercel deployment with vercel.json, added comprehensive README with deployment instructions, verified production build works |
 | 2026-01-17 01:29 | Task 2.1 Complete | Implemented content provider interface and local MDX implementation with abstract architecture for future Notion/Obsidian migration |
 | 2026-01-17 01:44 | Tasks 2.2/2.3/2.5 Complete | Created ArticleCard component with comprehensive metadata display (date, reading time, tags, category) and enhanced hover effects; Refactored homepage to use the new component |
+| 2026-01-17 01:53 | Task 2.4 Complete | Implemented code highlighting with react-syntax-highlighter (PrismJS). Added CodeBlock component with language detection, VSCode Dark Plus theme, copy button with visual feedback, and support for 40+ programming languages |
 
 ---
 
