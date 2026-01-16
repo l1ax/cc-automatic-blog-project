@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 4 - Responsive Design & Polish |
-| **Current Task** | Task 4.3 Complete. Next: Task 4.4 - Add loading states and skeleton screens |
+| **Current Task** | Task 4.4 Complete. Next: Task 4.5 - Add 404 page |
 | **Blocker** | None |
-| **Last Action** | Optimized typography for mobile reading with better font sizes, line heights, and reading width |
+| **Last Action** | Added loading states and skeleton screens for all pages with shimmer animation |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -622,6 +622,53 @@ None
     - CSS custom properties for consistent theming
     - Proper text selection styling with brand colors
   - **Notes**: Build verified successfully. Typography is now optimized for mobile reading with better font sizes, line heights, letter spacing, and reading width. Chinese characters receive special treatment for optimal readability.
+
+- [x] **Task 4.4**: Add loading states and skeleton screens
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `components/skeletons/article-card.tsx` - ArticleCard skeleton component
+    - `components/skeletons/text.tsx` - Text skeleton components (HeadingSkeleton, ParagraphSkeleton, TextLineSkeleton)
+    - `components/skeletons/search-result.tsx` - Search result skeleton component
+    - `components/skeletons/index.ts` - Centralized export for all skeleton components
+    - `app/loading.tsx` - Global loading state for the entire application
+    - `app/blog/[slug]/loading.tsx` - Article page loading state
+    - `app/blog/tag/[tag]/loading.tsx` - Tag page loading state
+  - **Files Modified**:
+    - `app/globals.css` - Added shimmer animation keyframes and animate-shimmer utility class
+  - **Features**:
+    - Global loading state that shows while any page is loading
+    - Article-specific loading state with content structure skeleton
+    - Tag page loading state with breadcrumb and article list skeleton
+    - Reusable skeleton components for article cards, text elements, and search results
+    - Shimmer animation effect using CSS gradients
+    - Responsive skeleton layouts matching actual component structure
+    - Consistent styling with blog's dark theme (#2d2d2d tertiary background)
+  - **Skeleton Components**:
+    - ArticleCardSkeleton: Individual article card placeholder with title, summary, metadata, and tags
+    - ArticleCardSkeletonList: Multiple article card skeletons (configurable count)
+    - HeadingSkeleton: Heading placeholder for h1-h6 elements
+    - ParagraphSkeleton: Multi-line paragraph placeholder with configurable line count
+    - TextLineSkeleton: Single-line text placeholder with configurable width
+    - SearchResultSkeleton: Search result dropdown item placeholder
+    - SearchResultSkeletonList: Multiple search result skeletons
+  - **Loading States**:
+    - Global loading (app/loading.tsx): Shows hero section, tag filter, article list, and features section skeletons
+    - Article loading (app/blog/[slug]/loading.tsx): Shows back link, article header (title, metadata, summary, tags), content blocks with code placeholders, and footer
+    - Tag page loading (app/blog/tag/[tag]/loading.tsx): Shows breadcrumb, tag header, and article list skeletons
+  - **Animation**:
+    - CSS shimmer animation with gradient effect (#2d2d2d to #3d3d3d)
+    - Smooth 2-second infinite animation loop
+    - Applied to all skeleton elements via Tailwind's animate-pulse class
+    - Optional animate-shimmer class for enhanced gradient effect
+  - **Technical Implementation**:
+    - Next.js App Router loading.tsx files for automatic loading state management
+    - Reusable skeleton components with consistent styling
+    - Responsive design matching actual components (sm:, md:, lg: breakpoints)
+    - Proper accessibility with semantic HTML structure
+    - Type-safe props with TypeScript interfaces
+  - **Notes**: Build verified successfully. Loading states and skeleton screens are now fully implemented across all pages. The skeletons match the actual component structure and provide visual feedback during data fetching. The shimmer animation creates a polished loading experience.
+
 - [ ] **Task 4.5**: Add 404 page
 - [ ] **Task 4.6**: Add image optimization (next/image)
 - [ ] **Task 4.7**: Implement dark/light theme toggle (optional)
@@ -790,6 +837,7 @@ None yet - project just started
 | 2026-01-17 03:45 | Phase 3 Complete | All Phase 3 tasks completed. Search & Navigation features are now implemented: FlexSearch integration, build-time search index, search box with live results, keyboard shortcut, article TOC, smooth scrolling, and back to top button. |
 | 2026-01-17 04:00 | Task 4.2 Complete | Added mobile navigation menu with hamburger icon and slide-in panel. Created MobileNav component with smooth animations, click-outside-to-close, body scroll lock, and proper accessibility. Integrated into header layout. Search box hidden on mobile to save space. Build verified successfully. |
 | 2026-01-17 04:15 | Task 4.3 Complete | Optimized typography for mobile reading. Added comprehensive CSS optimizations including 16px base font size, improved line heights (1.75 on mobile, 1.8 for Chinese), letter spacing optimization, reading width limits (65ch), text selection styling, and touch-friendly link spacing. Updated MDXContent and article page with responsive typography classes. Build verified successfully. |
+| 2026-01-17 04:30 | Task 4.4 Complete | Added loading states and skeleton screens for all pages. Created skeleton components (ArticleCardSkeleton, HeadingSkeleton, ParagraphSkeleton, SearchResultSkeleton) and loading.tsx files for global, article, and tag pages. Added shimmer animation CSS. Build verified successfully. |
 
 ---
 

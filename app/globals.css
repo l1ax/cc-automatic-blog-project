@@ -121,3 +121,26 @@ a {
     }
   }
 }
+
+/* Skeleton loading animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Enhanced skeleton animation with gradient shimmer */
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(
+    to right,
+    #2d2d2d 0%,
+    #3d3d3d 20%,
+    #2d2d2d 40%,
+    #2d2d2d 100%
+  );
+  background-size: 1000px 100%;
+}
