@@ -279,7 +279,7 @@
 
 - [x] **Task 2.8**: Add About page
   - **Completed**: 2026-01-17
-  - **Commit**: TBD
+  - **Commit**: 6918699
   - **Files Created**:
     - `app/about/page.tsx` - About page with comprehensive information
   - **Features**:
