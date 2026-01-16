@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 3 - Search & Navigation |
-| **Current Task** | Task 3.1 Complete. Next: Task 3.2 - Generate search index at build time |
+| **Current Task** | Task 3.2 Complete. Next: Task 3.3 - Create search box component with live results |
 | **Blocker** | None |
-| **Last Action** | Integrated FlexSearch for client-side search with SearchIndex class and utilities |
+| **Last Action** | Generated search index at build time with inverted index for client-side search |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -18,7 +18,7 @@
 |-------|-------|
 | **Working Directory** | /Users/cong/chenzhicong/cc-automatic-blog-project |
 | **Git Branch** | main |
-| **Last Commit** | 5d20073 - feat: implement dark theme layout with orange accents |
+| **Last Commit** | TBD |
 
 ---
 
@@ -328,11 +328,46 @@
     - Fields indexed: title, summary, tags, category, content
   - **Notes**: Build verified successfully. FlexSearch is now integrated and ready for client-side search. The SearchIndex class provides a clean API for indexing and searching articles. Next step is to generate the index at build time and create the search box component.
 
+- [x] **Task 3.2**: Generate search index at build time
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `lib/search/build-index.ts` - Build-time search index generator with inverted index
+    - `lib/search/client-search.ts` - Client-side search utilities for loading and searching the pre-built index
+    - `lib/search/index.ts` - Search module exports
+    - `lib/search/search-legacy.ts` - Renamed from lib/search.ts for backward compatibility
+  - **Files Modified**:
+    - `package.json` - Added build:search script and tsx dependency
+  - **Dependencies Added**:
+    - tsx@^4.21.0 - TypeScript execution for build scripts
+  - **Features**:
+    - Build-time search index generation using npm run build:search
+    - Inverted index for efficient client-side search (token → article slugs mapping)
+    - Full-text search support with Chinese character and bigram tokenization
+    - ClientSearchIndex class for loading and searching the pre-built index
+    - Singleton pattern for search index instance
+    - Search index JSON file output to public/search-index.json
+    - Build script integration (npm run build runs build:search automatically)
+  - **Technical Implementation**:
+    - Reads all articles from content provider
+    - Extracts full content from Markdown files
+    - Strips code blocks and markdown syntax for clean search
+    - Tokenizes text supporting both English and Chinese
+    - Chinese tokenization: individual characters + bigrams
+    - Creates inverted index mapping tokens to article slugs
+    - Client-side search loads index via fetch API
+    - Scores results based on token frequency
+  - **Output**:
+    - public/search-index.json containing:
+      - articles: Array of SearchableArticle with full content
+      - indexed: Map from token to article slugs
+  - **Notes**: Build verified successfully. Search index is generated at build time and served as static JSON. The client-side search utilities are ready for integration with the search box component. Index contains 429 unique tokens for 1 article. Next step is to create the search box component.
+
 ### In Progress
 
-- [ ] **Task 3.2**: Generate search index at build time
+- [ ] **Task 3.3**: Create search box component with live results
   - **Status**: Next task - Ready to begin
-  - **Notes**: Create build-time index generation for client-side search
+  - **Notes**: Create interactive search box component with real-time search results
 
 ### Pending
 
@@ -342,8 +377,8 @@
 
 ### Phase 3: Search & Navigation
 
-- [ ] **Task 3.1**: Integrate FlexSearch for client-side search
-- [ ] **Task 3.2**: Generate search index at build time
+- [x] **Task 3.1**: Integrate FlexSearch for client-side search
+- [x] **Task 3.2**: Generate search index at build time
 - [ ] **Task 3.3**: Create search box component with live results
 - [ ] **Task 3.4**: Add keyboard shortcut for search (Cmd+K)
 - [ ] **Task 3.5**: Implement article table of contents (TOC)
@@ -456,6 +491,9 @@ None yet - project just started
 - flexsearch@0.7.43
 - @types/flexsearch@0.7.5
 
+**Build Script Dependencies (Task 3.2)**:
+- tsx@4.21.0
+
 ---
 
 ## Blockers
@@ -474,8 +512,8 @@ None yet - project just started
 2. **Read PRD**: `cat docs/PRD.md` - understand full requirements
 3. **Check git log**: `git log --oneline -10` - see recent commits
 4. **Check git status**: `git status` - see uncommitted changes
-5. **Current task is**: Task 3.1 - Integrate FlexSearch for client-side search
-6. **Next action should be**: Install FlexSearch and set up search functionality
+5. **Current task is**: Task 3.3 - Create search box component with live results
+6. **Next action should be**: Create SearchBox component with real-time search results display
 
 **Important Context to Remember:**
 - This is a personal tech blog for knowledge management, not public engagement
@@ -512,6 +550,7 @@ None yet - project just started
 | 2026-01-17 02:14 | Phase 2 Complete | All Phase 2 tasks completed. Core features (MVP) are now implemented: content provider architecture, article list/detail pages, code highlighting, tag filtering, tag pages, and About page. |
 | 2026-01-17 02:14 | Phase 3 Start | Ready to begin Phase 3 - Search & Navigation. Next task: Task 3.1 - Integrate FlexSearch for client-side search. |
 | 2026-01-17 02:32 | Task 3.1 Complete | Integrated FlexSearch for client-side search. Created SearchIndex class in lib/search.ts with Document-based indexing. Added flexsearch@0.7.43 and @types/flexsearch@0.7.5 dependencies. Build verified successfully. |
+| 2026-01-17 02:50 | Task 3.2 Complete | Generated search index at build time. Created build-index.ts with inverted index for efficient client-side search. Added client-search.ts for loading and searching pre-built index. Search index is served as static JSON from public/search-index.json. Build script integration complete. |
 
 ---
 

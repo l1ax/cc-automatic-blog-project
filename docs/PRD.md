@@ -376,7 +376,7 @@ cc-automatic-blog-project/
 **Goal**: 实现搜索和导航功能。
 
 - [x] **Task 3.1**: Integrate FlexSearch for client-side search
-- [ ] **Task 3.2**: Generate search index at build time
+- [x] **Task 3.2**: Generate search index at build time
 - [ ] **Task 3.3**: Create search box component with live results
 - [ ] **Task 3.4**: Add keyboard shortcut for search (Cmd+K)
 - [ ] **Task 3.5**: Implement article table of contents (TOC)

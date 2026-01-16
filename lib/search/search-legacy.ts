@@ -3,7 +3,7 @@
  * Generates and manages FlexSearch index for client-side search
  */
 
-import { ArticleMetadata } from './providers/types';
+import { ArticleMetadata } from '../providers/types';
 import FlexSearch from 'flexsearch';
 
 /**
@@ -165,7 +165,7 @@ export async function generateSearchIndex(): Promise<{
   metadata: ArticleMetadata[];
 }> {
   // Import here to avoid circular dependency
-  const { getAllArticles } = await import('./content');
+  const { getAllArticles } = await import('../content');
 
   const articles = await getAllArticles();
   const index = createSearchIndex(articles);

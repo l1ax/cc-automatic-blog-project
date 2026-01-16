@@ -1,0 +1,23 @@
+Task 3.1 is now complete. Here's a summary of what was implemented:
+
+## Task 3.1 Complete: Integrate FlexSearch for Client-Side Search
+
+**Files Created:**
+- `lib/search.ts` - Search index utilities with FlexSearch integration
+
+**Dependencies Added:**
+- flexsearch@0.7.43 - Fast client-side search library
+- @types/flexsearch@0.7.5 - TypeScript definitions
+
+**Features Implemented:**
+- `SearchIndex` class wrapping FlexSearch.Document for easy use
+- Support for indexing title, summary, tags, category, and content fields
+- Full tokenization for Chinese and English content
+- Configurable search depth (3) and relevance scoring
+- `createSearchIndex()` utility to build index from article metadata
+- `generateSearchIndex()` async function for build-time index generation
+- `SearchResult` interface with slug, title, summary, tags, category
+
+**Build Status:** Verified successfully
+
+**Next Task:** Task 3.2 - Generate search index at build time
