@@ -19,30 +19,27 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Debounced search function
-  const debouncedSearch = useCallback(
-    async (searchQuery: string) => {
-      if (!searchQuery.trim()) {
-        setResults([]);
-        setIsOpen(false);
-        return;
-      }
+  const debouncedSearch = useCallback(async (searchQuery: string) => {
+    if (!searchQuery.trim()) {
+      setResults([]);
+      setIsOpen(false);
+      return;
+    }
 
-      setIsLoading(true);
-      try {
-        const searchIndex = getSearchIndex();
-        const searchResults = await searchIndex.search(searchQuery, 10);
-        setResults(searchResults);
-        setIsOpen(true);
-        setSelectedIndex(-1);
-      } catch (error) {
-        console.error("Search error:", error);
-        setResults([]);
-      } finally {
-        setIsLoading(false);
-      }
-    },
-    []
-  );
+    setIsLoading(true);
+    try {
+      const searchIndex = getSearchIndex();
+      const searchResults = await searchIndex.search(searchQuery, 10);
+      setResults(searchResults);
+      setIsOpen(true);
+      setSelectedIndex(-1);
+    } catch (error) {
+      console.error("Search error:", error);
+      setResults([]);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
 
   // Debounce effect
   useEffect(() => {
@@ -92,9 +89,7 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
     switch (e.key) {
       case "ArrowDown":
         e.preventDefault();
-        setSelectedIndex((prev) =>
-          prev < results.length - 1 ? prev + 1 : prev
-        );
+        setSelectedIndex((prev) => (prev < results.length - 1 ? prev + 1 : prev));
         break;
       case "ArrowUp":
         e.preventDefault();
@@ -190,10 +185,7 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
       {isOpen && (
         <>
           {/* Backdrop */}
-          <div
-            className="fixed inset-0 z-10"
-            onClick={() => setIsOpen(false)}
-          />
+          <div className="fixed inset-0 z-10" onClick={() => setIsOpen(false)} />
 
           {/* Results */}
           <div className="absolute z-20 mt-2 w-full sm:w-auto bg-bg-secondary border border-border rounded-lg shadow-xl shadow-bg-primary/50 max-h-80 sm:max-h-96 overflow-hidden">
@@ -312,9 +304,7 @@ export function SearchBox({ placeholder = "搜索文章..." }: SearchBoxProps) {
                   />
                 </svg>
                 <p className="text-xs sm:text-sm">未找到相关文章</p>
-                <p className="text-[10px] sm:text-xs mt-1 text-text-muted">
-                  试试其他关键词
-                </p>
+                <p className="text-[10px] sm:text-xs mt-1 text-text-muted">试试其他关键词</p>
               </div>
             ) : null}
           </div>

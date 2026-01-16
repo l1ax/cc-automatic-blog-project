@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 import { getAllArticles } from "@/lib/content";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

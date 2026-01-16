@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import { Metadata } from 'next';
+import Link from "next/link";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: '404 - Page Not Found',
-  description: 'The page you are looking for does not exist.',
+  title: "404 - Page Not Found",
+  description: "The page you are looking for does not exist.",
 };
 
 export default function NotFound() {
@@ -11,18 +11,12 @@ export default function NotFound() {
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-2xl w-full text-center">
         {/* 404 Heading */}
-        <h1 className="text-8xl sm:text-9xl font-bold text-accent-primary mb-4">
-          404
-        </h1>
+        <h1 className="text-8xl sm:text-9xl font-bold text-accent-primary mb-4">404</h1>
 
         {/* Error Message */}
         <div className="space-y-4 mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">
-            页面未找到
-          </h2>
-          <p className="text-text-secondary text-lg">
-            抱歉，您访问的页面不存在或已被移动。
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">页面未找到</h2>
+          <p className="text-text-secondary text-lg">抱歉，您访问的页面不存在或已被移动。</p>
         </div>
 
         {/* 404 Illustration */}
@@ -50,12 +44,7 @@ export default function NotFound() {
             href="/"
             className="inline-flex items-center gap-2 px-6 py-3 bg-accent-primary hover:bg-accent-hover text-white rounded-lg font-medium transition-colors duration-200"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -70,12 +59,7 @@ export default function NotFound() {
             href="/about"
             className="inline-flex items-center gap-2 px-6 py-3 bg-tertiary hover:bg-secondary text-text-primary rounded-lg font-medium transition-colors duration-200 border border-border"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -89,9 +73,7 @@ export default function NotFound() {
 
         {/* Suggestion Text */}
         <div className="mt-12 p-6 bg-tertiary rounded-xl border border-border">
-          <p className="text-text-secondary text-sm">
-            您可以：
-          </p>
+          <p className="text-text-secondary text-sm">您可以：</p>
           <ul className="mt-3 text-text-secondary text-sm space-y-1">
             <li>检查 URL 是否拼写正确</li>
             <li>使用顶部的搜索框查找文章</li>

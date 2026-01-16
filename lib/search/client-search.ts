@@ -3,7 +3,7 @@
  * Loads and searches the pre-built search index
  */
 
-import type { BuildTimeIndex, ClientSearchResult } from './types';
+import type { BuildTimeIndex, ClientSearchResult } from "./types";
 
 /**
  * Client-side search index
@@ -24,7 +24,7 @@ export class ClientSearchIndex {
       return this.loadPromise;
     }
 
-    this.loadPromise = fetch('/search-index.json')
+    this.loadPromise = fetch("/search-index.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to load search index: ${res.statusText}`);
@@ -38,7 +38,7 @@ export class ClientSearchIndex {
       })
       .catch((error) => {
         this.loadPromise = null;
-        console.error('Error loading search index:', error);
+        console.error("Error loading search index:", error);
         throw error;
       });
 
@@ -51,9 +51,7 @@ export class ClientSearchIndex {
   private tokenize(query: string): string[] {
     if (!query) return [];
 
-    const cleaned = query
-      .toLowerCase()
-      .replace(/[^\p{L}\p{N}\s]/gu, ' ');
+    const cleaned = query.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, " ");
 
     const tokens = cleaned.split(/\s+/).filter((t) => t.length > 0);
 

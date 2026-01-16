@@ -71,11 +71,12 @@ fn main() {
 博客支持图片显示，图片会自动进行优化处理：
 
 ![Next.js Logo](https://nextjs.org/icons/next.svg)
-*Next.js Logo*
+_Next.js Logo_
 
 ## 期待
 
 这个博客主要是为我自己服务的，用于：
+
 - 记录学习笔记
 - 整理技术方案
 - 沉淀项目经验

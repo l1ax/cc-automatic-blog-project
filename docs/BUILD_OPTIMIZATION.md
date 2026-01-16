@@ -7,6 +7,7 @@ This guide explains the build optimization features configured for this Next.js 
 ### What is Bundle Analysis?
 
 Bundle analysis helps you understand the size and composition of your JavaScript bundles. This is crucial for:
+
 - Identifying large dependencies that increase page load times
 - Finding duplicate code across bundles
 - Optimizing your application's performance
@@ -21,6 +22,7 @@ npm run build:analyze
 ```
 
 This will:
+
 1. Build your application with bundle analysis enabled
 2. Automatically open browser windows showing interactive visualizations of your bundles
 3. Generate reports for both client and server bundles
@@ -28,6 +30,7 @@ This will:
 ### Understanding the Reports
 
 The bundle analyzer shows:
+
 - **Module sizes**: How large each dependency is
 - **Dependency tree**: Which modules import which
 - **Duplicate code**: Code that appears in multiple bundles
@@ -38,13 +41,15 @@ The bundle analyzer shows:
 Based on bundle analysis, you can:
 
 1. **Code Splitting**: Split large components into separate chunks
+
    ```typescript
    // Instead of: import { HeavyComponent } from './HeavyComponent'
    // Use dynamic imports:
-   const HeavyComponent = dynamic(() => import('./HeavyComponent'))
+   const HeavyComponent = dynamic(() => import("./HeavyComponent"));
    ```
 
 2. **Tree Shaking**: Ensure you're only importing what you need
+
    ```typescript
    // Bad: import _ from 'lodash'
    // Good: import debounce from 'lodash/debounce'
@@ -107,27 +112,35 @@ npm run lint
 Before deploying to production:
 
 1. **Run Type Check**
+
    ```bash
    npm run type-check
    ```
+
    Ensures no TypeScript errors
 
 2. **Run Linter**
+
    ```bash
    npm run lint
    ```
+
    Catches code quality issues
 
 3. **Run Build**
+
    ```bash
    npm run build
    ```
+
    Verifies production build works
 
 4. **Check Build Size**
+
    ```bash
    npm run build:analyze
    ```
+
    Review bundle sizes and look for optimization opportunities
 
 5. **Review Build Output**
@@ -160,6 +173,7 @@ Before deploying to production:
 ### Pre-commit Checks
 
 Consider adding a pre-commit hook to run:
+
 ```bash
 npm run type-check && npm run lint
 ```
@@ -167,6 +181,7 @@ npm run type-check && npm run lint
 ### CI/CD Integration
 
 The `.github/workflows/ci.yml` already includes:
+
 - Type checking
 - Linting
 - Production build verification
@@ -174,6 +189,7 @@ The `.github/workflows/ci.yml` already includes:
 ### Regular Bundle Audits
 
 Run bundle analysis:
+
 - **Weekly** during active development
 - **After** adding new dependencies
 - **Before** major releases
@@ -184,6 +200,7 @@ Run bundle analysis:
 ### Build is Slow
 
 1. Check what's taking time:
+
    ```bash
    npm run build -- --debug
    ```
@@ -204,6 +221,7 @@ Run bundle analysis:
 ### Type Errors in Production
 
 If `npm run type-check` fails but build succeeds:
+
 ```bash
 # This means type errors are being ignored
 # Update next.config.ts to be stricter:

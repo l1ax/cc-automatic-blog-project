@@ -2,11 +2,7 @@ import { getAllArticles, getAllTags } from "@/lib/content";
 import { ArticleCard } from "@/components/article-card";
 import { TagFilter } from "@/components/tag-filter";
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: Promise<{ tag?: string }>;
-}) {
+export default async function Home({ searchParams }: { searchParams: Promise<{ tag?: string }> }) {
   const { tag: selectedTag } = await searchParams;
   const allArticles = await getAllArticles();
   const allTags = await getAllTags();
@@ -68,8 +64,18 @@ export default async function Home({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <div className="bg-bg-secondary rounded-lg p-4 sm:p-6 border border-border">
               <div className="w-10 h-10 bg-accent-primary rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-bg-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <svg
+                  className="w-6 h-6 text-bg-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
                 </svg>
               </div>
               <h3 className="text-base sm:text-lg font-semibold text-text-primary mb-2">
@@ -81,8 +87,18 @@ export default async function Home({
             </div>
             <div className="bg-bg-secondary rounded-lg p-4 sm:p-6 border border-border">
               <div className="w-10 h-10 bg-accent-primary rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-bg-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                <svg
+                  className="w-6 h-6 text-bg-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                  />
                 </svg>
               </div>
               <h3 className="text-base sm:text-lg font-semibold text-text-primary mb-2">
@@ -94,8 +110,18 @@ export default async function Home({
             </div>
             <div className="bg-bg-secondary rounded-lg p-4 sm:p-6 border border-border sm:col-span-2 lg:col-span-1">
               <div className="w-10 h-10 bg-accent-primary rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-bg-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                <svg
+                  className="w-6 h-6 text-bg-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  />
                 </svg>
               </div>
               <h3 className="text-base sm:text-lg font-semibold text-text-primary mb-2">

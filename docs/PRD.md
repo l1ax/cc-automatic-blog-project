@@ -2,13 +2,13 @@
 
 ## Metadata
 
-| Field | Value |
-|-------|-------|
-| **Created** | 2026-01-17 |
-| **Last Updated** | 2026-01-17 |
-| **Status** | draft |
-| **Version** | 1.0 |
-| **Author** | Claude + cong |
+| Field            | Value         |
+| ---------------- | ------------- |
+| **Created**      | 2026-01-17    |
+| **Last Updated** | 2026-01-17    |
+| **Status**       | draft         |
+| **Version**      | 1.0           |
+| **Author**       | Claude + cong |
 
 ---
 
@@ -30,6 +30,7 @@
 ### Current State
 
 目前使用零散的笔记工具或简单的文档记录，但缺乏：
+
 - 全文搜索能力
 - 良好的移动端体验
 - 专业的代码高亮
@@ -208,17 +209,17 @@ These items are explicitly NOT part of this project:
 
 ### Tech Stack
 
-| Layer | Technology | Notes |
-|-------|------------|-------|
-| Frontend | Next.js 14+ | 使用 App Router 和 SSG |
-| Styling | Tailwind CSS | 移动端优先的响应式设计 |
-| Content | MDX | 支持 Markdown + React 组件 |
-| Code Highlighting | Shiki | VSCode 同款高亮 |
-| Search | FlexSearch | 客户端全文搜索 |
-| Math | KaTeX | 数学公式渲染 |
-| Diagrams | Mermaid | 流程图、时序图等 |
-| Deployment | Vercel | 自动部署和 CDN |
-| Version Control | Git | 内容版本管理 |
+| Layer             | Technology   | Notes                      |
+| ----------------- | ------------ | -------------------------- |
+| Frontend          | Next.js 14+  | 使用 App Router 和 SSG     |
+| Styling           | Tailwind CSS | 移动端优先的响应式设计     |
+| Content           | MDX          | 支持 Markdown + React 组件 |
+| Code Highlighting | Shiki        | VSCode 同款高亮            |
+| Search            | FlexSearch   | 客户端全文搜索             |
+| Math              | KaTeX        | 数学公式渲染               |
+| Diagrams          | Mermaid      | 流程图、时序图等           |
+| Deployment        | Vercel       | 自动部署和 CDN             |
+| Version Control   | Git          | 内容版本管理               |
 
 ### Architecture Overview
 
@@ -260,13 +261,13 @@ These items are explicitly NOT part of this project:
 
 ```typescript
 interface ArticleFrontmatter {
-  title: string;           // 文章标题
-  date: string;            // 发布日期 (YYYY-MM-DD)
-  summary?: string;        // 文章摘要（可选）
-  tags?: string[];         // 标签列表（可选）
-  category?: string;       // 分类（可选）
-  draft?: boolean;         // 是否为草稿（默认 false）
-  readingTime?: number;    // 阅读时间分钟（自动计算）
+  title: string; // 文章标题
+  date: string; // 发布日期 (YYYY-MM-DD)
+  summary?: string; // 文章摘要（可选）
+  tags?: string[]; // 标签列表（可选）
+  category?: string; // 分类（可选）
+  draft?: boolean; // 是否为草稿（默认 false）
+  readingTime?: number; // 阅读时间分钟（自动计算）
 }
 ```
 
@@ -336,7 +337,7 @@ cc-automatic-blog-project/
 
 ## 7. Implementation Phases
 
-*Each task should be completable in 1-4 hours (roughly one PR/commit).*
+_Each task should be completable in 1-4 hours (roughly one PR/commit)._
 
 ### Phase 1: Walking Skeleton (Foundation)
 
@@ -443,7 +444,7 @@ cc-automatic-blog-project/
 - [x] **Task 7.1**: Add unit tests for utility functions
 - [x] **Task 7.2**: Add integration tests for critical flows
 - [ ] **Task 7.3**: Set up E2E tests with Playwright (optional)
-- [ ] **Task 7.4**: Configure ESLint and Prettier
+- [x] **Task 7.4**: Configure ESLint and Prettier
 - [ ] **Task 7.5**: Write README with setup instructions
 - [ ] **Task 7.6**: Document how to add new articles
 - [ ] **Task 7.7**: Create contribution guide (for future self)
@@ -526,14 +527,14 @@ npm run lint
 
 ### Risk Matrix
 
-| Risk | Likelihood | Impact | Mitigation |
-|------|------------|--------|------------|
-| 构建时间随文章增长过长 | Medium | Medium | 使用 ISR (增量静态生成) 或迁移到部分动态渲染 |
-| Vercel 免费额度限制 | Low | Low | 个人博客流量有限，免费额度足够 |
-| 搜索索引文件过大 | Medium | Medium | 实现搜索结果分页或使用更高效的压缩 |
-| MDX 解析错误导致构建失败 | Low | High | 添加构建时验证和错误提示 |
-| 依赖包版本冲突 | Medium | Medium | 使用 Dependabot 自动更新依赖 |
-| 迁移到 Notion 时数据结构不兼容 | Low | Medium | 设计良好的内容抽象层，易于扩展 |
+| Risk                           | Likelihood | Impact | Mitigation                                   |
+| ------------------------------ | ---------- | ------ | -------------------------------------------- |
+| 构建时间随文章增长过长         | Medium     | Medium | 使用 ISR (增量静态生成) 或迁移到部分动态渲染 |
+| Vercel 免费额度限制            | Low        | Low    | 个人博客流量有限，免费额度足够               |
+| 搜索索引文件过大               | Medium     | Medium | 实现搜索结果分页或使用更高效的压缩           |
+| MDX 解析错误导致构建失败       | Low        | High   | 添加构建时验证和错误提示                     |
+| 依赖包版本冲突                 | Medium     | Medium | 使用 Dependabot 自动更新依赖                 |
+| 迁移到 Notion 时数据结构不兼容 | Low        | Medium | 设计良好的内容抽象层，易于扩展               |
 
 ### Pre-Mortem: Why This Project Failed
 
@@ -545,7 +546,7 @@ npm run lint
 - **代码高亮性能问题** — Shiki 在服务端运行占用过多资源，构建超时
 - **搜索功能不准确** — FlexSearch 配置不当，搜索结果质量差
 
-*Mitigation*: 设计良好的内容抽象层，早期测试移动端，使用正确的 SSG 策略
+_Mitigation_: 设计良好的内容抽象层，早期测试移动端，使用正确的 SSG 策略
 
 ---
 
@@ -594,9 +595,9 @@ graph TD
 
 ## Change Log
 
-| Date | Version | Changes | Author |
-|------|---------|---------|--------|
-| 2026-01-17 | 1.0 | Initial PRD | Claude |
+| Date       | Version | Changes     | Author |
+| ---------- | ------- | ----------- | ------ |
+| 2026-01-17 | 1.0     | Initial PRD | Claude |
 
 ---
 
@@ -623,27 +624,27 @@ graph TD
 
 ```css
 /* Background Colors */
---bg-primary: #1a1a1a;      /* 深灰色背景 */
---bg-secondary: #242424;    /* 次级背景 */
---bg-tertiary: #2d2d2d;     /* 卡片/代码块背景 */
+--bg-primary: #1a1a1a; /* 深灰色背景 */
+--bg-secondary: #242424; /* 次级背景 */
+--bg-tertiary: #2d2d2d; /* 卡片/代码块背景 */
 
 /* Text Colors */
---text-primary: #e5e5e5;    /* 主要文字 */
---text-secondary: #a3a3a3;  /* 次要文字 */
---text-muted: #737373;      /* 弱化文字 */
+--text-primary: #e5e5e5; /* 主要文字 */
+--text-secondary: #a3a3a3; /* 次要文字 */
+--text-muted: #737373; /* 弱化文字 */
 
 /* Accent Colors */
---accent-primary: #f97316;  /* 橙色主色 */
---accent-hover: #ea580c;    /* 橙色悬停 */
---accent-subtle: #c2410c;   /* 橙色暗淡 */
+--accent-primary: #f97316; /* 橙色主色 */
+--accent-hover: #ea580c; /* 橙色悬停 */
+--accent-subtle: #c2410c; /* 橙色暗淡 */
 
 /* Border & Divider */
---border-color: #404040;    /* 边框颜色 */
---divider-color: #262626;   /* 分割线颜色 */
+--border-color: #404040; /* 边框颜色 */
+--divider-color: #262626; /* 分割线颜色 */
 
 /* Code Syntax Highlighting */
---code-keyword: #f97316;    /* 关键字橙色 */
---code-string: #86efac;     /* 字符串绿色 */
---code-comment: #737373;    /* 注释灰色 */
---code-function: #60a5fa;   /* 函数蓝色 */
+--code-keyword: #f97316; /* 关键字橙色 */
+--code-string: #86efac; /* 字符串绿色 */
+--code-comment: #737373; /* 注释灰色 */
+--code-function: #60a5fa; /* 函数蓝色 */
 ```

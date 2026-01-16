@@ -81,9 +81,7 @@ export function MobileNav() {
       {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-50 transition-opacity duration-300 ${
-          isOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
         {/* Backdrop */}
@@ -142,9 +140,7 @@ export function MobileNav() {
 
           {/* Menu Footer */}
           <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-divider">
-            <p className="text-xs text-text-muted text-center">
-              Built with Next.js & TypeScript
-            </p>
+            <p className="text-xs text-text-muted text-center">Built with Next.js & TypeScript</p>
           </div>
         </div>
       </div>

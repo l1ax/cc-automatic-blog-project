@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
+import Image from "next/image";
+import { useState } from "react";
 
 interface MDXImageProps {
   src: string;
@@ -13,8 +13,8 @@ export function MDXImage({ src, alt, title }: MDXImageProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  // Check if the image is external or local
-  const isExternal = src.startsWith('http://') || src.startsWith('https://');
+  // Check if the image is external or local (unused, kept for reference)
+  // const isExternal = src.startsWith("http://") || src.startsWith("https://");
 
   if (error) {
     return (
@@ -27,7 +27,9 @@ export function MDXImage({ src, alt, title }: MDXImageProps) {
 
   return (
     <div className="my-6 sm:my-8 relative group">
-      <div className={`relative overflow-hidden rounded-lg bg-bg-tertiary ${isLoading ? 'animate-pulse' : ''}`}>
+      <div
+        className={`relative overflow-hidden rounded-lg bg-bg-tertiary ${isLoading ? "animate-pulse" : ""}`}
+      >
         <Image
           src={src}
           alt={alt}

@@ -14,9 +14,7 @@ interface TextSkeletonProps {
  * Loading placeholder for headings (h1, h2, h3, etc.)
  */
 export function HeadingSkeleton({ className = "" }: TextSkeletonProps) {
-  return (
-    <div className={`h-6 sm:h-8 bg-bg-tertiary rounded animate-pulse ${className}`}></div>
-  );
+  return <div className={`h-6 sm:h-8 bg-bg-tertiary rounded animate-pulse ${className}`}></div>;
 }
 
 /**

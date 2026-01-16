@@ -3,7 +3,7 @@
  */
 
 // Shared types
-export type { BuildTimeIndex, SearchableArticle, ClientSearchResult } from './types';
+export type { BuildTimeIndex, SearchableArticle, ClientSearchResult } from "./types";
 
 // Client-side utilities
-export { ClientSearchIndex, getSearchIndex } from './client-search';
+export { ClientSearchIndex, getSearchIndex } from "./client-search";

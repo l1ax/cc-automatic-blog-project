@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import katex from 'katex';
-import 'katex/dist/katex.min.css';
+import React, { useState, useEffect } from "react";
+import katex from "katex";
+import "katex/dist/katex.min.css";
 
 interface MathBlockProps {
   formula: string;
@@ -11,21 +11,21 @@ interface MathBlockProps {
 
 export function MathBlock({ formula, displayMode }: MathBlockProps) {
   const [error, setError] = useState<string | null>(null);
-  const [renderedHtml, setRenderedHtml] = useState<string>('');
+  const [renderedHtml, setRenderedHtml] = useState<string>("");
 
   useEffect(() => {
     try {
       const html = katex.renderToString(formula, {
         displayMode,
         throwOnError: false,
-        strict: 'ignore',
+        strict: "ignore",
         trust: false,
-        output: 'html',
+        output: "html",
       });
       setRenderedHtml(html);
       setError(null);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to render formula');
+      setError(err instanceof Error ? err.message : "Failed to render formula");
     }
   }, [formula, displayMode]);
 
@@ -46,7 +46,7 @@ export function MathBlock({ formula, displayMode }: MathBlockProps) {
         <div
           dangerouslySetInnerHTML={{ __html: renderedHtml }}
           className="min-w-full flex justify-center items-center py-2"
-          style={{ fontSize: '1.1em' }}
+          style={{ fontSize: "1.1em" }}
         />
       </div>
     );
@@ -56,7 +56,7 @@ export function MathBlock({ formula, displayMode }: MathBlockProps) {
     <span
       dangerouslySetInnerHTML={{ __html: renderedHtml }}
       className="mx-1"
-      style={{ fontSize: '1em' }}
+      style={{ fontSize: "1em" }}
     />
   );
 }

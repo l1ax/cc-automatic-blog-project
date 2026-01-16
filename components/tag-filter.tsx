@@ -31,7 +31,9 @@ export function TagFilter({ allTags, selectedTag, articleCount }: TagFilterProps
           {selectedTag ? (
             <>
               <span className="text-base sm:text-xl">标签:</span>{" "}
-              <span className="ml-1 sm:ml-2 text-accent-primary truncate max-w-[150px] sm:max-w-none">{selectedTag}</span>
+              <span className="ml-1 sm:ml-2 text-accent-primary truncate max-w-[150px] sm:max-w-none">
+                {selectedTag}
+              </span>
             </>
           ) : (
             <>

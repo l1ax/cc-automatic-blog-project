@@ -4,10 +4,10 @@
  * This file is only for Node.js build scripts, not for client-side import
  */
 
-import { writeFile, mkdir, readdir } from 'fs/promises';
-import { join } from 'path';
-import { contentProvider } from '../providers/local-mdx';
-import type { SearchableArticle, BuildTimeIndex } from './types';
+import { writeFile, mkdir, readdir } from "fs/promises";
+import { join } from "path";
+import { contentProvider } from "../providers/local-mdx";
+import type { SearchableArticle, BuildTimeIndex } from "./types";
 
 /**
  * Tokenize text into searchable tokens
@@ -17,16 +17,14 @@ export function tokenize(text: string): string[] {
   if (!text) return [];
 
   // Remove special characters but keep Chinese characters, letters, and numbers
-  const cleaned = text
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s]/gu, ' ');
+  const cleaned = text.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, " ");
 
   // Split by whitespace to get tokens
-  const tokens = cleaned.split(/\s+/).filter(t => t.length > 0);
+  const tokens = cleaned.split(/\s+/).filter((t) => t.length > 0);
 
   // For Chinese text, also extract individual characters as bigrams
   const chineseTokens: string[] = [];
-  tokens.forEach(token => {
+  tokens.forEach((token) => {
     // Check if token contains Chinese characters
     if (/[\u4e00-\u9fa5]/.test(token)) {
       // Add individual characters for Chinese
@@ -55,13 +53,13 @@ export async function generateSearchIndex(): Promise<BuildTimeIndex> {
   const articles = await contentProvider.getAllArticles();
 
   // Read full content for each article
-  const { readFile } = await import('fs/promises');
-  const { join } = await import('path');
+  const { readFile } = await import("fs/promises");
+  const { join } = await import("path");
 
   const searchableArticles: SearchableArticle[] = [];
 
   // Get the actual file names from posts directory
-  const postsDir = join(process.cwd(), 'posts');
+  const postsDir = join(process.cwd(), "posts");
   const fileNames = await readdir(postsDir);
 
   // Create a map from slug to actual filename
@@ -86,7 +84,7 @@ export async function generateSearchIndex(): Promise<BuildTimeIndex> {
       }
 
       const filePath = join(postsDir, fileName);
-      const fileContent = await readFile(filePath, 'utf-8');
+      const fileContent = await readFile(filePath, "utf-8");
 
       // Extract content without frontmatter
       const contentMatch = fileContent.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
@@ -94,10 +92,10 @@ export async function generateSearchIndex(): Promise<BuildTimeIndex> {
 
       // Strip markdown syntax for better search results
       const plainContent = content
-        .replace(/```[\s\S]*?```/g, '') // Remove code blocks
-        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Replace links with text
-        .replace(/[#*_`~\[\]]/g, '') // Remove markdown syntax
-        .replace(/\s+/g, ' ') // Normalize whitespace
+        .replace(/```[\s\S]*?```/g, "") // Remove code blocks
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // Replace links with text
+        .replace(/[#*_`~\[\]]/g, "") // Remove markdown syntax
+        .replace(/\s+/g, " ") // Normalize whitespace
         .trim();
 
       searchableArticles.push({
@@ -116,17 +114,17 @@ export async function generateSearchIndex(): Promise<BuildTimeIndex> {
   }
 
   // Build inverted index
-  const indexed: BuildTimeIndex['indexed'] = {};
+  const indexed: BuildTimeIndex["indexed"] = {};
 
   searchableArticles.forEach((article) => {
     // Combine all searchable text
     const searchableText = [
       article.title,
       article.summary,
-      article.tags?.join(' '),
+      article.tags?.join(" "),
       article.category,
       article.content,
-    ].join(' ');
+    ].join(" ");
 
     const tokens = tokenize(searchableText);
 
@@ -149,17 +147,21 @@ export async function generateSearchIndex(): Promise<BuildTimeIndex> {
 /**
  * Write search index to JSON file
  */
-export async function writeSearchIndex(outputPath: string = join(process.cwd(), 'public', 'search-index.json')): Promise<void> {
+export async function writeSearchIndex(
+  outputPath: string = join(process.cwd(), "public", "search-index.json")
+): Promise<void> {
   const index = await generateSearchIndex();
 
   // Ensure directory exists
-  const dir = join(outputPath, '..');
+  const dir = join(outputPath, "..");
   await mkdir(dir, { recursive: true });
 
   // Write index as JSON
-  await writeFile(outputPath, JSON.stringify(index, null, 2), 'utf-8');
+  await writeFile(outputPath, JSON.stringify(index, null, 2), "utf-8");
 
+  // eslint-disable-next-line no-console
   console.log(`Search index generated with ${index.articles.length} articles`);
+  // eslint-disable-next-line no-console
   console.log(`Index contains ${Object.keys(index.indexed).length} unique tokens`);
 }
 
@@ -167,11 +169,13 @@ export async function writeSearchIndex(outputPath: string = join(process.cwd(), 
 if (require.main === module) {
   writeSearchIndex()
     .then(() => {
-      console.log('Search index generated successfully');
+      // eslint-disable-next-line no-console
+      console.log("Search index generated successfully");
       process.exit(0);
     })
     .catch((error) => {
-      console.error('Error generating search index:', error);
+      // eslint-disable-next-line no-console
+      console.error("Error generating search index:", error);
       process.exit(1);
     });
 }

@@ -10,19 +10,19 @@
  */
 
 // Re-export types
-export type { Article, ArticleMetadata, ContentProvider, SearchQuery } from './providers/types';
+export type { Article, ArticleMetadata, ContentProvider, SearchQuery } from "./providers/types";
 
 // Export the content provider interface and implementations
-export { LocalMDXProvider, contentProvider } from './providers/local-mdx';
-export type { ContentProvider as IContentProvider } from './providers/types';
+export { LocalMDXProvider, contentProvider } from "./providers/local-mdx";
+export type { ContentProvider as IContentProvider } from "./providers/types";
 
 // Import the default provider instance
-import { contentProvider } from './providers/local-mdx';
+import { contentProvider } from "./providers/local-mdx";
 
 /**
  * Get all articles (metadata only)
  */
-export async function getAllArticles(): Promise<import('./providers/types').ArticleMetadata[]> {
+export async function getAllArticles(): Promise<import("./providers/types").ArticleMetadata[]> {
   return contentProvider.getAllArticles();
 }
 
@@ -38,7 +38,7 @@ export async function getAllArticleSlugs(): Promise<string[]> {
  */
 export async function getArticleBySlug(
   slug: string
-): Promise<import('./providers/types').Article | null> {
+): Promise<import("./providers/types").Article | null> {
   return contentProvider.getArticleBySlug(slug);
 }
 
@@ -47,7 +47,7 @@ export async function getArticleBySlug(
  */
 export async function getArticlesByTag(
   tag: string
-): Promise<import('./providers/types').ArticleMetadata[]> {
+): Promise<import("./providers/types").ArticleMetadata[]> {
   return contentProvider.getArticlesByTag(tag);
 }
 
@@ -64,7 +64,7 @@ export async function getAllTags(): Promise<string[]> {
 export async function searchArticles(
   query: string,
   limit?: number
-): Promise<import('./providers/types').ArticleMetadata[]> {
+): Promise<import("./providers/types").ArticleMetadata[]> {
   return contentProvider.searchArticles({ query, limit });
 }
 
@@ -80,19 +80,19 @@ export async function getRelatedArticles(
   currentTags: string[] = [],
   currentCategory?: string,
   limit: number = 3
-): Promise<import('./providers/types').ArticleMetadata[]> {
+): Promise<import("./providers/types").ArticleMetadata[]> {
   const allArticles = await contentProvider.getAllArticles();
 
   // Filter out the current article
-  const otherArticles = allArticles.filter(article => article.slug !== currentSlug);
+  const otherArticles = allArticles.filter((article) => article.slug !== currentSlug);
 
   // Score each article based on relevance
-  const scoredArticles = otherArticles.map(article => {
+  const scoredArticles = otherArticles.map((article) => {
     let score = 0;
 
     // Tag matching (highest priority)
     if (article.tags && currentTags.length > 0) {
-      const sharedTags = article.tags.filter(tag => currentTags.includes(tag));
+      const sharedTags = article.tags.filter((tag) => currentTags.includes(tag));
       score += sharedTags.length * 10;
     }
 
@@ -105,7 +105,9 @@ export async function getRelatedArticles(
     // More recent articles get a small bonus
     const articleDate = new Date(article.date);
     const now = new Date();
-    const daysSincePublication = Math.floor((now.getTime() - articleDate.getTime()) / (1000 * 60 * 60 * 24));
+    const daysSincePublication = Math.floor(
+      (now.getTime() - articleDate.getTime()) / (1000 * 60 * 60 * 24)
+    );
     const recencyBonus = Math.max(0, 5 - daysSincePublication / 365); // Decreases over time, min 0
     score += recencyBonus;
 
@@ -116,5 +118,5 @@ export async function getRelatedArticles(
   return scoredArticles
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
-    .map(item => item.article);
+    .map((item) => item.article);
 }

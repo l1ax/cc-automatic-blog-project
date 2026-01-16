@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import type { ArticleMetadata } from '@/lib/providers/types';
+import Link from "next/link";
+import type { ArticleMetadata } from "@/lib/providers/types";
 
 interface RelatedArticlesProps {
   articles: ArticleMetadata[];

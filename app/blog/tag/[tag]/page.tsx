@@ -57,7 +57,9 @@ export default async function TagPage({ params }: TagPageProps) {
             <li className="text-text-muted">/</li>
             <li className="text-text-muted">标签</li>
             <li className="text-text-muted">/</li>
-            <li className="text-accent-primary font-medium truncate max-w-[120px] sm:max-w-none">{decodedTag}</li>
+            <li className="text-accent-primary font-medium truncate max-w-[120px] sm:max-w-none">
+              {decodedTag}
+            </li>
           </ol>
         </nav>
 
@@ -70,9 +72,7 @@ export default async function TagPage({ params }: TagPageProps) {
               <span className="sm:hidden">标签:</span> {decodedTag}
             </h1>
           </div>
-          <p className="text-text-secondary text-base sm:text-lg">
-            共 {articles.length} 篇文章
-          </p>
+          <p className="text-text-secondary text-base sm:text-lg">共 {articles.length} 篇文章</p>
         </section>
 
         {/* Article List */}

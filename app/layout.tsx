@@ -11,7 +11,8 @@ export const metadata: Metadata = {
     default: "个人技术博客 | Tech Blog",
     template: "%s | 个人技术博客",
   },
-  description: "个人技术博客，记录和分享编程知识、技术心得和开发经验。专注于 Next.js、React、TypeScript 等前端技术。",
+  description:
+    "个人技术博客，记录和分享编程知识、技术心得和开发经验。专注于 Next.js、React、TypeScript 等前端技术。",
   keywords: [
     "技术博客",
     "编程",
@@ -42,7 +43,8 @@ export const metadata: Metadata = {
     locale: "zh_CN",
     url: "https://yourdomain.com",
     title: "个人技术博客 | Tech Blog",
-    description: "个人技术博客，记录和分享编程知识、技术心得和开发经验。专注于 Next.js、React、TypeScript 等前端技术。",
+    description:
+      "个人技术博客，记录和分享编程知识、技术心得和开发经验。专注于 Next.js、React、TypeScript 等前端技术。",
     siteName: "个人技术博客",
     images: [
       {
@@ -56,7 +58,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "个人技术博客 | Tech Blog",
-    description: "个人技术博客，记录和分享编程知识、技术心得和开发经验。专注于 Next.js、React、TypeScript 等前端技术。",
+    description:
+      "个人技术博客，记录和分享编程知识、技术心得和开发经验。专注于 Next.js、React、TypeScript 等前端技术。",
     images: [
       {
         url: "/twitter-image",
@@ -106,7 +109,8 @@ export default function RootLayout({
                 "@type": "WebSite",
                 name: "个人技术博客",
                 url: "https://yourdomain.com",
-                description: "个人技术博客，记录和分享编程知识、技术心得和开发经验。专注于 Next.js、React、TypeScript 等前端技术。",
+                description:
+                  "个人技术博客，记录和分享编程知识、技术心得和开发经验。专注于 Next.js、React、TypeScript 等前端技术。",
                 potentialAction: {
                   "@type": "SearchAction",
                   target: {

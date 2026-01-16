@@ -11,7 +11,7 @@
  * - Footer with back link
  */
 
-import { HeadingSkeleton, ParagraphSkeleton } from "@/components/skeletons";
+// import { HeadingSkeleton, ParagraphSkeleton } from "@/components/skeletons";
 
 export default function ArticleLoading() {
   return (

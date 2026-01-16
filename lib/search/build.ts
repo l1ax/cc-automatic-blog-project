@@ -4,7 +4,7 @@
  */
 
 // Shared types
-export type { BuildTimeIndex, SearchableArticle } from './types';
+export type { BuildTimeIndex, SearchableArticle } from "./types";
 
 // Build-time utilities
-export { generateSearchIndex, writeSearchIndex } from './build-index';
+export { generateSearchIndex, writeSearchIndex } from "./build-index";

@@ -9,7 +9,7 @@ export interface TocItem {
  */
 export function extractToc(content: string): TocItem[] {
   const toc: TocItem[] = [];
-  const lines = content.split('\n');
+  const lines = content.split("\n");
 
   for (const line of lines) {
     // Match Markdown headings: #, ##, ###, etc.
@@ -32,19 +32,19 @@ export function extractToc(content: string): TocItem[] {
  */
 export function generateHeadingId(text: string): string {
   // Remove common markdown syntax and clean up
-  let id = text
+  const id = text
     // Remove markdown links [text](url) -> text
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
     // Remove inline code `code` -> code
-    .replace(/`([^`]+)`/g, '$1')
+    .replace(/`([^`]+)`/g, "$1")
     // Remove bold/italic markers
-    .replace(/[*_]+/g, '')
+    .replace(/[*_]+/g, "")
     // Remove special characters but keep Chinese characters
-    .replace(/[^\w\u4e00-\u9fff\s-]/g, '')
+    .replace(/[^\w\u4e00-\u9fff\s-]/g, "")
     // Replace spaces with hyphens
-    .replace(/\s+/g, '-')
+    .replace(/\s+/g, "-")
     // Remove leading/trailing hyphens
-    .replace(/^-+|-+$/g, '')
+    .replace(/^-+|-+$/g, "")
     .toLowerCase();
 
   // Ensure the ID is not empty

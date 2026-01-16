@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
-import rehypeRaw from 'rehype-raw';
-import { CodeBlock } from './code-block';
-import { MDXImage } from './mdx-image';
-import { MermaidDiagram } from './mermaid-diagram';
-import { generateHeadingId } from '@/lib/toc';
-import 'katex/dist/katex.min.css';
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import rehypeRaw from "rehype-raw";
+import { CodeBlock } from "./code-block";
+import { MDXImage } from "./mdx-image";
+import { MermaidDiagram } from "./mermaid-diagram";
+import { generateHeadingId } from "@/lib/toc";
+import "katex/dist/katex.min.css";
 
 interface MDXContentProps {
   content: string;
@@ -21,116 +21,152 @@ export function MDXContent({ content }: MDXContentProps) {
       remarkPlugins={[remarkGfm, remarkMath]}
       rehypePlugins={[rehypeKatex, rehypeRaw]}
       components={{
-        h1: ({ node, children, ...props }) => {
+        h1: ({ node: _node, children, ...props }) => {
           const id = generateHeadingId(String(children));
           return (
-            <h1 id={id} className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mt-8 sm:mt-12 mb-4 sm:mb-6 first:mt-0 scroll-mt-20 sm:scroll-mt-24 text-balance" {...props}>
+            <h1
+              id={id}
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mt-8 sm:mt-12 mb-4 sm:mb-6 first:mt-0 scroll-mt-20 sm:scroll-mt-24 text-balance"
+              {...props}
+            >
               {children}
             </h1>
           );
         },
-        h2: ({ node, children, ...props }) => {
+        h2: ({ node: _node, children, ...props }) => {
           const id = generateHeadingId(String(children));
           return (
-            <h2 id={id} className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary mt-6 sm:mt-10 mb-3 sm:mb-5 scroll-mt-20 sm:scroll-mt-24 text-balance" {...props}>
+            <h2
+              id={id}
+              className="text-xl sm:text-2xl md:text-3xl font-bold text-text-primary mt-6 sm:mt-10 mb-3 sm:mb-5 scroll-mt-20 sm:scroll-mt-24 text-balance"
+              {...props}
+            >
               {children}
             </h2>
           );
         },
-        h3: ({ node, children, ...props }) => {
+        h3: ({ node: _node, children, ...props }) => {
           const id = generateHeadingId(String(children));
           return (
-            <h3 id={id} className="text-lg sm:text-xl md:text-2xl font-semibold text-text-primary mt-5 sm:mt-8 mb-3 sm:mb-4 scroll-mt-20 sm:scroll-mt-24 text-balance" {...props}>
+            <h3
+              id={id}
+              className="text-lg sm:text-xl md:text-2xl font-semibold text-text-primary mt-5 sm:mt-8 mb-3 sm:mb-4 scroll-mt-20 sm:scroll-mt-24 text-balance"
+              {...props}
+            >
               {children}
             </h3>
           );
         },
-        h4: ({ node, children, ...props }) => {
+        h4: ({ node: _node, children, ...props }) => {
           const id = generateHeadingId(String(children));
           return (
-            <h4 id={id} className="text-base sm:text-lg md:text-xl font-semibold text-text-primary mt-4 sm:mt-6 mb-2 sm:mb-3 scroll-mt-20 sm:scroll-mt-24 text-balance" {...props}>
+            <h4
+              id={id}
+              className="text-base sm:text-lg md:text-xl font-semibold text-text-primary mt-4 sm:mt-6 mb-2 sm:mb-3 scroll-mt-20 sm:scroll-mt-24 text-balance"
+              {...props}
+            >
               {children}
             </h4>
           );
         },
-        p: ({ node, ...props }) => (
-          <p className="text-text-secondary leading-relaxed-mobile mb-4 sm:mb-6 text-base sm:text-lg reading-width" {...props} />
+        p: ({ node: _node, ...props }) => (
+          <p
+            className="text-text-secondary leading-relaxed-mobile mb-4 sm:mb-6 text-base sm:text-lg reading-width"
+            {...props}
+          />
         ),
-        ul: ({ node, ...props }) => (
-          <ul className="list-disc list-inside mb-4 sm:mb-6 space-y-2 sm:space-y-2.5 text-text-secondary text-base sm:text-lg reading-width" {...props} />
+        ul: ({ node: _node, ...props }) => (
+          <ul
+            className="list-disc list-inside mb-4 sm:mb-6 space-y-2 sm:space-y-2.5 text-text-secondary text-base sm:text-lg reading-width"
+            {...props}
+          />
         ),
-        ol: ({ node, ...props }) => (
-          <ol className="list-decimal list-inside mb-4 sm:mb-6 space-y-2 sm:space-y-2.5 text-text-secondary text-base sm:text-lg reading-width" {...props} />
+        ol: ({ node: _node, ...props }) => (
+          <ol
+            className="list-decimal list-inside mb-4 sm:mb-6 space-y-2 sm:space-y-2.5 text-text-secondary text-base sm:text-lg reading-width"
+            {...props}
+          />
         ),
-        li: ({ node, ...props }) => (
+        li: ({ node: _node, ...props }) => (
           <li className="ml-2 sm:ml-4 leading-relaxed-mobile" {...props} />
         ),
-        blockquote: ({ node, ...props }) => (
-          <blockquote className="border-l-2 sm:border-l-4 border-accent-primary pl-3 sm:pl-4 py-2 sm:py-3 my-4 sm:my-6 bg-bg-secondary italic text-text-secondary text-base sm:text-lg reading-width" {...props} />
+        blockquote: ({ node: _node, ...props }) => (
+          <blockquote
+            className="border-l-2 sm:border-l-4 border-accent-primary pl-3 sm:pl-4 py-2 sm:py-3 my-4 sm:my-6 bg-bg-secondary italic text-text-secondary text-base sm:text-lg reading-width"
+            {...props}
+          />
         ),
-        a: ({ node, ...props }) => (
-          <a className="text-accent-primary hover:text-accent-hover underline transition-colors duration-200 text-base sm:text-lg break-words" {...props} />
+        a: ({ node: _node, ...props }) => (
+          <a
+            className="text-accent-primary hover:text-accent-hover underline transition-colors duration-200 text-base sm:text-lg break-words"
+            {...props}
+          />
         ),
-        strong: ({ node, ...props }) => (
+        strong: ({ node: _node, ...props }) => (
           <strong className="font-semibold text-text-primary" {...props} />
         ),
-        em: ({ node, ...props }) => (
-          <em className="italic text-text-secondary" {...props} />
-        ),
-        code: ({ node, inline, className, children, ...props }: any) => {
-          const language = className?.replace(/language-/, '') || '';
+        em: ({ node: _node, ...props }) => <em className="italic text-text-secondary" {...props} />,
+        code: ({ node: _node, inline, className, children, ...props }: any) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const language = className?.replace(/language-/, "") || "";
 
           if (inline) {
             return (
-              <code className="bg-bg-tertiary text-accent-primary px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-sm sm:text-base font-mono break-all" {...props}>
+              <code
+                className="bg-bg-tertiary text-accent-primary px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-sm sm:text-base font-mono break-all"
+                {...props}
+              >
                 {children}
               </code>
             );
           }
 
           // Handle Mermaid diagrams
-          if (language === 'mermaid') {
-            return <MermaidDiagram code={String(children).replace(/\n$/, '')} />;
+          if (language === "mermaid") {
+            return <MermaidDiagram code={String(children).replace(/\n$/, "")} />;
           }
 
-          return (
-            <CodeBlock code={String(children).replace(/\n$/, '')} language={language} />
-          );
+          return <CodeBlock code={String(children).replace(/\n$/, "")} language={language} />;
         },
-        pre: ({ node, children, ...props }: any) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+        pre: ({ node: _node, children, ...props }: any) => {
           // Don't render pre wrapper since CodeBlock handles it
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const codeElement = (children as any)?.props?.children;
-          if (codeElement && typeof codeElement === 'string') {
+          if (codeElement && typeof codeElement === "string") {
             return <>{children}</>;
           }
           return <>{children}</>;
         },
-        hr: ({ node, ...props }) => (
+        hr: ({ node: _node, ...props }) => (
           <hr className="border-t border-divider my-6 sm:my-8" {...props} />
         ),
-        table: ({ node, ...props }) => (
+        table: ({ node: _node, ...props }) => (
           <div className="overflow-x-auto -mx-3 sm:mx-0 mb-4 sm:mb-6">
             <table className="min-w-full divide-y divide-border text-sm sm:text-base" {...props} />
           </div>
         ),
-        thead: ({ node, ...props }) => (
-          <thead className="bg-bg-secondary" {...props} />
-        ),
-        tbody: ({ node, ...props }) => (
+        thead: ({ node: _node, ...props }) => <thead className="bg-bg-secondary" {...props} />,
+        tbody: ({ node: _node, ...props }) => (
           <tbody className="bg-bg-tertiary divide-y divide-border" {...props} />
         ),
-        tr: ({ node, ...props }) => (
-          <tr {...props} />
+        tr: ({ node: _node, ...props }) => <tr {...props} />,
+        th: ({ node: _node, ...props }) => (
+          <th
+            className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-text-primary uppercase tracking-wider whitespace-nowrap"
+            {...props}
+          />
         ),
-        th: ({ node, ...props }) => (
-          <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs sm:text-sm font-medium text-text-primary uppercase tracking-wider whitespace-nowrap" {...props} />
+        td: ({ node: _node, ...props }) => (
+          <td
+            className="px-2 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-text-secondary"
+            {...props}
+          />
         ),
-        td: ({ node, ...props }) => (
-          <td className="px-2 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-text-secondary" {...props} />
-        ),
-        img: ({ node, src, alt, title, ...props }: any) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+        img: ({ node: _node, src, alt, title, ...props }: any) => {
           if (!src) return null;
-          return <MDXImage src={src} alt={alt || ''} title={title} />;
+          return <MDXImage src={src} alt={alt || ""} title={title} />;
         },
       }}
     >

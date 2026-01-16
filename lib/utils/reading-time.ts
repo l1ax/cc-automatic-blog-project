@@ -10,9 +10,9 @@ export function calculateReadingTime(content: string): number {
 
   // Remove code blocks and count words in plain text
   const plainText = content
-    .replace(/```[\s\S]*?```/g, '') // Remove code blocks
-    .replace(/`[^`]+`/g, '') // Remove inline code
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'); // Convert markdown links to text
+    .replace(/```[\s\S]*?```/g, "") // Remove code blocks
+    .replace(/`[^`]+`/g, "") // Remove inline code
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"); // Convert markdown links to text
 
   const wordCount = plainText.split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
@@ -27,9 +27,9 @@ export function calculateReadingTime(content: string): number {
  */
 export function calculateReadingTimeCustom(content: string, wordsPerMinute: number = 200): number {
   const plainText = content
-    .replace(/```[\s\S]*?```/g, '')
-    .replace(/`[^`]+`/g, '')
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/`[^`]+`/g, "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 
   const wordCount = plainText.split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.ceil(wordCount / wordsPerMinute));

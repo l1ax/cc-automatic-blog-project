@@ -4,13 +4,13 @@
  * Implements the ContentProvider interface for local file-based content.
  */
 
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { ContentProvider, Article, ArticleMetadata, SearchQuery } from './types';
-import { calculateReadingTime } from '../utils/reading-time';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import type { ContentProvider, Article, ArticleMetadata, SearchQuery } from "./types";
+import { calculateReadingTime } from "../utils/reading-time";
 
-const POSTS_DIRECTORY = path.join(process.cwd(), 'posts');
+const POSTS_DIRECTORY = path.join(process.cwd(), "posts");
 
 /**
  * Extract slug from filename
@@ -18,7 +18,7 @@ const POSTS_DIRECTORY = path.join(process.cwd(), 'posts');
  */
 function extractSlugFromFileName(fileName: string): string {
   const match = fileName.match(/^\d{4}-\d{2}-\d{2}-(.+)\.mdx?$/);
-  return match ? match[1] : fileName.replace(/\.mdx?$/, '');
+  return match ? match[1] : fileName.replace(/\.mdx?$/, "");
 }
 
 /**
@@ -44,7 +44,7 @@ function findFileNameBySlug(slug: string): string | null {
 function parseArticleFile(fileName: string, slug: string): Article | null {
   try {
     const fullPath = path.join(POSTS_DIRECTORY, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
     // Validate required fields
@@ -104,6 +104,7 @@ export class LocalMDXProvider implements ContentProvider {
     for (const slug of slugs) {
       const article = await this.getArticleBySlug(slug);
       if (article && !article.draft) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { content, ...metadata } = article;
         articles.push(metadata);
       }

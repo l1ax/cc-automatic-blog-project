@@ -1,0 +1,43 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+.next
+out
+dist
+build
+
+# Production
+.vercel
+.netlify
+
+# Cache
+.turbo
+.cache
+
+# Environment
+.env
+.env*.local
+
+# Generated files
+public/search-index.json
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+.DS_Store
+*.log
+logs
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo

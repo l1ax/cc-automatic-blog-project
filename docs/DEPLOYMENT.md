@@ -29,6 +29,7 @@ This guide provides comprehensive instructions for deploying your blog to Vercel
 ### Fastest Deployment (5 minutes)
 
 1. **Push code to GitHub**:
+
    ```bash
    git add .
    git commit -m "Initial commit"
@@ -125,10 +126,10 @@ None required for basic deployment.
 
 ### Optional Variables
 
-| Variable | Purpose | Example |
-|----------|---------|---------|
-| `NEXT_PUBLIC_SITE_URL` | Production URL for sitemap/OG tags | `https://blog.example.com` |
-| `ANALYZE` | Enable bundle analyzer | `true` (for `npm run build:analyze`) |
+| Variable               | Purpose                            | Example                              |
+| ---------------------- | ---------------------------------- | ------------------------------------ |
+| `NEXT_PUBLIC_SITE_URL` | Production URL for sitemap/OG tags | `https://blog.example.com`           |
+| `ANALYZE`              | Enable bundle analyzer             | `true` (for `npm run build:analyze`) |
 
 ### Setting Environment Variables
 
@@ -224,6 +225,7 @@ If you use Cloudflare for DNS:
 ### SSL Certificates
 
 Vercel automatically:
+
 - Issues Let's Encrypt SSL certificates
 - Renews certificates automatically
 - Supports HTTPS only (redirects HTTP → HTTPS)
@@ -288,17 +290,18 @@ npm run start
 ### GitHub Actions CI
 
 The project includes `.github/workflows/ci.yml` that runs on:
+
 - Push to `main` branch
 - Pull requests to `main`
 - Manual workflow dispatch
 
 #### CI Jobs
 
-| Job | Purpose | Commands |
-|-----|---------|----------|
+| Job          | Purpose               | Commands             |
+| ------------ | --------------------- | -------------------- |
 | `type-check` | TypeScript validation | `npm run type-check` |
-| `lint` | Code quality checks | `npm run lint` |
-| `build` | Production build | `npm run build` |
+| `lint`       | Code quality checks   | `npm run lint`       |
+| `build`      | Production build      | `npm run build`      |
 
 #### CI Configuration
 
@@ -317,8 +320,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
       - run: npm ci
       - run: npm run type-check
 
@@ -358,6 +361,7 @@ ANALYZE=true npm run build
 ```
 
 This opens an interactive report showing:
+
 - Client-side JavaScript size
 - Server-side bundle size
 - Dependencies and their sizes
@@ -368,7 +372,7 @@ This opens an interactive report showing:
    - Next.js automatically splits by routes
    - Use dynamic imports for large components:
      ```tsx
-     const HeavyComponent = dynamic(() => import('./HeavyComponent'))
+     const HeavyComponent = dynamic(() => import("./HeavyComponent"));
      ```
 
 2. **Image Optimization**:
@@ -386,12 +390,12 @@ This opens an interactive report showing:
 
 ### Performance Targets
 
-| Metric | Target | How to Check |
-|--------|--------|--------------|
-| Build Time | < 2 minutes | `time npm run build` |
-| First Contentful Paint | < 1.8s | Lighthouse |
-| Largest Contentful Paint | < 2.5s | Lighthouse |
-| Total Bundle Size | < 200KB | `npm run build:analyze` |
+| Metric                   | Target      | How to Check            |
+| ------------------------ | ----------- | ----------------------- |
+| Build Time               | < 2 minutes | `time npm run build`    |
+| First Contentful Paint   | < 1.8s      | Lighthouse              |
+| Largest Contentful Paint | < 2.5s      | Lighthouse              |
+| Total Bundle Size        | < 200KB     | `npm run build:analyze` |
 
 ---
 
@@ -449,6 +453,7 @@ ls -la public/search-index.json
 **Cause**: Build succeeded but runtime error
 
 **Solution**:
+
 1. Check Vercel deployment logs
 2. Look for runtime errors in Functions tab
 3. Test locally: `npm run build && npm run start`
@@ -459,6 +464,7 @@ ls -la public/search-index.json
 **Cause**: Variable not set or not prefixed with `NEXT_PUBLIC_`
 
 **Solution**:
+
 1. Ensure variable starts with `NEXT_PUBLIC_` for client-side access
 2. Set variable in Vercel dashboard
 3. **Redeploy** (environment variables only apply on new deployments)
@@ -468,6 +474,7 @@ ls -la public/search-index.json
 **Cause**: DNS misconfiguration
 
 **Solution**:
+
 1. Use `dig` to check DNS:
    ```bash
    dig blog.example.com
@@ -481,6 +488,7 @@ ls -la public/search-index.json
 **Cause**: Search index not generated or wrong path
 
 **Solution**:
+
 1. Verify `public/search-index.json` exists:
    ```bash
    npm run build:search
@@ -495,11 +503,13 @@ ls -la public/search-index.json
 #### Site is slow to load
 
 **Diagnosis**:
+
 1. Run Lighthouse audit
 2. Check bundle size: `npm run build:analyze`
 3. Check Vercel Analytics
 
 **Solutions**:
+
 - Enable compression (automatic on Vercel)
 - Optimize images (use `next/image`)
 - Reduce JavaScript bundle size
@@ -510,6 +520,7 @@ ls -la public/search-index.json
 **Target**: < 2 minutes for < 100 articles
 
 **If slower**:
+
 1. Check number of articles
 2. Consider ISR (Incremental Static Regeneration)
 3. Optimize images and assets
@@ -576,6 +587,7 @@ curl https://your-domain.com/search-index.json
 ### Zero-Downtime Deployments
 
 Vercel automatically:
+
 - Deploys to new URL first
 - Runs health checks
 - Swaps traffic to new deployment
@@ -586,11 +598,13 @@ No manual configuration needed.
 ### Rollback Deployment
 
 Via Vercel Dashboard:
+
 1. Go to Deployments tab
 2. Find previous successful deployment
 3. Click "Promote to Production"
 
 Via Vercel CLI:
+
 ```bash
 # List deployments
 vercel ls
@@ -602,6 +616,7 @@ vercel promote <deployment-url> --scope <team>
 ### Preview Deployments
 
 Every pull request automatically gets a preview URL:
+
 - `https://your-branch.pr-123.your-domain.vercel.app`
 - Test changes before merging
 - Share preview URL for review
@@ -626,6 +641,7 @@ Vercel supports deployment hooks (webhooks):
 ### Multiple Environments
 
 Create different projects for:
+
 - Production (main branch)
 - Staging (develop branch)
 - Feature branches (preview deployments)
@@ -664,6 +680,7 @@ This blog is designed for simple, reliable deployment:
 The entire process takes ~2-3 minutes from `git push` to live deployment.
 
 **Key points**:
+
 - No server configuration needed
 - Automatic HTTPS/SSL
 - Automatic deployments on git push

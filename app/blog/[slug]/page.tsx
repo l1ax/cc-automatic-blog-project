@@ -1,11 +1,11 @@
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import { getArticleBySlug, getAllArticleSlugs, getRelatedArticles } from '@/lib/content';
-import { MDXContent } from '@/components/mdx-content';
-import { TableOfContents } from '@/components/table-of-contents';
-import { RelatedArticles } from '@/components/related-articles';
-import { extractToc } from '@/lib/toc';
-import type { Metadata } from 'next';
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { getArticleBySlug, getAllArticleSlugs, getRelatedArticles } from "@/lib/content";
+import { MDXContent } from "@/components/mdx-content";
+import { TableOfContents } from "@/components/table-of-contents";
+import { RelatedArticles } from "@/components/related-articles";
+import { extractToc } from "@/lib/toc";
+import type { Metadata } from "next";
 
 interface PageProps {
   params: Promise<{
@@ -28,11 +28,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!article) {
     return {
-      title: 'Article Not Found',
+      title: "Article Not Found",
     };
   }
 
-  const baseUrl = 'https://yourdomain.com';
+  const baseUrl = "https://yourdomain.com";
   const url = `${baseUrl}/blog/${slug}`;
 
   return {
@@ -40,16 +40,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: article.summary || `Read ${article.title}`,
     keywords: article.tags,
     openGraph: {
-      type: 'article',
+      type: "article",
       url,
       title: article.title,
       description: article.summary || `Read ${article.title}`,
       publishedTime: article.date,
-      authors: ['Blog Author'],
+      authors: ["Blog Author"],
       tags: article.tags,
       images: [
         {
-          url: '/opengraph-image',
+          url: "/opengraph-image",
           width: 1200,
           height: 630,
           alt: article.title,
@@ -57,12 +57,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: article.title,
       description: article.summary || `Read ${article.title}`,
       images: [
         {
-          url: '/twitter-image',
+          url: "/twitter-image",
           width: 1200,
           height: 600,
           alt: article.title,
@@ -96,31 +96,31 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   // Generate structured data for this article
   const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
     headline: article.title,
     description: article.summary,
-    image: 'https://yourdomain.com/opengraph-image',
+    image: "https://yourdomain.com/opengraph-image",
     datePublished: article.date,
     dateModified: article.date,
     author: {
-      '@type': 'Person',
-      name: 'Blog Author',
-      url: 'https://yourdomain.com',
+      "@type": "Person",
+      name: "Blog Author",
+      url: "https://yourdomain.com",
     },
     publisher: {
-      '@type': 'Organization',
-      name: '个人技术博客',
+      "@type": "Organization",
+      name: "个人技术博客",
       logo: {
-        '@type': 'ImageObject',
-        url: 'https://yourdomain.com/icon.png',
+        "@type": "ImageObject",
+        url: "https://yourdomain.com/icon.png",
       },
     },
     mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://yourdomain.com/blog/${article.slug}`,
+      "@type": "WebPage",
+      "@id": `https://yourdomain.com/blog/${article.slug}`,
     },
-    keywords: article.tags?.join(', '),
+    keywords: article.tags?.join(", "),
     articleSection: article.category,
   };
 

@@ -51,7 +51,10 @@ export default function Loading() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[1, 2, 3].map((item) => (
-              <div key={item} className="bg-bg-secondary rounded-lg p-4 sm:p-6 border border-border">
+              <div
+                key={item}
+                className="bg-bg-secondary rounded-lg p-4 sm:p-6 border border-border"
+              >
                 <div className="w-10 h-10 bg-bg-tertiary rounded-lg animate-pulse mb-4"></div>
                 <div className="h-5 sm:h-6 bg-bg-tertiary rounded animate-pulse mb-2 w-24 sm:w-32"></div>
                 <div className="h-4 bg-bg-tertiary rounded animate-pulse w-full"></div>

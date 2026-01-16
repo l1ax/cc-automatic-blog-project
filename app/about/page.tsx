@@ -117,8 +117,18 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div className="flex items-start">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-accent-primary rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-bg-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5 text-bg-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
                   </svg>
                 </div>
                 <div>
@@ -132,8 +142,18 @@ export default function AboutPage() {
               </div>
               <div className="flex items-start">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-accent-primary rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-bg-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5 text-bg-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                    />
                   </svg>
                 </div>
                 <div>
@@ -147,8 +167,18 @@ export default function AboutPage() {
               </div>
               <div className="flex items-start">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-accent-primary rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-bg-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5 text-bg-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    />
                   </svg>
                 </div>
                 <div>
@@ -162,8 +192,18 @@ export default function AboutPage() {
               </div>
               <div className="flex items-start">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-accent-primary rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-bg-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+                  <svg
+                    className="w-4 h-4 sm:w-5 sm:h-5 text-bg-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
+                    />
                   </svg>
                 </div>
                 <div>
@@ -214,8 +254,8 @@ export default function AboutPage() {
                 让用户专注于内容本身。
               </p>
               <p>
-                <strong className="text-text-primary">内容优先</strong>：所有设计决策都以提升阅读体验为核心，
-                而非追求花哨的效果。
+                <strong className="text-text-primary">内容优先</strong>
+                ：所有设计决策都以提升阅读体验为核心， 而非追求花哨的效果。
               </p>
               <p>
                 <strong className="text-text-primary">长期可用</strong>：使用纯文本格式存储内容，
@@ -234,16 +274,26 @@ export default function AboutPage() {
               联系方式
             </h2>
             <p className="text-text-secondary text-sm sm:text-base">
-              这是一个纯知识管理项目，不提供评论功能。如果你发现任何问题或有建议，
-              可以通过 GitHub Issues 联系我。
+              这是一个纯知识管理项目，不提供评论功能。如果你发现任何问题或有建议， 可以通过 GitHub
+              Issues 联系我。
             </p>
             <div className="mt-4 sm:mt-6">
               <Link
                 href="/"
                 className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-accent-primary text-bg-primary rounded-lg font-medium hover:bg-accent-hover transition-colors duration-200 text-sm sm:text-base"
               >
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
                 </svg>
                 返回首页
               </Link>

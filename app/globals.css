@@ -17,8 +17,16 @@ body {
 body {
   color: #e5e5e5;
   background: #1a1a1a;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -135,12 +143,6 @@ a {
 /* Enhanced skeleton animation with gradient shimmer */
 .animate-shimmer {
   animation: shimmer 2s infinite linear;
-  background: linear-gradient(
-    to right,
-    #2d2d2d 0%,
-    #3d3d3d 20%,
-    #2d2d2d 40%,
-    #2d2d2d 100%
-  );
+  background: linear-gradient(to right, #2d2d2d 0%, #3d3d3d 20%, #2d2d2d 40%, #2d2d2d 100%);
   background-size: 1000px 100%;
 }

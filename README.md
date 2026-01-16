@@ -24,17 +24,20 @@ Personal tech blog built with Next.js 15, MDX, and Tailwind CSS. Designed as a k
 ### Local Development
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/cc-automatic-blog-project.git
    cd cc-automatic-blog-project
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Run the development server:
+
    ```bash
    npm run dev
    ```
@@ -61,6 +64,7 @@ npm run build         # Build Next.js application
 This is the easiest method for automatic deployments:
 
 1. **Push your code to GitHub**:
+
    ```bash
    git remote add origin https://github.com/yourusername/cc-automatic-blog-project.git
    git branch -M main
@@ -119,6 +123,7 @@ This runs on every push and pull request to ensure code quality before deploymen
 ### Automatic Deployments
 
 **Automatic deployment is already configured** in `vercel.json` with:
+
 ```json
 "git": {
   "deploymentEnabled": {
@@ -220,11 +225,13 @@ cc-automatic-blog-project/
 ## Adding New Articles
 
 1. Create a new Markdown file in `posts/`:
+
    ```
    posts/YYYY-MM-DD-article-title.md
    ```
 
 2. Add frontmatter to the top:
+
    ```yaml
    ---
    title: "Your Article Title"
@@ -239,6 +246,7 @@ cc-automatic-blog-project/
 3. Write your content in Markdown below the frontmatter
 
 4. Commit and push:
+
    ```bash
    git add posts/YYYY-MM-DD-article-title.md
    git commit -m "Add: new article"
@@ -257,6 +265,7 @@ Use LaTeX syntax with `$` for inline and `$$` for block formulas:
 Inline math: $E = mc^2$
 
 Block math:
+
 $$
 \int_{a}^{b} f(x) dx = F(b) - F(a)
 $$
@@ -269,7 +278,7 @@ Use Mermaid code blocks:
 ```markdown
 \`\`\`mermaid
 flowchart TD
-    A[Start] --> B[End]
+A[Start] --> B[End]
 \`\`\`
 ```
 
@@ -277,11 +286,11 @@ flowchart TD
 
 Specify language for syntax highlighting:
 
-````markdown
+```markdown
 \`\`\`typescript
 const greeting: string = "Hello, World!";
 \`\`\`
-````
+```
 
 ## Environment Variables
 

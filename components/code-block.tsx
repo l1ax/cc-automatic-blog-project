@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { useState } from 'react';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useState } from "react";
 
 interface CodeBlockProps {
   code: string;
@@ -11,15 +11,15 @@ interface CodeBlockProps {
 
 // Language aliases mapping
 const languageAliases: Record<string, string> = {
-  'js': 'javascript',
-  'ts': 'typescript',
-  'jsx': 'jsx',
-  'tsx': 'tsx',
-  'c++': 'cpp',
-  'csharp': 'csharp',
-  'shell': 'bash',
-  'sh': 'bash',
-  'yml': 'yaml',
+  js: "javascript",
+  ts: "typescript",
+  jsx: "jsx",
+  tsx: "tsx",
+  "c++": "cpp",
+  csharp: "csharp",
+  shell: "bash",
+  sh: "bash",
+  yml: "yaml",
 };
 
 function normalizeLanguage(lang: string): string {
@@ -27,7 +27,7 @@ function normalizeLanguage(lang: string): string {
   return languageAliases[normalized] || normalized;
 }
 
-export function CodeBlock({ code, language = 'text' }: CodeBlockProps) {
+export function CodeBlock({ code, language = "text" }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
   const normalizedLang = normalizeLanguage(language);
 
@@ -49,14 +49,24 @@ export function CodeBlock({ code, language = 'text' }: CodeBlockProps) {
           {copied ? (
             <>
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
               <span className="hidden sm:inline">已复制</span>
             </>
           ) : (
             <>
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                />
               </svg>
               <span className="hidden sm:inline">复制</span>
             </>
@@ -69,12 +79,12 @@ export function CodeBlock({ code, language = 'text' }: CodeBlockProps) {
           style={vscDarkPlus}
           customStyle={{
             margin: 0,
-            padding: '0.75rem',
-            borderRadius: '0 0 0.5rem 0.5rem',
-            background: '#2d2d2d',
-            fontSize: '0.75rem',
-            lineHeight: '1.5',
-            minWidth: '100%',
+            padding: "0.75rem",
+            borderRadius: "0 0 0.5rem 0.5rem",
+            background: "#2d2d2d",
+            fontSize: "0.75rem",
+            lineHeight: "1.5",
+            minWidth: "100%",
           }}
           codeTagProps={{
             style: {

@@ -2,23 +2,23 @@
 
 ## Quick Context (Read This First!)
 
-| Field | Value |
-|-------|-------|
-| **Current Phase** | Phase 7 - Testing & Documentation |
-| **Current Task** | Task 7.2 Complete. Next: Task 7.3 - Set up E2E tests with Playwright (optional) |
-| **Blocker** | None |
-| **Last Action** | Completed Task 7.2: Added integration tests for critical flows. Created comprehensive integration tests for content provider (getAllArticles, getArticleBySlug, getArticlesByTag, searchArticles, getRelatedArticles) and client-side search (load, search, tokenization, scoring, error handling). All 131 tests passing. |
-| **Last Updated** | 2026-01-17 |
+| Field             | Value                                                                                                                                                                                                                                                                                                                                                                                            |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Current Phase** | Phase 7 - Testing & Documentation                                                                                                                                                                                                                                                                                                                                                                |
+| **Current Task**  | Task 7.4 Complete. Next: Task 7.5 - Write README with setup instructions                                                                                                                                                                                                                                                                                                                         |
+| **Blocker**       | None                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Last Action**   | Completed Task 7.4: Configured ESLint and Prettier. Added `.prettierrc.json`, `.prettierignore`, `.editorconfig`, enhanced `.eslintrc.json` with TypeScript and Prettier integration. Added `lint:fix` and `format` scripts. Formatted entire codebase. All 112 tests passing. Build verified successfully. ESLint and Prettier fully configured. |
+| **Last Updated**  | 2026-01-17                                                                                                                                                                                                                                                                                                                                                                                       |
 
 ---
 
 ## Environment
 
-| Field | Value |
-|-------|-------|
+| Field                 | Value                                             |
+| --------------------- | ------------------------------------------------- |
 | **Working Directory** | /Users/cong/chenzhicong/cc-automatic-blog-project |
-| **Git Branch** | main |
-| **Last Commit** | 8d60d44 |
+| **Git Branch**        | main                                              |
+| **Last Commit**       | 8d60d44                                           |
 
 ---
 
@@ -871,7 +871,7 @@ None
   - **Dependencies Added**:
     - mermaid@11.6.0 - Diagram and charting library
   - **Features**:
-    - Mermaid code block detection in Markdown (```mermaid ... ```)
+    - Mermaid code block detection in Markdown (`mermaid ... `)
     - Client-side rendering using Mermaid.js
     - Dark theme with custom colors matching blog's design
     - Error handling with user-friendly error messages
@@ -997,7 +997,7 @@ None
     - Consistent styling with other metadata (date, category)
   - **Technical Implementation**:
     - calculateReadingTime() function in lib/providers/local-mdx.ts
-    - Removes code blocks (```...```) and inline code (`...`)
+    - Removes code blocks (`...`) and inline code (`...`)
     - Converts markdown links to plain text
     - Splits by whitespace to count words
     - Returns minimum 1 minute, rounded up
@@ -1303,7 +1303,46 @@ None
     - Proper cleanup and isolation between test suites
   - **Notes**: All 131 tests passing. Integration tests verify the critical flows work correctly with real data structures and mock responses.
 - [ ] **Task 7.3**: Set up E2E tests with Playwright (optional)
-- [ ] **Task 7.4**: Configure ESLint and Prettier
+- [x] **Task 7.4**: Configure ESLint and Prettier
+  - **Completed**: 2026-01-17
+  - **Commit**: TBD
+  - **Files Created**:
+    - `.prettierrc.json` - Prettier configuration with opinionated settings
+    - `.prettierignore` - Prettier ignore patterns
+    - `.editorconfig` - Editor configuration for consistent formatting across editors
+  - **Files Modified**:
+    - `.eslintrc.json` - Enhanced ESLint configuration with TypeScript and Prettier integration
+    - `package.json` - Added formatting and linting scripts
+  - **Features**:
+    - Prettier configuration with consistent code style (100 char line width, 2 spaces, trailing commas, semicolons)
+    - ESLint configuration with TypeScript recommended rules and Prettier integration
+    - Custom ESLint rules for unused variables (prefixed with `_`), type-only imports, and no console statements
+    - New npm scripts:
+      - `npm run lint` - Run ESLint
+      - `npm run lint:fix` - Auto-fix ESLint issues
+      - `npm run format` - Format files with Prettier
+      - `npm run format:check` - Check formatting without modifying
+    - EditorConfig for consistent editor settings (UTF-8, LF line endings, 2-space indentation)
+    - All codebase formatted with Prettier
+    - All ESLint errors fixed (only acceptable warnings remain for MDX `any` types)
+  - **Prettier Configuration**:
+    - Semi-colons: enabled
+    - Trailing commas: es5
+    - Single quotes: disabled (uses double quotes)
+    - Print width: 100 characters
+    - Tab width: 2 spaces
+    - Arrow parens: always
+    - End of line: lf (Unix-style)
+  - **ESLint Configuration**:
+    - Extends: next/core-web-vitals, plugin:@typescript-eslint/recommended, prettier
+    - Custom rules:
+      - @typescript-eslint/no-unused-vars: Error, allows `_` prefix for unused vars
+      - @typescript-eslint/no-explicit-any: Warning (acceptable for MDX component props)
+      - @typescript-eslint/consistent-type-imports: Error, prefers type imports
+      - no-console: Warning, allows warn/error
+      - prefer-const: Error
+      - no-var: Error
+  - **Notes**: Build verified successfully. All 112 tests passing. ESLint and Prettier are fully configured and integrated with the project.
 - [ ] **Task 7.5**: Write README with setup instructions
 - [ ] **Task 7.6**: Document how to add new articles
 - [ ] **Task 7.7**: Create contribution guide (for future self)
@@ -1326,18 +1365,19 @@ None yet - project just started
 
 ### Important File Locations
 
-| Purpose | Path |
-|---------|------|
-| PRD Document | [docs/PRD.md](docs/PRD.md) |
+| Purpose          | Path                                 |
+| ---------------- | ------------------------------------ |
+| PRD Document     | [docs/PRD.md](docs/PRD.md)           |
 | Progress Tracker | [docs/PROGRESS.md](docs/PROGRESS.md) |
-| Articles | `posts/*.md` |
-| Components | `components/` |
-| Content Layer | `lib/content.ts` |
-| Blog Detail Page | `app/blog/[slug]/page.tsx` |
+| Articles         | `posts/*.md`                         |
+| Components       | `components/`                        |
+| Content Layer    | `lib/content.ts`                     |
+| Blog Detail Page | `app/blog/[slug]/page.tsx`           |
 
 ### Dependencies Added
 
 **Base Dependencies (Task 1.1)**:
+
 - next@15.1.4
 - react@18.3.1
 - react-dom@18.3.1
@@ -1349,34 +1389,41 @@ None yet - project just started
 - eslint-config-next@15.1.4
 
 **MDX Dependencies (Task 1.3)**:
+
 - @next/mdx@16.1.2
 - @mdx-js/loader@3.1.1
 - @mdx-js/react@3.1.1
 - @types/mdx@2.0.13
 
 **Content Rendering Dependencies (Task 1.6)**:
+
 - gray-matter@4.0.3
 - react-markdown@9.0.1
 - remark-gfm@4.0.0
 - rehype-raw@7.0.0
 
 **Content Provider Architecture (Task 2.1)**:
+
 - No new dependencies added
 - Refactored existing code to use provider pattern
 - All functionality preserved with new architecture
 
 **Code Highlighting Dependencies (Task 2.4)**:
+
 - react-syntax-highlighter@15.6.1
 - @types/react-syntax-highlighter@5.0.4
 
 **Search Dependencies (Task 3.1)**:
+
 - flexsearch@0.7.43
 - @types/flexsearch@0.7.5
 
 **Build Script Dependencies (Task 3.2)**:
+
 - tsx@4.21.0
 
 **Math Formula Dependencies (Task 5.1/5.2)**:
+
 - katex@0.16.11
 - react-katex@3.0.1
 - @types/katex@0.16.7
@@ -1384,6 +1431,7 @@ None yet - project just started
 - rehype-katex@7.0.1
 
 **Diagram Dependencies (Task 5.3)**:
+
 - mermaid@11.6.0
 
 ---
@@ -1391,8 +1439,8 @@ None yet - project just started
 ## Blockers
 
 | Task | Blocker | Attempts | Last Tried |
-|------|---------|----------|------------|
-| None | - | - | - |
+| ---- | ------- | -------- | ---------- |
+| None | -       | -        | -          |
 
 ---
 
@@ -1408,6 +1456,7 @@ None yet - project just started
 6. **Next action should be**: Proceed with Task 5.3 - Integrate Mermaid for diagram rendering (flowcharts, sequence diagrams, etc.)
 
 **Important Context to Remember:**
+
 - This is a personal tech blog for knowledge management, not public engagement
 - Must support excellent code highlighting and reading experience
 - Mobile-friendly is critical
@@ -1420,53 +1469,53 @@ None yet - project just started
 
 ## Session History
 
-| Timestamp | Event | Details |
-|-----------|-------|---------|
-| 2026-01-17 00:16 | Session Start | Initial PRD creation via discovery questions |
-| 2026-01-17 00:20 | PRD Complete | Comprehensive PRD.md created with all phases |
-| 2026-01-17 00:20 | PROGRESS Complete | PROGRESS.md created for tracking |
-| 2026-01-17 00:20 | Ready to Start | Task 1.1 is next - Initialize Next.js project |
-| 2026-01-17 01:00 | Task 1.1 Complete | Next.js 15 project initialized with TypeScript and Tailwind CSS |
-| 2026-01-17 01:01 | Task 1.2 Complete | Created project directory structure (posts/, components/, lib/) |
-| 2026-01-17 01:04 | Task 1.3 Complete | Set up MDX support - installed @next/mdx, configured Next.js and TypeScript |
-| 2026-01-17 01:11 | Task 1.4 Complete | Created first sample article with frontmatter (posts/2026-01-17-welcome-to-my-blog.md) |
-| 2026-01-17 01:14 | Task 1.5 Complete | Implemented dark theme layout with header, footer, styled homepage, and comprehensive Tailwind color palette |
-| 2026-01-17 01:17 | Task 1.6 Complete | Created article detail page at `/blog/[slug]` with MDX rendering, content utilities, and dynamic homepage |
-| 2026-01-17 01:20 | Task 1.7 Complete | Configured Vercel deployment with vercel.json, added comprehensive README with deployment instructions, verified production build works |
-| 2026-01-17 01:29 | Task 2.1 Complete | Implemented content provider interface and local MDX implementation with abstract architecture for future Notion/Obsidian migration |
-| 2026-01-17 01:44 | Tasks 2.2/2.3/2.5 Complete | Created ArticleCard component with comprehensive metadata display (date, reading time, tags, category) and enhanced hover effects; Refactored homepage to use the new component |
-| 2026-01-17 01:53 | Task 2.4 Complete | Implemented code highlighting with react-syntax-highlighter (PrismJS). Added CodeBlock component with language detection, VSCode Dark Plus theme, copy button with visual feedback, and support for 40+ programming languages |
-| 2026-01-17 02:00 | Task 2.6 Complete | Implemented tag filtering functionality with TagFilter component using URL search params. Added client-side interactive tag buttons with active state highlighting, clear filter option, and shareable filtered URLs |
-| 2026-01-17 02:07 | Task 2.7 Complete | Created tag pages at `/blog/tag/[tag]` with SSG. Added breadcrumb navigation, SEO metadata, 404 handling, and consistent styling with existing pages. Tag URLs support Chinese characters with URL encoding. |
-| 2026-01-17 02:14 | Task 2.8 Complete | Created About page at `/about` with comprehensive information sections (blog purpose, tech stack, features, future plans, design philosophy, contact). Added breadcrumb navigation, grid layout, SVG icons, and responsive design following established patterns. |
-| 2026-01-17 02:14 | Phase 2 Complete | All Phase 2 tasks completed. Core features (MVP) are now implemented: content provider architecture, article list/detail pages, code highlighting, tag filtering, tag pages, and About page. |
-| 2026-01-17 02:14 | Phase 3 Start | Ready to begin Phase 3 - Search & Navigation. Next task: Task 3.1 - Integrate FlexSearch for client-side search. |
-| 2026-01-17 02:32 | Task 3.1 Complete | Integrated FlexSearch for client-side search. Created SearchIndex class in lib/search.ts with Document-based indexing. Added flexsearch@0.7.43 and @types/flexsearch@0.7.5 dependencies. Build verified successfully. |
-| 2026-01-17 02:50 | Task 3.2 Complete | Generated search index at build time. Created build-index.ts with inverted index for efficient client-side search. Added client-search.ts for loading and searching pre-built index. Search index is served as static JSON from public/search-index.json. Build script integration complete. |
-| 2026-01-17 03:00 | Task 3.3 Complete | Created SearchBox component with live search results dropdown. Integrated into header navigation. Fixed module bundling issues by creating shared types.ts and removing sync wrappers with Node.js imports from client bundle. Build verified successfully. |
-| 2026-01-17 03:15 | Task 3.4 Complete | Added global keyboard shortcut (Cmd+K/Ctrl+K) to focus search input. Added visual kbd badge showing the keyboard shortcut (⌘K) on desktop. Badge is hidden on mobile to save space. Build verified successfully. |
-| 2026-01-17 03:30 | Task 3.5 Complete | Implemented article table of contents (TOC) with auto-extraction from headings. Created lib/toc.ts with extractToc and generateHeadingId utilities. Created TableOfContents component with Intersection Observer for active tracking, collapsible UI, and smooth scrolling. Updated MDXContent to add IDs to all headings (h1-h4). Integrated TOC into article detail page. Hidden on mobile/tablet, visible on desktop. Build verified successfully. |
-| 2026-01-17 03:45 | Task 3.6 Complete | Smooth scrolling for TOC links already implemented in Task 3.5. No additional work needed. |
-| 2026-01-17 03:45 | Task 3.7 Complete | Added "Back to top" button with smooth scrolling animation. Created BackToTop component with fade-in/slide-up animation when scrolling down. Added scroll-smooth utility to html element. Button appears after 300px scroll, positioned at bottom-right corner with orange accent color matching blog theme. Build verified successfully. |
-| 2026-01-17 03:45 | Phase 3 Complete | All Phase 3 tasks completed. Search & Navigation features are now implemented: FlexSearch integration, build-time search index, search box with live results, keyboard shortcut, article TOC, smooth scrolling, and back to top button. |
-| 2026-01-17 04:00 | Task 4.2 Complete | Added mobile navigation menu with hamburger icon and slide-in panel. Created MobileNav component with smooth animations, click-outside-to-close, body scroll lock, and proper accessibility. Integrated into header layout. Search box hidden on mobile to save space. Build verified successfully. |
-| 2026-01-17 04:15 | Task 4.3 Complete | Optimized typography for mobile reading. Added comprehensive CSS optimizations including 16px base font size, improved line heights (1.75 on mobile, 1.8 for Chinese), letter spacing optimization, reading width limits (65ch), text selection styling, and touch-friendly link spacing. Updated MDXContent and article page with responsive typography classes. Build verified successfully. |
-| 2026-01-17 04:30 | Task 4.4 Complete | Added loading states and skeleton screens for all pages. Created skeleton components (ArticleCardSkeleton, HeadingSkeleton, ParagraphSkeleton, SearchResultSkeleton) and loading.tsx files for global, article, and tag pages. Added shimmer animation CSS. Build verified successfully. |
-| 2026-01-17 04:45 | Task 4.5 Complete | Added custom 404 page with helpful navigation. Created app/not-found.tsx with large 404 heading, clear error message in Chinese, sad face illustration, two action buttons (Return to Home, About Blog), and helpful suggestions list. Responsive design with consistent dark theme styling and SEO metadata. Build verified successfully. |
-| 2026-01-17 05:00 | Task 4.6 Complete | Added image optimization with Next.js Image component. Created MDXImage component with AVIF/WebP support, lazy loading, loading skeleton, error handling, and caption support. Configured next.config.ts with remote patterns for external images. Integrated into MDXContent for automatic optimization of images in Markdown content. Build verified successfully. |
-| 2026-01-17 05:30 | Task 4.8 Complete | Added favicon and comprehensive SEO meta tags. Created icon.tsx, apple-icon.tsx, opengraph-image.tsx, twitter-image.tsx for dynamic image generation. Created sitemap.ts and robots.ts for search engine optimization. Updated layout.tsx with Open Graph, Twitter Cards, robots meta tags, and JSON-LD structured data. Updated blog/[slug]/page.tsx with article-specific SEO metadata and BlogPosting schema. Build verified successfully. |
-| 2026-01-17 05:45 | Task 5.1/5.2 Complete | Integrated KaTeX for math formula rendering. Added remark-math and rehype-katex plugins to MDXContent. Created MathBlock component for KaTeX rendering. Created test article (math-formula-test.md) with inline and block math formulas including integrals, matrices, Fourier transforms, and Schrödinger equation. Math formulas render server-side at build time using standard LaTeX syntax ($ for inline, $$ for block). Build verified successfully. |
-| 2026-01-17 06:00 | Task 5.3 Complete | Integrated Mermaid for diagram rendering. Created MermaidDiagram component with client-side rendering using mermaid@11.6.0. Added dark theme customization matching blog's orange accent colors. Integrated MermaidDiagram into MDXContent to detect mermaid code blocks. Created test article (mermaid-diagram-test.md) with 10 different diagram types: flowcharts, sequence diagrams, state diagrams, class diagrams, ER diagrams, Gantt charts, pie charts, Git graphs, mindmaps, and timelines. All diagrams support Chinese text and responsive layout with horizontal scrolling. Build verified successfully. |
-| 2026-01-17 06:15 | Task 5.4 Complete | Added syntax highlighting for Mermaid code blocks. Enhanced MermaidDiagram component with toggle button to switch between rendered diagram and syntax highlighted code view. Added header bar with "Mermaid Diagram" label and toggle button. Uses react-syntax-highlighter with VSCode Dark Plus theme for Mermaid syntax highlighting. Styled consistently with code blocks. Build verified successfully. |
-| 2026-01-17 06:30 | Task 5.5 Complete | Added related articles section at bottom of articles. Created getRelatedArticles function in lib/content.ts with smart scoring algorithm (shared tags: 10 points each, same category: 5 points, recency bonus: decreases over time). Created RelatedArticles component with responsive grid layout (1→2→3 columns), article cards showing title/date/reading time/summary/tags, hover effects with orange accent, "阅读更多" arrow that slides on hover. Integrated into article detail page between content and footer. Build verified successfully. |
-| 2026-01-17 06:45 | Task 5.6 Complete | Added reading time display to article detail page. Reading time calculation already existed in LocalMDXProvider (~200 words/min excluding code blocks). Added clock icon and "X 分钟阅读" display to article header metadata section, positioned between date and category. Consistent styling with existing metadata elements. Build verified successfully. |
-| 2026-01-17 06:45 | Task 5.7 Complete | Copy button was already implemented as part of Task 2.4 (CodeBlock component). Marked as complete in PRD and PROGRESS. |
-| 2026-01-17 06:45 | Phase 5 Complete | All Phase 5 tasks completed. Advanced features are now implemented: KaTeX math formulas, Mermaid diagrams, syntax highlighting for Mermaid code blocks, related articles section, and reading time estimation. Moving to Phase 6: Deployment & CI/CD. |
-| 2026-01-17 07:00 | Task 6.1 Complete | Configured Vercel project with GitHub integration. Enhanced vercel.json with security headers, cache policies, environment variables, and git deployment settings. Created GitHub Actions CI workflow (.github/workflows/ci.yml) with type checking, linting, and build jobs. Updated README.md with comprehensive deployment instructions including Vercel Dashboard, Vercel CLI, and GitHub Integration options. Build verified successfully. |
-| 2026-01-17 07:15 | Task 6.2 Complete | Verified automatic deployment configuration in vercel.json. The `git.deploymentEnabled.main: true` setting was already configured in Task 6.1. Updated README.md to clarify that automatic deployment is already configured and users just need to connect their GitHub repository in Vercel dashboard for it to work. No code changes required. |
-| 2026-01-17 07:30 | Task 6.3 Complete | Added build optimization with bundle analysis. Installed @next/bundle-analyzer, configured next.config.ts with bundle analyzer plugin and build optimizations (React Strict Mode, production source maps disabled, modular imports). Added build:analyze and type-check scripts. Created .env.example and comprehensive BUILD_OPTIMIZATION.md documentation. Build verified successfully. |
-| 2026-01-17 07:45 | Task 7.1 Complete | Added unit tests for utility functions. Set up Vitest testing framework with React plugin and coverage reporting. Created comprehensive unit tests for TOC utilities (extractToc, generateHeadingId, getActiveHeading), search index tokenization, and reading time calculation. All 65 tests passing. Extracted reading time calculation to separate utility function for better testability. Added test scripts (test, test:run, test:ui, test:coverage). Build verified successfully. |
-| 2026-01-17 07:50 | Task 7.2 Complete | Added integration tests for critical flows. Created comprehensive integration tests for content provider (getAllArticles, getArticleBySlug, getArticlesByTag, getAllTags, searchArticles, getRelatedArticles) and client-side search (load, search, tokenization, scoring, error handling). All 131 tests passing (65 unit + 66 integration). Tests verify article list page flow, article detail page flow, tag filtering flow, and search flow. Build verified successfully. |
+| Timestamp        | Event                      | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ---------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-01-17 00:16 | Session Start              | Initial PRD creation via discovery questions                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 2026-01-17 00:20 | PRD Complete               | Comprehensive PRD.md created with all phases                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 2026-01-17 00:20 | PROGRESS Complete          | PROGRESS.md created for tracking                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 2026-01-17 00:20 | Ready to Start             | Task 1.1 is next - Initialize Next.js project                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| 2026-01-17 01:00 | Task 1.1 Complete          | Next.js 15 project initialized with TypeScript and Tailwind CSS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 2026-01-17 01:01 | Task 1.2 Complete          | Created project directory structure (posts/, components/, lib/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 2026-01-17 01:04 | Task 1.3 Complete          | Set up MDX support - installed @next/mdx, configured Next.js and TypeScript                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 2026-01-17 01:11 | Task 1.4 Complete          | Created first sample article with frontmatter (posts/2026-01-17-welcome-to-my-blog.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 2026-01-17 01:14 | Task 1.5 Complete          | Implemented dark theme layout with header, footer, styled homepage, and comprehensive Tailwind color palette                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 2026-01-17 01:17 | Task 1.6 Complete          | Created article detail page at `/blog/[slug]` with MDX rendering, content utilities, and dynamic homepage                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| 2026-01-17 01:20 | Task 1.7 Complete          | Configured Vercel deployment with vercel.json, added comprehensive README with deployment instructions, verified production build works                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| 2026-01-17 01:29 | Task 2.1 Complete          | Implemented content provider interface and local MDX implementation with abstract architecture for future Notion/Obsidian migration                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 2026-01-17 01:44 | Tasks 2.2/2.3/2.5 Complete | Created ArticleCard component with comprehensive metadata display (date, reading time, tags, category) and enhanced hover effects; Refactored homepage to use the new component                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 2026-01-17 01:53 | Task 2.4 Complete          | Implemented code highlighting with react-syntax-highlighter (PrismJS). Added CodeBlock component with language detection, VSCode Dark Plus theme, copy button with visual feedback, and support for 40+ programming languages                                                                                                                                                                                                                                                                                                                                                                                        |
+| 2026-01-17 02:00 | Task 2.6 Complete          | Implemented tag filtering functionality with TagFilter component using URL search params. Added client-side interactive tag buttons with active state highlighting, clear filter option, and shareable filtered URLs                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 2026-01-17 02:07 | Task 2.7 Complete          | Created tag pages at `/blog/tag/[tag]` with SSG. Added breadcrumb navigation, SEO metadata, 404 handling, and consistent styling with existing pages. Tag URLs support Chinese characters with URL encoding.                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 2026-01-17 02:14 | Task 2.8 Complete          | Created About page at `/about` with comprehensive information sections (blog purpose, tech stack, features, future plans, design philosophy, contact). Added breadcrumb navigation, grid layout, SVG icons, and responsive design following established patterns.                                                                                                                                                                                                                                                                                                                                                    |
+| 2026-01-17 02:14 | Phase 2 Complete           | All Phase 2 tasks completed. Core features (MVP) are now implemented: content provider architecture, article list/detail pages, code highlighting, tag filtering, tag pages, and About page.                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 2026-01-17 02:14 | Phase 3 Start              | Ready to begin Phase 3 - Search & Navigation. Next task: Task 3.1 - Integrate FlexSearch for client-side search.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 2026-01-17 02:32 | Task 3.1 Complete          | Integrated FlexSearch for client-side search. Created SearchIndex class in lib/search.ts with Document-based indexing. Added flexsearch@0.7.43 and @types/flexsearch@0.7.5 dependencies. Build verified successfully.                                                                                                                                                                                                                                                                                                                                                                                                |
+| 2026-01-17 02:50 | Task 3.2 Complete          | Generated search index at build time. Created build-index.ts with inverted index for efficient client-side search. Added client-search.ts for loading and searching pre-built index. Search index is served as static JSON from public/search-index.json. Build script integration complete.                                                                                                                                                                                                                                                                                                                         |
+| 2026-01-17 03:00 | Task 3.3 Complete          | Created SearchBox component with live search results dropdown. Integrated into header navigation. Fixed module bundling issues by creating shared types.ts and removing sync wrappers with Node.js imports from client bundle. Build verified successfully.                                                                                                                                                                                                                                                                                                                                                          |
+| 2026-01-17 03:15 | Task 3.4 Complete          | Added global keyboard shortcut (Cmd+K/Ctrl+K) to focus search input. Added visual kbd badge showing the keyboard shortcut (⌘K) on desktop. Badge is hidden on mobile to save space. Build verified successfully.                                                                                                                                                                                                                                                                                                                                                                                                     |
+| 2026-01-17 03:30 | Task 3.5 Complete          | Implemented article table of contents (TOC) with auto-extraction from headings. Created lib/toc.ts with extractToc and generateHeadingId utilities. Created TableOfContents component with Intersection Observer for active tracking, collapsible UI, and smooth scrolling. Updated MDXContent to add IDs to all headings (h1-h4). Integrated TOC into article detail page. Hidden on mobile/tablet, visible on desktop. Build verified successfully.                                                                                                                                                                |
+| 2026-01-17 03:45 | Task 3.6 Complete          | Smooth scrolling for TOC links already implemented in Task 3.5. No additional work needed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 2026-01-17 03:45 | Task 3.7 Complete          | Added "Back to top" button with smooth scrolling animation. Created BackToTop component with fade-in/slide-up animation when scrolling down. Added scroll-smooth utility to html element. Button appears after 300px scroll, positioned at bottom-right corner with orange accent color matching blog theme. Build verified successfully.                                                                                                                                                                                                                                                                            |
+| 2026-01-17 03:45 | Phase 3 Complete           | All Phase 3 tasks completed. Search & Navigation features are now implemented: FlexSearch integration, build-time search index, search box with live results, keyboard shortcut, article TOC, smooth scrolling, and back to top button.                                                                                                                                                                                                                                                                                                                                                                              |
+| 2026-01-17 04:00 | Task 4.2 Complete          | Added mobile navigation menu with hamburger icon and slide-in panel. Created MobileNav component with smooth animations, click-outside-to-close, body scroll lock, and proper accessibility. Integrated into header layout. Search box hidden on mobile to save space. Build verified successfully.                                                                                                                                                                                                                                                                                                                  |
+| 2026-01-17 04:15 | Task 4.3 Complete          | Optimized typography for mobile reading. Added comprehensive CSS optimizations including 16px base font size, improved line heights (1.75 on mobile, 1.8 for Chinese), letter spacing optimization, reading width limits (65ch), text selection styling, and touch-friendly link spacing. Updated MDXContent and article page with responsive typography classes. Build verified successfully.                                                                                                                                                                                                                       |
+| 2026-01-17 04:30 | Task 4.4 Complete          | Added loading states and skeleton screens for all pages. Created skeleton components (ArticleCardSkeleton, HeadingSkeleton, ParagraphSkeleton, SearchResultSkeleton) and loading.tsx files for global, article, and tag pages. Added shimmer animation CSS. Build verified successfully.                                                                                                                                                                                                                                                                                                                             |
+| 2026-01-17 04:45 | Task 4.5 Complete          | Added custom 404 page with helpful navigation. Created app/not-found.tsx with large 404 heading, clear error message in Chinese, sad face illustration, two action buttons (Return to Home, About Blog), and helpful suggestions list. Responsive design with consistent dark theme styling and SEO metadata. Build verified successfully.                                                                                                                                                                                                                                                                           |
+| 2026-01-17 05:00 | Task 4.6 Complete          | Added image optimization with Next.js Image component. Created MDXImage component with AVIF/WebP support, lazy loading, loading skeleton, error handling, and caption support. Configured next.config.ts with remote patterns for external images. Integrated into MDXContent for automatic optimization of images in Markdown content. Build verified successfully.                                                                                                                                                                                                                                                 |
+| 2026-01-17 05:30 | Task 4.8 Complete          | Added favicon and comprehensive SEO meta tags. Created icon.tsx, apple-icon.tsx, opengraph-image.tsx, twitter-image.tsx for dynamic image generation. Created sitemap.ts and robots.ts for search engine optimization. Updated layout.tsx with Open Graph, Twitter Cards, robots meta tags, and JSON-LD structured data. Updated blog/[slug]/page.tsx with article-specific SEO metadata and BlogPosting schema. Build verified successfully.                                                                                                                                                                        |
+| 2026-01-17 05:45 | Task 5.1/5.2 Complete      | Integrated KaTeX for math formula rendering. Added remark-math and rehype-katex plugins to MDXContent. Created MathBlock component for KaTeX rendering. Created test article (math-formula-test.md) with inline and block math formulas including integrals, matrices, Fourier transforms, and Schrödinger equation. Math formulas render server-side at build time using standard LaTeX syntax ($ for inline, $$ for block). Build verified successfully.                                                                                                                                                           |
+| 2026-01-17 06:00 | Task 5.3 Complete          | Integrated Mermaid for diagram rendering. Created MermaidDiagram component with client-side rendering using mermaid@11.6.0. Added dark theme customization matching blog's orange accent colors. Integrated MermaidDiagram into MDXContent to detect mermaid code blocks. Created test article (mermaid-diagram-test.md) with 10 different diagram types: flowcharts, sequence diagrams, state diagrams, class diagrams, ER diagrams, Gantt charts, pie charts, Git graphs, mindmaps, and timelines. All diagrams support Chinese text and responsive layout with horizontal scrolling. Build verified successfully. |
+| 2026-01-17 06:15 | Task 5.4 Complete          | Added syntax highlighting for Mermaid code blocks. Enhanced MermaidDiagram component with toggle button to switch between rendered diagram and syntax highlighted code view. Added header bar with "Mermaid Diagram" label and toggle button. Uses react-syntax-highlighter with VSCode Dark Plus theme for Mermaid syntax highlighting. Styled consistently with code blocks. Build verified successfully.                                                                                                                                                                                                          |
+| 2026-01-17 06:30 | Task 5.5 Complete          | Added related articles section at bottom of articles. Created getRelatedArticles function in lib/content.ts with smart scoring algorithm (shared tags: 10 points each, same category: 5 points, recency bonus: decreases over time). Created RelatedArticles component with responsive grid layout (1→2→3 columns), article cards showing title/date/reading time/summary/tags, hover effects with orange accent, "阅读更多" arrow that slides on hover. Integrated into article detail page between content and footer. Build verified successfully.                                                                |
+| 2026-01-17 06:45 | Task 5.6 Complete          | Added reading time display to article detail page. Reading time calculation already existed in LocalMDXProvider (~200 words/min excluding code blocks). Added clock icon and "X 分钟阅读" display to article header metadata section, positioned between date and category. Consistent styling with existing metadata elements. Build verified successfully.                                                                                                                                                                                                                                                         |
+| 2026-01-17 06:45 | Task 5.7 Complete          | Copy button was already implemented as part of Task 2.4 (CodeBlock component). Marked as complete in PRD and PROGRESS.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 2026-01-17 06:45 | Phase 5 Complete           | All Phase 5 tasks completed. Advanced features are now implemented: KaTeX math formulas, Mermaid diagrams, syntax highlighting for Mermaid code blocks, related articles section, and reading time estimation. Moving to Phase 6: Deployment & CI/CD.                                                                                                                                                                                                                                                                                                                                                                |
+| 2026-01-17 07:00 | Task 6.1 Complete          | Configured Vercel project with GitHub integration. Enhanced vercel.json with security headers, cache policies, environment variables, and git deployment settings. Created GitHub Actions CI workflow (.github/workflows/ci.yml) with type checking, linting, and build jobs. Updated README.md with comprehensive deployment instructions including Vercel Dashboard, Vercel CLI, and GitHub Integration options. Build verified successfully.                                                                                                                                                                      |
+| 2026-01-17 07:15 | Task 6.2 Complete          | Verified automatic deployment configuration in vercel.json. The `git.deploymentEnabled.main: true` setting was already configured in Task 6.1. Updated README.md to clarify that automatic deployment is already configured and users just need to connect their GitHub repository in Vercel dashboard for it to work. No code changes required.                                                                                                                                                                                                                                                                     |
+| 2026-01-17 07:30 | Task 6.3 Complete          | Added build optimization with bundle analysis. Installed @next/bundle-analyzer, configured next.config.ts with bundle analyzer plugin and build optimizations (React Strict Mode, production source maps disabled, modular imports). Added build:analyze and type-check scripts. Created .env.example and comprehensive BUILD_OPTIMIZATION.md documentation. Build verified successfully.                                                                                                                                                                                                                            |
+| 2026-01-17 07:45 | Task 7.1 Complete          | Added unit tests for utility functions. Set up Vitest testing framework with React plugin and coverage reporting. Created comprehensive unit tests for TOC utilities (extractToc, generateHeadingId, getActiveHeading), search index tokenization, and reading time calculation. All 65 tests passing. Extracted reading time calculation to separate utility function for better testability. Added test scripts (test, test:run, test:ui, test:coverage). Build verified successfully.                                                                                                                             |
+| 2026-01-17 07:50 | Task 7.2 Complete          | Added integration tests for critical flows. Created comprehensive integration tests for content provider (getAllArticles, getArticleBySlug, getArticlesByTag, getAllTags, searchArticles, getRelatedArticles) and client-side search (load, search, tokenization, scoring, error handling). All 131 tests passing (65 unit + 66 integration). Tests verify article list page flow, article detail page flow, tag filtering flow, and search flow. Build verified successfully.                                                                                                                                       |
 
 ---
 

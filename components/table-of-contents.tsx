@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useState, useRef } from 'react';
-import { TocItem } from '@/lib/toc';
+import { useEffect, useState, useRef } from "react";
+import type { TocItem } from "@/lib/toc";
 
 interface TableOfContentsProps {
   toc: TocItem[];
@@ -23,7 +23,7 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
         });
       },
       {
-        rootMargin: '-100px 0px -66%',
+        rootMargin: "-100px 0px -66%",
         threshold: 0,
       }
     );
@@ -65,7 +65,7 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
           >
             <span>目录</span>
             <svg
-              className={`w-4 h-4 transition-transform ${isCollapsed ? '-rotate-90' : ''}`}
+              className={`w-4 h-4 transition-transform ${isCollapsed ? "-rotate-90" : ""}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -82,10 +82,7 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
           {!isCollapsed && (
             <ul className="space-y-2 text-sm">
               {toc.map((item) => (
-                <li
-                  key={item.id}
-                  style={{ paddingLeft: `${(item.level - 1) * 12}px` }}
-                >
+                <li key={item.id} style={{ paddingLeft: `${(item.level - 1) * 12}px` }}>
                   <a
                     href={`#${item.id}`}
                     onClick={(e) => {
@@ -100,14 +97,14 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
 
                         window.scrollTo({
                           top: offsetPosition,
-                          behavior: 'smooth',
+                          behavior: "smooth",
                         });
                       }
                     }}
                     className={`block py-1 border-l-2 transition-all duration-200 ${
                       activeId === item.id
-                        ? 'border-accent-primary text-accent-primary font-medium pl-3'
-                        : 'border-transparent text-text-secondary hover:text-text-primary hover:border-divider pl-3'
+                        ? "border-accent-primary text-accent-primary font-medium pl-3"
+                        : "border-transparent text-text-secondary hover:text-text-primary hover:border-divider pl-3"
                     }`}
                   >
                     {item.text}
