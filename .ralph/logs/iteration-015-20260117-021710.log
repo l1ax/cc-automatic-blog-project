@@ -1,0 +1,30 @@
+The commit was successful. Task 4.4 has been completed. Let me provide a summary of what was implemented:
+
+## Task 4.4 Complete: Add loading states and skeleton screens
+
+**Summary of Changes:**
+
+### Files Created:
+1. **`components/skeletons/article-card.tsx`** - ArticleCard skeleton component with title, summary, metadata, and tags
+2. **`components/skeletons/text.tsx`** - Text skeleton components (HeadingSkeleton, ParagraphSkeleton, TextLineSkeleton)
+3. **`components/skeletons/search-result.tsx`** - Search result skeleton component
+4. **`components/skeletons/index.ts`** - Centralized export for all skeleton components
+
+5. **`app/loading.tsx`** - Global loading state for the entire application
+6. **`app/blog/[slug]/loading.tsx`** - Article page loading state with content structure skeleton
+7. **`app/blog/tag/[tag]/loading.tsx`** - Tag page loading state with breadcrumb and article list skeleton
+
+### Files Modified:
+1. **`app/globals.css`** - Added shimmer animation keyframes and `animate-shimmer` utility class
+
+### Features Implemented:
+- **Global loading state** that shows while any page is loading
+- **Article-specific loading state** with content structure skeleton (back link, header, content blocks, footer)
+- **Tag page loading state** with breadcrumb and article list skeletons
+- **Reusable skeleton components** for article cards, text elements, and search results
+- **Shimmer animation effect** using CSS gradients (#2d2d2d to #3d3d3d)
+- **Responsive skeleton layouts** matching actual component structure
+- **Consistent styling** with blog's dark theme
+
+### Next Task:
+**Task 4.5**: Add 404 page

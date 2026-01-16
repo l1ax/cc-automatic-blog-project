@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | **Current Phase** | Phase 4 - Responsive Design & Polish |
-| **Current Task** | Task 4.4 Complete. Next: Task 4.5 - Add 404 page |
+| **Current Task** | Task 4.5 - Add 404 page |
 | **Blocker** | None |
-| **Last Action** | Added loading states and skeleton screens for all pages with shimmer animation |
+| **Last Action** | Updated PROGRESS.md with Task 4.4 commit hash (421ce3f) |
 | **Last Updated** | 2026-01-17 |
 
 ---
@@ -625,7 +625,7 @@ None
 
 - [x] **Task 4.4**: Add loading states and skeleton screens
   - **Completed**: 2026-01-17
-  - **Commit**: TBD
+  - **Commit**: 421ce3f
   - **Files Created**:
     - `components/skeletons/article-card.tsx` - ArticleCard skeleton component
     - `components/skeletons/text.tsx` - Text skeleton components (HeadingSkeleton, ParagraphSkeleton, TextLineSkeleton)
