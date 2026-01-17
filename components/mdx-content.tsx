@@ -106,8 +106,8 @@ export function MDXContent({ content }: MDXContentProps) {
           <strong className="font-semibold text-text-primary" {...props} />
         ),
         em: ({ node: _node, ...props }) => <em className="italic text-text-secondary" {...props} />,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         code: ({ node: _node, inline, className, children, ...props }: any) => {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const language = className?.replace(/language-/, "") || "";
 
           if (inline) {

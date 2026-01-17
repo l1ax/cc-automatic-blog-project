@@ -83,6 +83,7 @@ describe("Content Provider Integration Tests", () => {
       const article = await getArticleBySlug(testSlug);
 
       expect(article).not.toBeNull();
+      if (!article) return;
       expect(article).toHaveProperty("slug", testSlug);
       expect(article).toHaveProperty("title");
       expect(article).toHaveProperty("date");
